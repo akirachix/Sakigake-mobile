@@ -1,0 +1,34 @@
+name: Android CI/CD
+on:
+  push:
+    branches:
+      - dev
+jobs:
+  build:
+    runs-on: ubuntu version 20.04
+    steps:
+   
+    - name: Checkout code
+      uses: actions/checkout@v2
+    # Setup JDK
+    - name: Setup JDK
+      uses: actions/setup-java@v2
+      with:
+        java-version: '11'
+    # Set up Android SDK
+    - name: Set up Android SDK
+      uses: actions/setup-java@v2
+      with:
+        java-version: '11' 
+      env:
+        ANDROID_HOME: ${{ runner.workspace }}/android-sdk
+      run: |
+        wget -q https://dl.google.com/android/repository/commandlinetools-linux-7302050_latest.zip -O android-sdk.zip
+        unzip -q android-sdk.zip -d ${{ runner.workspace }}/android-sdk
+        yes | ${{ runner.workspace }}/android-sdk/cmdline-tools/bin/sdkmanager --licenses
+        ${{ runner.workspace }}/android-sdk/cmdline-tools/bin/sdkmanager "platforms;android-30" "build-tools;30.0.3"
+    # Build and test the Android app
+    - name: Build and test
+      run: |
+        chmod +x gradlew
+        ./gradlew clean build
