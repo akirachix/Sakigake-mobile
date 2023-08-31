@@ -7,7 +7,7 @@ jobs:
   build:
     runs-on: ubuntu version 20.04
     steps:
-    # Checkout the code
+   
     - name: Checkout code
       uses: actions/checkout@v2
     # Setup JDK
