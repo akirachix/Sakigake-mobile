@@ -14,12 +14,12 @@ jobs:
     - name: Setup JDK
       uses: actions/setup-java@v2
       with:
-        java-version: '8'
+        java-version: '11'
     # Set up Android SDK
     - name: Set up Android SDK
       uses: actions/setup-java@v2
       with:
-        java-version: '8' 
+        java-version: '11' 
       env:
         ANDROID_HOME: ${{ runner.workspace }}/android-sdk
       run: |
