@@ -1,8 +1,10 @@
 name: CI/CD Pipeline
+
 on:
   push:
     branches:
       - staging
+
 jobs:
   build:
     runs-on: ubuntu-20.04
@@ -13,9 +15,8 @@ jobs:
         run: npm install
       - name: Run tests
         run: npm test
-cd
-- name: Deploy to Staging
-  run: npm run deploy-staging
-- name: Deploy to Production
-  if: github.ref == 'refs/heads/main'
-  run: npm run deploy-production
+      - name: Deploy to Staging
+        run: npm run deploy-staging
+      - name: Deploy to Production
+        if: github.ref == 'refs/heads/main'
+        run: npm run deploy-production
