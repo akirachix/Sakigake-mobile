@@ -1,36 +1,21 @@
-name: Kotlin Android CI/CD
-
+name: CI/CD Pipeline
 on:
   push:
     branches:
       - dev
-
 jobs:
   build:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
-      - name: Setup Java
-        uses: actions/setup-java@v2
-        with:
-          java-version: '11'
-
-      - name: Set up Android SDK
-        uses: actions/setup-android@v2
-        with:
-          java-version: '11'
-          distribution: 'sdk'
-
-      - name: Grant execute permission to gradlew
-        run: chmod +x ./gradlew
-
-      - name: Build and Test
-        run: ./gradlew clean build
-
-      - name: Archive APKs
-        uses: actions/upload-artifact@v2
-        with:
-          name: app-debug
-          path: app/build/outputs/apk/debug/
+      - name: Install dependencies
+        run: npm install
+      - name: Run tests
+        run: npm test
+cd
+- name: Deploy to Staging
+  run: npm run deploy-staging
+- name: Deploy to Production
+  if: github.ref == 'refs/heads/main'
+  run: npm run deploy-production
