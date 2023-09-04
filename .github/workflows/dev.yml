@@ -2,12 +2,12 @@ name: Android CI
 
 on:
   push:
-    branche:
+    branches:
       - dev
 
 jobs:
   build-and-test:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
@@ -22,14 +22,19 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '11'
-          distribution: 'android'
+        env:
+          ANDROID_HOME: ${{ runner.workspace }}/android-sdk
+        run: |
+          wget -q https://dl.google.com/android/repository/commandlinetools-linux-7302050_latest.zip -O android-sdk.zip
+          unzip -q android-sdk.zip -d ${{ runner.workspace }}/android-sdk
+          yes | ${{ runner.workspace }}/android-sdk/cmdline-tools/bin/sdkmanager --licenses
+          ${{ runner.workspace }}/android-sdk/cmdline-tools/bin/sdkmanager "platforms;android-30" "build-tools;30.0.3"
+
+      - name: Make Gradle Wrapper Executable
+        run: chmod +x gradlew
 
       - name: Install Dependencies
-        run: |
-          # Replace with your dependency installation commands (e.g., using Gradle)
-          ./gradlew dependencies
+        run: ./gradlew dependencies
 
       - name: Build and Test
-        run: |
-          # Replace with your build and test commands (e.g., using Gradle)
-          ./gradlew build test
+        run: ./gradlew clean build test
