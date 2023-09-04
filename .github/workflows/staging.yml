@@ -3,12 +3,11 @@ name: CI/CD Pipeline
 on:
   push:
     branches:
-      - dev
-
+      - staging
 
 jobs:
   build:
-    runs-on: ubuntu-(version 20.04)
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
