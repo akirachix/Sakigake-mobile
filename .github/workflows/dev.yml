@@ -10,11 +10,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
     - name: Setup Java
-      uses: actions/setup-java@v2
-      with:
-        java-version: '11'
-    - name: Set up Android SDK
-      uses: actions/setup-java@v2
+      
       with:
         java-version: '11'
         distribution: 'sdk'
@@ -27,3 +23,5 @@ jobs:
       with:
         name: app-debug
         path: app/build/outputs/apk/debug
+
+        
