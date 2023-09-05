@@ -1,30 +1,52 @@
-name: Android CI/CD
+name: Android Build & Deploy
 
 on:
   push:
     branches:
       - dev
 
+
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-20.04
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: Setup Java
-      uses: actions/setup-java@v2
-      with:
-        java-version: '11'
+      - name: Set up ruby env
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7.2
+          bundler-cache: true
 
-    - name: Grant execute permission to gradlew
-      run: chmod +x ./gradlew
+      - name: Run tests
+        run: bundle exec fastlane android test
 
-    - name: Build and Test
-      run: ./gradlew clean build
+      - name: Decode Service Account Key JSON File
+        uses: actions/decode-env-file@v1
+        id: service_account_json_file
+        with:
+          env-file-name: "serviceAccount.json"
+          env-var-name: GPLAY_SERVICE_ACCOUNT_KEY_JSON
 
-    - name: Archive APKS
-      uses: actions/upload-artifact@v2
-      with:
-        name: app-debug
-        path: app/build/outputs/apk/debug
+      - name: Decode Keystore File
+        uses: actions/decode-env-file@v1
+        id: android_keystore
+        with:
+          env-file-name: "android_keystore.keystore"
+          env-var-name: KEYSTORE_FILE
+
+      - name: Build & deploy Android release
+        run: bundle exec fastlane android deploy
+        env:
+          KEYSTORE_FILE: ${{ steps.android_keystore.outputs.decoded-content }}
+          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+          ANDROID_JSON_KEY_FILE: ${{ steps.service_account_json_file.outputs.decoded-content }}
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: assets
+          path: |
+            ${{ github.workspace }}/app/build/outputs/bundle/release
