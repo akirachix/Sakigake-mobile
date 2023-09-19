@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MzaziConnectApplication</string>
+    <string name="agriculture">/agriculture</string>
+    <string name="Agriculture">agriculture</string>
 </resources>
