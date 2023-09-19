@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MzaziConnectApplication</string>
+    <string name="james_kiman" />
+    <string name="james_kimani" />
 </resources>

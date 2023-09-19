@@ -13,7 +13,13 @@
         android:theme="@style/Theme.MzaziConnectApplication"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.ViewChildActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ChildGradeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ViewChildRegisteredActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
