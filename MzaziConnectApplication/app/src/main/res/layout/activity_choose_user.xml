@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/brgbooks"
+    tools:context=".ui.ChooseUserActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="134dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="136dp"
+        android:src="@drawable/logo1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvtitle"
+        android:layout_width="146dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="124dp"
+        android:text="MzaziConnect"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+
+    <LinearLayout
+        android:id="@+id/boxLayout"
+        android:layout_width="325dp"
+        android:layout_height="267dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="64dp"
+        android:background="#DB008CBF"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvtitle">
+
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Continue as a"
+            android:textSize="23dp"
+            android:textColor="@color/white"
+            android:textAlignment="center"/>
+
+        <Button
+            android:id="@+id/btnparent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="#FFFFFF"
+            android:textColor="@color/black"
+            android:textAlignment="textStart"
+            android:drawableRight="@drawable/baseline_navigate_next_24"
+            android:text="Parent"
+            app:cornerRadius="5dp" />
+
+
+        <Button
+            android:id="@+id/btnteacher"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#FFFFFF"
+            android:textColor="@color/black"
+            android:drawableRight="@drawable/baseline_navigate_next_24"
+            android:textAlignment="textStart"
+            android:text="Teacher"
+            app:cornerRadius="5dp"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvhow"
+        android:layout_width="341dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="84dp"
+        android:text="Having trouble logging in ? Here is how"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
