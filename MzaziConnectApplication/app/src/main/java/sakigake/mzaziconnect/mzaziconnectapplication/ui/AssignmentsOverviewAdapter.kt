@@ -20,7 +20,6 @@ class SubjectAdapter(private val subjects: List<Subjects>) : RecyclerView.Adapte
     }
 
     override fun getItemCount() = subjects.size
-
     class SubjectViewHolder(private val binding: SubjectChoosenAssignmentItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(subject: Subjects) {
             binding.tvSubjectName.text = subject.subjectName
