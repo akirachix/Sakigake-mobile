@@ -2,4 +2,8 @@
     <string name="app_name">MzaziConnectApplication</string>
     <string name="agriculture">/agriculture</string>
     <string name="Agriculture">agriculture</string>
+    <string name="post_assignment">Post Assignment</string>
+    <string name="resources">Resources</string>
+    <string name="add_comment">Add Comment</string>
+    <string name="i_love_the_assignment">I love the assignment</string>
 </resources>
