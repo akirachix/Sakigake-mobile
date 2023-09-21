@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.AccountSettingsActivity">
+
+
+    <ImageView
+        android:id="@+id/ivbackset"
+        android:layout_width="31dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/backarrow" />
+
+    <ImageView
+        android:id="@+id/ivdotsset"
+        android:layout_width="37dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="27dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/dots" />
+
+    <TextView
+        android:id="@+id/tvasett"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="32dp"
+        android:text="Account Settings"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/ivbackset"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivschoologo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="48dp"
+        app:srcCompat="@drawable/schoollogo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvasett"
+        />
+
+    <ImageView
+        android:id="@+id/ivcamera"
+        android:layout_width="47dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="128dp"
+        android:layout_marginEnd="104dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ivschoologo"
+        app:srcCompat="@drawable/camera" />
+
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="320dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="63dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="138dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="LakeWood Primary School"
+        android:drawableRight="@drawable/edit"
+        android:textColor="#433F3F"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.163"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivcamera" />
+
+    <EditText
+        android:id="@+id/etphonenumber"
+        android:layout_width="320dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:drawableRight="@drawable/edit"
+        android:inputType="phone"
+        android:textColor="#433F3F"
+        android:text="+254768905423"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etName" />
+
+    <EditText
+        android:id="@+id/etemail"
+        android:layout_width="320dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:drawableRight="@drawable/edit"
+        android:inputType="textEmailAddress"
+        android:text="lakewood@gmail.com"
+        android:textColor="#433F3F"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etphonenumber" />
+
+    <EditText
+        android:id="@+id/etpassword"
+        android:layout_width="320dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:drawableRight="@drawable/edit"
+        android:inputType="textEmailAddress"
+        android:text="............"
+        android:textColor="#433F3F"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etemail" />
+
+
+    <Button
+        android:id="@+id/btnupdate"
+        android:layout_width="351dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="56dp"
+        android:backgroundTint="@color/blue"
+        android:clickable="true"
+        android:text="Update Changes"
+        app:cornerRadius="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

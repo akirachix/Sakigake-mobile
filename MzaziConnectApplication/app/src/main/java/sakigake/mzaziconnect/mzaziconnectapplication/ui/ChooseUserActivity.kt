@@ -18,11 +18,11 @@ class ChooseUserActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         binding.btnparent.setOnClickListener {
-            val intent = Intent(this@ChooseUserActivity, ChooseUserActivity::class.java)
+            val intent = Intent(this@ChooseUserActivity, LoginActivity::class.java)
             startActivity(intent)
         }
         binding.btnteacher.setOnClickListener {
-            val intent = Intent(this@ChooseUserActivity, ChooseUserActivity::class.java)
+            val intent = Intent(this@ChooseUserActivity, LoginActivity::class.java)
             startActivity(intent)
         }
 
