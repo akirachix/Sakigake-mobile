@@ -45,8 +45,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.06999999"
-        android:textColor="@color/blue"
-        android:textSize="25sp"/>
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:layout_marginStart="10dp"
+        android:textStyle="bold"
+        />
 
     <TextView
         android:id="@+id/tvGrade"
@@ -60,19 +63,35 @@
         app:layout_constraintTop_toBottomOf="@+id/tvSchoolNameTitle"
         app:layout_constraintVertical_bias="0.01999998"
         android:textColor="@color/blue"
-        android:textSize="25sp"/>
+        android:textSize="25sp"
+        android:textStyle="bold"/>
+
+
+    <Button
+        android:id="@+id/btnViewAssignments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="92dp"
+        android:backgroundTint="@color/grey"
+        android:text="View Assignments"
+        android:textColor="@color/blue"
+        app:cornerRadius="7dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.893"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/RvSubjectCards"
         android:layout_width="0dp"
-        android:layout_marginTop="10dp"
         android:layout_height="0dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvGrade"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:layout_constraintHorizontal_bias="0.0"
-        tools:listitem="@layout/subject_choosen_assignment_item" />
+        tools:listitem="@layout/subject_overview_item"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

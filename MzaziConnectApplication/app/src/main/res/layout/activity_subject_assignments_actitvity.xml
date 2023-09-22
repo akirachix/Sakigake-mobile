@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".ui.SubjectChoosenAssignments">
+    tools:context=".ui.SubjectAssignmentsActitvity">
 
     <ImageView
         android:id="@+id/imgBack"
@@ -30,14 +30,13 @@
         app:srcCompat="@drawable/baseline_more_vert_24"
         app:tint="@color/blue" />
 
-    />
 
     <TextView
         android:id="@+id/tvAssignmentTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Agriculture"
+        android:layout_marginTop="30dp"
+        android:text="Assignments"
         android:textColor="@color/black"
         android:textSize="25dp"
         android:textStyle="bold"
@@ -51,14 +50,12 @@
         android:layout_width="411dp"
         android:layout_height="583dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.269"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvAssignmentTitle"
-        app:layout_constraintVertical_bias="0.0"
-        tools:listitem="@layout/subject_choosen_assignment_item" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/assignment_item" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
