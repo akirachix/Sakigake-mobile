@@ -23,8 +23,8 @@
         android:layout_width="200dp"
         android:layout_height="45dp"
         android:layout_marginStart="83dp"
-        app:layout_constraintStart_toEndOf="@+id/tvAssignmentTitle"
-        app:layout_constraintTop_toTopOf="@+id/tvAssignmentTitle"
+        app:layout_constraintStart_toEndOf="@+id/tvAccountSettings"
+        app:layout_constraintTop_toTopOf="@+id/tvAccountSettings"
         app:srcCompat="@drawable/baseline_more_vert_24"
         app:tint="@color/blue" />
 
@@ -37,7 +37,7 @@
         tools:layout_editor_absoluteX="73dp"/>
 
     <TextView
-        android:id="@+id/tvAssignmentTitle"
+        android:id="@+id/tvAccountSettings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="170dp"

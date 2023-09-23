@@ -22,11 +22,47 @@ class SubjectAssignmentsActitvity : AppCompatActivity() {
         super.onResume()
         val recyclerView = findViewById<RecyclerView>(R.id.rvAssignmentTopics)
         val assignments = listOf(
-            AssignmentDataClass("Agriculture  - ", "25/12/2023", "Plants", "No resources required", "Posted at 25/12/2023"),
-            AssignmentDataClass("English  - ", "25/12/2023", "Adjectives", "No resources required", "Posted at 25/12/2023"),
-            AssignmentDataClass("Kiswahili  - ", "25/12/2023", "Misamiati", "No resources required", "Posted at 25/12/2023"),
-            AssignmentDataClass("Science   - ", "25/12/2023", "Digestive System", "No resources required", "Posted at 25/12/2023")
+            AssignmentDataClass(
+                "Agriculture  - ",
+                "Due: 10th Nov",
+                "Plants",
+                "No resources required",
+                "Posted at 25/12/2023"),
 
+            AssignmentDataClass(
+                "English  - ",
+                "Due: 10th Nov",
+                "Adjectives",
+                "No resources required",
+                "Posted at 25/12/2023"),
+
+            AssignmentDataClass(
+                "Kiswahili  - ",
+                "Due: 10th Nov",
+                "Misamiati",
+                "No resources required",
+                "Posted at 25/12/2023"),
+
+            AssignmentDataClass(
+                "Science   - ",
+                "Due: 10th Nov",
+                "Digestive System",
+                "No resources required",
+                "Posted at 25/12/2023"),
+
+            AssignmentDataClass(
+                "C.R.E   - ",
+                "Due: 10th Nov",
+                "Creation Theory",
+                "No resources required",
+                "Posted at 25/12/2023"),
+
+            AssignmentDataClass(
+                "HomeScience   - ",
+                "Due: 10th Nov",
+                "Hygiene",
+                "No resources required",
+                "Posted at 25/12/2023"),
         )
         val adapter = SubjectAssignmentsAdapter(assignments) { selectedassignment ->
             val intent = Intent(this, SubjectChoosenAssignments::class.java)

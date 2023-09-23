@@ -33,7 +33,7 @@
     />
 
     <TextView
-        android:id="@+id/tvAssignmentTitle"
+        android:id="@+id/tvAccountSettings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -49,15 +49,15 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvAssignmentTopics"
         android:layout_width="411dp"
-        android:layout_height="583dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="24dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.269"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvAssignmentTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvAccountSettings"
         app:layout_constraintVertical_bias="0.0"
         tools:listitem="@layout/subject_choosen_assignment_item" />
 

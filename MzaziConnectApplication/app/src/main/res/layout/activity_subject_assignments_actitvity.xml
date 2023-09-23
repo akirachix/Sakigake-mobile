@@ -32,10 +32,10 @@
 
 
     <TextView
-        android:id="@+id/tvAssignmentTitle"
+        android:id="@+id/tvAccountSettings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:text="Assignments"
         android:textColor="@color/black"
         android:textSize="25dp"
@@ -48,8 +48,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvAssignmentTopics"
         android:layout_width="411dp"
-        android:layout_height="583dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

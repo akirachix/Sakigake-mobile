@@ -10,33 +10,28 @@
         android:id="@+id/tvParentName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="37dp"
         android:layout_marginTop="40dp"
-        android:layout_marginEnd="215dp"
         android:text="James Kimani"
         android:textColor="@color/blue"
         android:textSize="25dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.143"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <TextView
         android:id="@+id/tvChildNameTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="37dp"
+        android:layout_marginTop="48dp"
         android:text="Your Child's Name"
         android:textColor="@color/blue"
         android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/btnChildName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.145"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvParentName"
-        app:layout_constraintVertical_bias="0.424" />
+        app:layout_constraintTop_toBottomOf="@+id/tvParentName" />
 
     <Button
         android:id="@+id/btnChildName"
@@ -45,7 +40,24 @@
         android:backgroundTint="@color/grey"
         android:text="Bridget Nakakande"
         android:textColor="@color/darkblue"
-        android:textSize="15dp"
+        android:textSize="18dp"
+        android:textStyle="normal"
+        app:cornerRadius="7dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.452"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvParentName"
+        app:layout_constraintVertical_bias="0.255" />
+
+    <Button
+        android:id="@+id/btnChildName1"
+        android:layout_width="338dp"
+        android:layout_height="52dp"
+        android:backgroundTint="@color/grey"
+        android:text="Kevine Nzayanga"
+        android:textColor="@color/darkblue"
+        android:textSize="18dp"
         android:textStyle="normal"
         app:cornerRadius="7dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -53,10 +65,10 @@
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvParentName"
-        app:layout_constraintVertical_bias="0.155" />
+        app:layout_constraintVertical_bias="0.399" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imgMore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -66,5 +78,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/baseline_more_vert_24" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="281dp"
+        android:layout_height="207dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toStartOf="@+id/imgMore"
+        app:layout_constraintHorizontal_bias="0.722"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

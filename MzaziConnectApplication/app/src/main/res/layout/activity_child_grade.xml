@@ -55,7 +55,7 @@
         android:id="@+id/tvGrade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Grade 1 - Blue"
+        android:text="Grade 1 "
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.07"
@@ -74,7 +74,8 @@
         android:layout_marginTop="92dp"
         android:backgroundTint="@color/grey"
         android:text="View Assignments"
-        android:textColor="@color/blue"
+        android:textColor="@color/darkblue"
+
         app:cornerRadius="7dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.893"
@@ -92,6 +93,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvGrade"
         app:layout_constraintVertical_bias="0.0"
-        tools:listitem="@layout/subject_overview_item"/>
+        tools:listitem="@layout/subject_overview_item" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

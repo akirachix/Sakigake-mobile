@@ -1,6 +1,6 @@
 package sakigake.mzaziconnect.mzaziconnectapplication.database
 
-import java.util.Date
+
 
 data class AssignmentDataClass(
     var subjectName: String?,
