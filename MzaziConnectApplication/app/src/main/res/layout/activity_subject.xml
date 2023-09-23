@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".ui.SubjectActivity">
 
+
+
     <ImageView
         android:id="@+id/ivbackset"
         android:layout_width="31dp"
@@ -16,35 +18,26 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/backarrow" />
 
-    <ImageView
-        android:id="@+id/ivdotsset"
-        android:layout_width="37dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="27dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/dots" />
 
     <TextView
         android:id="@+id/tvschool2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="12dp"
         android:text="Lake Wood School Utawala"
         android:textSize="25dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivdotsset" />
+        app:layout_constraintTop_toBottomOf="@+id/ivbackset" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/tvgrade3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="28dp"
-        android:text="Grade 3"
+        android:text="My classes"
         android:textColor="@color/blue"
         android:textSize="23dp"
         android:textStyle="bold"
@@ -53,28 +46,60 @@
 
 
     <Button
-        android:id="@+id/btnvclass"
+        android:id="@+id/btnassign"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="36dp"
         android:backgroundTint="@color/grey"
         android:textColor="@color/blue"
-        android:text="View My Classes"
+        android:text="View all assignments"
         app:cornerRadius="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvschool2" />
 
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvsub"
-        android:layout_width="387dp"
-        android:layout_height="493dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="228dp"
+        android:layout_width="363dp"
+        android:layout_height="484dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="3dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnassign"
         tools:listitem="@layout/subject" />
+
+    <ImageView
+        android:id="@+id/ivsettings"
+        android:layout_width="42dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/settings" />
+
+    <ImageView
+        android:id="@+id/ivswitch"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="107dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivsettings"
+        app:srcCompat="@drawable/baseline_person_add_alt_1_24" />
+
+    <ImageView
+        android:id="@+id/ivlogout"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="Logout"
+        android:onClick="ShowPopup"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/logout" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

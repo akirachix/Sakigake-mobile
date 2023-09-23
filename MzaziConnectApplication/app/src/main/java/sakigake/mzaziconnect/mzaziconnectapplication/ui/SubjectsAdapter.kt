@@ -7,9 +7,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import sakigake.mzaziconnect.mzaziconnectapplication.R
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.SubjectBinding
+import sakigake.mzaziconnect.mzaziconnectapplication.model.AssignmentData
 
 
-class SubjectsAdapter (private val subjects: List<Subjects>) : RecyclerView.Adapter<SubjectsAdapter.SubjectViewHolder>()
+class SubjectsAdapter (private val subjects: List<Subjects>,val onItemClick: (Subjects) -> Unit) : RecyclerView.Adapter<SubjectsAdapter.SubjectViewHolder>()
     {
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SubjectViewHolder {
@@ -21,6 +22,11 @@ class SubjectsAdapter (private val subjects: List<Subjects>) : RecyclerView.Adap
         override fun onBindViewHolder(holder: SubjectViewHolder, position: Int) {
             val subject = subjects[position]
             holder.bind(subject)
+
+            holder.itemView.setOnClickListener {
+                onItemClick(subject)
+            }
+
         }
 
 
@@ -28,9 +34,13 @@ class SubjectsAdapter (private val subjects: List<Subjects>) : RecyclerView.Adap
         class SubjectViewHolder(private val binding: SubjectBinding) :
             RecyclerView.ViewHolder(binding.root) {
             fun bind(subject: Subjects) {
-                binding.tvsub.text = subject.subjectName
-
-                binding.tvteacher.text = subject.subjectTeacherName
+                binding.tvSubjectName.text = subject.subjectName
+                binding.tvSubjectTeacherName.text = subject.subjectTeacherName
+                Picasso.get()
+                    .load(subject.subjectImageUrl)
+                    .error(R.drawable.farm)
+                    .into(binding.imgSubject)
+                binding.tvSubjectTeacherName.text = subject.subjectTeacherName
             }
         }
     }

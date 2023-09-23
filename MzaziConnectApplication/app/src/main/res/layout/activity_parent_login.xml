@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.LoginActivity">
+    tools:context=".ui.ParentLoginActivity">
 
     <TextView
-        android:id="@+id/tvlogin"
+        android:id="@+id/tvplogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="160dp"
@@ -29,7 +29,7 @@
         android:text="Welcome To Your Account!"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvlogin" />
+        app:layout_constraintTop_toBottomOf="@+id/tvplogin" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilname"
@@ -50,24 +50,26 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilpassword"
+        android:id="@+id/tilphonenum"
         android:layout_width="355dp"
         android:layout_height="61dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
-        app:passwordToggleEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tilname">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etpassword"
+            android:id="@+id/etnum"
             android:layout_width="match_parent"
-            android:inputType="textPassword"
+            android:inputType="phone"
             android:layout_height="wrap_content"
-            android:hint="Password" />
+            android:hint="Phone Number" />
     </com.google.android.material.textfield.TextInputLayout>
+
+
+
 
     <Button
         android:id="@+id/btnlogin"
@@ -80,13 +82,13 @@
         android:text="Log in"
         app:cornerRadius="5dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tilpassword" />
+        app:layout_constraintTop_toBottomOf="@+id/tilphonenum" />
 
     <TextView
         android:id="@+id/tvaccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="76dp"
         android:text="Don’t have an account yet?"
         android:textStyle="bold"
@@ -97,9 +99,9 @@
         android:id="@+id/tvcontact"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="76dp"
-        android:text="Contact your school"
+        android:text="Contact your child`s school"
         android:textColor="@color/blue"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/tvaccount"

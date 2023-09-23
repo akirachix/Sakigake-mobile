@@ -1,64 +1,145 @@
 package sakigake.mzaziconnect.mzaziconnectapplication.ui
 
+import android.app.Dialog
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.Button
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import sakigake.mzaziconnect.mzaziconnectapplication.R
-import sakigake.mzaziconnect.mzaziconnectapplication.databinding.ActivityMainBinding
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.ActivitySubjectBinding
 import sakigake.mzaziconnect.mzaziconnectapplication.model.Subjects
 
 class SubjectActivity : AppCompatActivity() {
     lateinit var binding: ActivitySubjectBinding
+    private lateinit var myDialog: Dialog
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding= ActivitySubjectBinding.inflate(layoutInflater)
+        binding = ActivitySubjectBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.WHITE))
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.dots)
+
+        myDialog = Dialog(this)
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         onResume()
 
         binding.ivbackset.setOnClickListener {
             val intent= Intent(this@SubjectActivity, LoginActivity::class.java)
             startActivity(intent)
         }
-        binding.btnvclass.setOnClickListener {
-            val intent = Intent(this@SubjectActivity,MyClassesActivity::class.java)
-            startActivity(intent)
+//        binding.ivdotsset.setOnClickListener {
+//            startActivity(Intent(this@SubjectActivity, AccountSettingsActivity::class.java))
+//        }
+
+        binding.ivsettings.setOnClickListener {
+            startActivity(Intent(this@SubjectActivity, AccountSettingsActivity::class.java))
         }
-        binding.ivdotsset.setOnClickListener {
-            startActivity(Intent(this@SubjectActivity, NavActivity::class.java))
+
+        binding.ivswitch.setOnClickListener {
+            startActivity(Intent(this@SubjectActivity, SwitchUserActivity::class.java))
+            }
+
+
+        binding.btnassign.setOnClickListener {
+            startActivity(Intent(this@SubjectActivity, SingleSubjectActivity::class.java))
+
         }
 
 
         val subjects = listOf(
-            Subjects("English","" ,"Ms Kiki" ),
-            Subjects("Math","" ,"Ms Wesleyina"),
-            Subjects("Science", "","Mr Kamau"),
-            Subjects("Agriculture", "","Mr p"),
-            Subjects("Kiswahili","", "Ms Kelly"),
-            Subjects("Art", "", "Ms Nessie"),
-            Subjects("English","" ,"Ms Janie" ),
-            Subjects("Math","" ,"Ms Puri "),
-
+            Subjects("Agriculture","https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695151509/Frame_180_1_kjclpx.jpg" ,"Ms Kiki" ),
+            Subjects("Math","https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695151508/Frame_181_rfkkvo.jpg" ,"Ms Wesleyina"),
+            Subjects("Science", "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695151508/Frame_186_1_ldcvij.jpg","Mr Kamau"),
+            Subjects("Art", "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695151509/Frame_180_1_kjclpx.jpg", "Ms Nessie"),
+            Subjects("CRE", "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695151509/Frame_182_hgbhpy.jpg","Mr Kanini"),
+            Subjects("Islam", "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695151508/Frame_183_1_pdflt4.jpg","Mr Kalili"),
+            Subjects("Science", "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695151509/Frame_180_1_kjclpx.jpg","Mr qwer"),
+            Subjects("English","https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695151508/Frame_181_rfkkvo.jpg" ,"Ms Janie" ),
             )
 
-        val subjectAdapter = SubjectsAdapter(subjects)
-        binding.rvsub.adapter = subjectAdapter
+        val subjectsAdapter = SubjectsAdapter(subjects) { selectedSubject ->
+            val intent = Intent(this, SubjectAssignmentActivity::class.java)
+            intent.putExtra("TopicName", selectedSubject.subjectName)
+            intent.putExtra("AssignmentDetails", selectedSubject.subjectTeacherName)
+            intent.putExtra("DueDate", selectedSubject.subjectImageUrl)
+            startActivity(intent)
+        }
+
+        binding.rvsub.adapter = subjectsAdapter
 
         val layoutManager = GridLayoutManager(this, 2)
         binding.rvsub.layoutManager = layoutManager
 
 
 
-
-    }
     }
 
-//    override fun onResume() {
-//        super.onResume()
-//        binding.rvsub.layoutManager=GridLayoutManager(this@SubjectActivity,2)
-//
-//
-//
-//    }
+    fun ShowPopup() {
+        var btnstay:Button
+        var btnlogout: Button
+        myDialog.setContentView(R.layout.logout)
+        btnlogout = myDialog.findViewById(R.id.btnyes)
+        btnlogout.text = "Continue"
+        btnstay = myDialog.findViewById(R.id.btnno)
+        btnstay.setOnClickListener {
+            myDialog.dismiss()
+        }
+        myDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        myDialog.show()
+
+
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+//        val inflater: MenuInflater = menuInflater
+        menuInflater.inflate(R.menu.nav_menu, menu)
+//        return true
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.nav_account -> {
+                val intent = Intent(this, AccountSettingsActivity::class.java)
+                startActivity(intent)
+                return true
+            }
+            R.id.nav_switch -> {
+                val intent = Intent(this, SwitchUserActivity::class.java)
+                startActivity(intent)
+                return true
+            }
+            R.id.nav_logout -> {
+                val intent = Intent(this, LogoutActivity::class.java)
+                startActivity(intent)
+
+                return true
+            }
+
+            else -> return super.onOptionsItemSelected(item)
+        }
+
+    }
+
+
+
+        override fun onResume() {
+        super.onResume()
+        binding.rvsub.layoutManager=GridLayoutManager(this@SubjectActivity,2)
+
+
+
+    }
+
+}
+
+
+

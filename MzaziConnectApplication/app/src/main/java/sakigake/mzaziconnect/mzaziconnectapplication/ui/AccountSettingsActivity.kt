@@ -19,5 +19,8 @@ class AccountSettingsActivity : AppCompatActivity() {
         binding.ivbackset.setOnClickListener {
             startActivity(Intent(this@AccountSettingsActivity, SubjectActivity::class.java))
         }
+        binding.btnupdate.setOnClickListener {
+            startActivity(Intent(this@AccountSettingsActivity, AccountSettingsActivity::class.java))
+        }
     }
 }

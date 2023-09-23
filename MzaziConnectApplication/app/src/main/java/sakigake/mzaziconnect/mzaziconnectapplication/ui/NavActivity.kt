@@ -1,5 +1,6 @@
 package sakigake.mzaziconnect.mzaziconnectapplication.ui
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -15,6 +16,7 @@ import sakigake.mzaziconnect.mzaziconnectapplication.databinding.ActivityNavBind
 class NavActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelectedListener {
     lateinit var binding: ActivityNavBinding
     private lateinit var drawerLayout: DrawerLayout
+    @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding=ActivityNavBinding.inflate(layoutInflater)
@@ -25,7 +27,7 @@ class NavActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelectedL
         setSupportActionBar(toolbar)
         val navigationView = findViewById<NavigationView>(R.id.nav_view)
         navigationView.setNavigationItemSelectedListener(this)
-        val toggle = ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open_nav, R.string.close_nav)
+        val toggle = ActionBarDrawerToggle(this, drawerLayout, toolbar, R.drawable.dots, R.drawable.dots)
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
@@ -52,6 +54,7 @@ class NavActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelectedL
     }
 
     override fun onBackPressed() {
+        super.onBackPressed()
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START)
         } else {

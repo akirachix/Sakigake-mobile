@@ -12,4 +12,6 @@ class LogoutActivity : AppCompatActivity() {
         binding=ActivityLogoutBinding.inflate(layoutInflater)
         setContentView(binding.root)
     }
+
+
 }
