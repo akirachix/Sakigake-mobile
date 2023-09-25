@@ -21,7 +21,8 @@ class Assign_detailsActivity : AppCompatActivity() {
 
 
         val recyclerView: RecyclerView = binding.rvresources
-        recyclerView.layoutManager = LinearLayoutManager(this, GridLayoutManager.HORIZONTAL, false)
+        recyclerView.layoutManager = LinearLayoutManager(this, GridLayoutManager.HORIZONTAL,
+            true)
         val resources = listOf(
             Resource("Panga"),
             Resource("Dustcoat"),
