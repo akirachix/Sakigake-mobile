@@ -78,5 +78,8 @@ class SubjectAssignmentsActitvity : AppCompatActivity() {
             val intent = Intent(this, ChildGrade::class.java)
             startActivity(intent)
         }
+        binding.imgMore.setOnClickListener{
+            startActivity(Intent(this@SubjectAssignmentsActitvity, AccountSettings::class.java))
+        }
     }
 }

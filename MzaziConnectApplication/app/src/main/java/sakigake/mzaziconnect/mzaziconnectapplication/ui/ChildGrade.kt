@@ -77,6 +77,7 @@ class ChildGrade: AppCompatActivity () {
             intent.putExtra("DueDate", selectedSubject.subjectImageUrl)
             startActivity(intent)
         }
+
         binding.RvSubjectCards.adapter = subjectAdapter
         val layoutManager = GridLayoutManager(this, 2)
         binding.RvSubjectCards.layoutManager = layoutManager

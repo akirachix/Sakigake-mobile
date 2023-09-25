@@ -10,7 +10,7 @@ import sakigake.mzaziconnect.mzaziconnectapplication.database.Subjects
 import sakigake.mzaziconnect.mzaziconnectapplication.database.Topics
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.SubjectChoosenAssignmentItemBinding
 
-class SubjectChoosenAssignmentsAdapter(val topics: List<Topics>) : RecyclerView.Adapter<SubjectChoosenAssignmentsAdapter.SubjectChoosenAssignmentViewHolder>(){
+class SubjectChoosenAssignmentsAdapter(val topics: List<Topics>, val onItemClick: (Topics) -> Unit) : RecyclerView.Adapter<SubjectChoosenAssignmentsAdapter.SubjectChoosenAssignmentViewHolder>(){
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -23,12 +23,12 @@ class SubjectChoosenAssignmentsAdapter(val topics: List<Topics>) : RecyclerView.
 
     override fun onBindViewHolder(holder: SubjectChoosenAssignmentViewHolder, position: Int) {
           val topics = topics[position]
+
          holder.bind(topics)
         holder.itemView.setOnClickListener {
-
+            onItemClick(topics)
+        }
     }
-
-}
 
 class SubjectChoosenAssignmentViewHolder(val binding: SubjectChoosenAssignmentItemBinding) : RecyclerView.ViewHolder(binding.root)
 {

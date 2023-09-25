@@ -7,4 +7,7 @@
     <item name="tvTopicName" type="id" />
     <item name="tvAssignmentDetails" type="id" />
     <item name="tvPostedAtTime" type="id" />
+    <item name="constraintLayout" type="id" />
+    <item name="tvMessage" type="id" />
+    <item name="ivsend" type="id" />
 </resources>

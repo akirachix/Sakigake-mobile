@@ -4,7 +4,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import sakigake.mzaziconnect.mzaziconnectapplication.R
 import sakigake.mzaziconnect.mzaziconnectapplication.database.Subjects
-import sakigake.mzaziconnect.mzaziconnectapplication.databinding.SubjectChoosenAssignmentItemBinding
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.SubjectOverviewItemBinding
 
 class SubjectAdapter(private val subjects: List<Subjects>,  private val onItemClick: (Subjects) -> Unit) : RecyclerView.Adapter<SubjectAdapter.SubjectViewHolder>() {
