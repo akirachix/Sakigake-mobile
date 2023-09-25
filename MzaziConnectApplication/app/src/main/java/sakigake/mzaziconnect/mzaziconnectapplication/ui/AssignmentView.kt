@@ -54,6 +54,9 @@ class AssignmentView : AppCompatActivity() {
             val intent = Intent(this, SubjectChoosenAssignments::class.java)
             startActivity(intent)
         }
+        binding.ivmore1.setOnClickListener{
+            startActivity(Intent(this@AssignmentView, AccountSettings::class.java))
+        }
     }
     private fun scrollRecyclerView(forward: Boolean) {
         val layoutManager = binding.rvresources.layoutManager as LinearLayoutManager
