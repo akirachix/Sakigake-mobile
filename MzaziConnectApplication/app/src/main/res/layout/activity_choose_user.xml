@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/brgbooks"
+    tools:context=".ui.ChooseUserActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="134dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="136dp"
+        android:src="@drawable/logo1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvtitle"
+        android:layout_width="146dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="124dp"
+        android:text="MzaziConnect"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+
+    <LinearLayout
+        android:id="@+id/boxLayout"
+        android:layout_width="372dp"
+        android:layout_height="298dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
+        android:background="#DB008CBF"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvtitle">
+
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Continue as a"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="23dp" />
+
+        <Button
+            android:id="@+id/btnparent"
+            android:layout_width="337dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="#FFFFFF"
+            android:clickable="true"
+            android:drawableRight="@drawable/baseline_navigate_next_24"
+            android:text="Parent"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            app:cornerRadius="5dp" />
+
+
+        <Button
+            android:id="@+id/btnteacher"
+            android:layout_width="339dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="13dp"
+            android:backgroundTint="#FFFFFF"
+            android:clickable="true"
+            android:drawableRight="@drawable/baseline_navigate_next_24"
+            android:text="Teacher"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            app:cornerRadius="5dp" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

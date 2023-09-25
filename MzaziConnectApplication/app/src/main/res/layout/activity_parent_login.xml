@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.ParentLoginActivity">
+
+    <TextView
+        android:id="@+id/tvplogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="68dp"
+        android:text="Log In"
+        android:textColor="@color/blue"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvwelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="24dp"
+
+        android:text="Welcome To Your Account!"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvplogin" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilname"
+        android:layout_width="355dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvwelcome">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etname"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="User Name" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilphonenum"
+        android:layout_width="355dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilname">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etnum"
+            android:layout_width="match_parent"
+            android:inputType="phone"
+            android:layout_height="wrap_content"
+            android:hint="Phone Number" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+    <Button
+        android:id="@+id/btnlogin"
+        android:layout_width="351dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="48dp"
+        android:backgroundTint="@color/blue"
+        android:clickable="true"
+        android:text="Log in"
+        app:cornerRadius="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilphonenum" />
+
+    <TextView
+        android:id="@+id/tvaccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="76dp"
+        android:text="Don’t have an account yet?"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnlogin" />
+
+    <TextView
+        android:id="@+id/tvcontact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="76dp"
+        android:text="Contact your child`s school"
+        android:textColor="@color/blue"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/tvaccount"
+        app:layout_constraintTop_toBottomOf="@+id/btnlogin" />
+</androidx.constraintlayout.widget.ConstraintLayout>

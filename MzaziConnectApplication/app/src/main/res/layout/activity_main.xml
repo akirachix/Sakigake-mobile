@@ -6,13 +6,38 @@
     android:layout_height="match_parent"
     tools:context=".ui.MainActivity">
 
-    <Button
-        android:id="@+id/btnGetStarted"
+<<<<<<< HEAD
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="242dp"
+        android:layout_height="195dp"
+        android:layout_marginTop="120dp"
+        android:src="@drawable/logo1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    <<<<<<< HEAD
+=======
+
+    <TextView
+        android:id="@+id/tvtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Get started"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="48dp"
+        android:text="MzaziConnect"
+        android:textColor="@color/blue"
+        android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    >>>>>>> 6b7c94600c7558ccc00ef2b3aa485ad52ac64534
+</androidx.constraintlayout.widget.ConstraintLayout><![CDATA[=======
+
+    >>>>>> 6b7c94600c7558ccc00ef2b3aa485ad52ac64534
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+]]>

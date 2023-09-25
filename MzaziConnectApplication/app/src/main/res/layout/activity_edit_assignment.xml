@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.EditAssignmentActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/TvAgriculture"
+            android:layout_width="127dp"
+            android:layout_height="37dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="124dp"
+            android:layout_marginTop="32dp"
+            android:gravity="top"
+            android:text="Agriculture"
+            android:textColor="@color/blue"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivcancel"
+            android:layout_width="37dp"
+            android:layout_height="29dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/baseline_clear_24"
+            app:tint="@color/blue" />
+
+
+
+        <EditText
+            android:id="@+id/editTextDate"
+            android:layout_width="260dp"
+            android:layout_height="61dp"
+            android:layout_marginTop="68dp"
+            android:focusable="false"
+            android:hint="25th June 2023"
+            android:onClick="showDatePickerDialog"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.516"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageButtonCalendar"
+            android:layout_width="44dp"
+            android:layout_height="53dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="68dp"
+            android:layout_marginEnd="10dp"
+            android:onClick="showDatePickerDialog"
+            android:src="@drawable/calendar"
+            android:contentDescription="Calendar Button"
+            app:layout_constraintEnd_toStartOf="@+id/editTextDate"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvCategories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="24dp"
+            android:text="Categories"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tiltypemessage" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilcategories"
+            android:layout_width="350dp"
+            android:layout_height="65dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvCategories">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etcategories"
+                android:layout_width="match_parent"
+                android:layout_height="51dp"
+                android:hint="Enter categories" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tvResources"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="24dp"
+            android:text="Resources"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tilcategories" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilresources"
+            android:layout_width="351dp"
+            android:layout_height="57dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvResources">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etresources"
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                android:hint="Enter Resources needed" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnPostAssignment"
+            android:layout_width="351dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="32dp"
+            android:backgroundTint="@color/blue"
+            android:clickable="true"
+            android:text="Post Assignment"
+            android:textColor="@color/white"
+            app:cornerRadius="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tilresources" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tiltypemessage"
+            android:layout_width="351dp"
+            android:layout_height="133dp"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="44dp"
+            app:layout_constraintBottom_toTopOf="@+id/tvCategories"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tiltopic"
+            app:layout_constraintVertical_bias="0.516">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ettypemessage"
+                android:layout_width="match_parent"
+                android:layout_height="121dp"
+                android:hint="Type a message" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tvTopic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="24dp"
+            android:text="Topic"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageButtonCalendar" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tiltopic"
+            android:layout_width="351dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTopic">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ettopic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Topic" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
