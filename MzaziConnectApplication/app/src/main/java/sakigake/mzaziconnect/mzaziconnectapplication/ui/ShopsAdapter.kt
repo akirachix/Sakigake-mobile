@@ -3,6 +3,7 @@ package sakigake.mzaziconnect.mzaziconnectapplication.ui
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 import sakigake.mzaziconnect.mzaziconnectapplication.database.ShopsDataclass
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.ShopItemBinding
 
@@ -24,8 +25,19 @@ class ShopsAdapter(val shops: List<ShopsDataclass>, val onItemClick: (ShopsDatac
 }
 class ShopsViewHolder(val binding: ShopItemBinding): RecyclerView.ViewHolder(binding.root){
     fun bind(shops: ShopsDataclass){
-        binding.tvShopName.text = shops.shopName
-        binding.tvLocation.text = shops.shoplocation
+        binding.tvSubjectName.text = shops.shopName
+        binding.tvShopLocation.text = shops.shoplocation
+        Picasso.get()
+            .load(shops.shopImage)
+            .into(binding.imgSubject)
     }
+//    fun bind(subject: Subjects) {
+//            binding.tvSubjectName.text = subject.subjectName
+//            Picasso.get()
+//                .load(subject.subjectImageUrl)
+//                .error(R.drawable.english_image)
+//                .into(binding.imgSubject)
+//            binding.tvSubjectTeacherName.text = subject.subjectTeacherName
+//        }
 }
 

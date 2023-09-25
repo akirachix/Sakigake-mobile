@@ -17,10 +17,10 @@ class AssignmentView : AppCompatActivity() {
         binding = ActivityAssignmentViewBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.rvresources.setOnClickListener {
-            val intent = Intent(this@AssignmentView, Shops::class.java)
-            startActivity(intent)
-        }
+//        binding.rvresources.setOnClickListener {
+//            val intent = Intent(this@AssignmentView, Shops::class.java)
+//            startActivity(intent)
+//        }
 
         val recyclerView: RecyclerView = binding.rvresources
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)

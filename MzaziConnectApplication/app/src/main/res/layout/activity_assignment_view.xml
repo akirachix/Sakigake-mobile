@@ -137,7 +137,7 @@
         android:id="@+id/imageView2"
         android:layout_width="51dp"
         android:layout_height="41dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="88dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView3"
@@ -148,8 +148,8 @@
         android:id="@+id/tvResourcesNeeded"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="32dp"
         android:text="Resources needed"
         android:textColor="@color/blue"
         android:textSize="18dp"
@@ -170,8 +170,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvresources"
-        android:layout_width="337dp"
-        android:layout_height="104dp"
+        android:layout_width="357dp"
+        android:layout_height="68dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="88dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -179,14 +179,14 @@
         tools:listitem="@layout/resource_item" />
 
     <androidx.cardview.widget.CardView
-        android:layout_width="377dp"
-        android:layout_height="91dp"
+        android:layout_width="400dp"
+        android:layout_height="120dp"
         android:layout_marginBottom="40dp"
         android:backgroundTint="@color/grey"
-        android:padding="50dp"
+        android:padding="150dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints">
 
@@ -218,8 +218,8 @@
                 android:inputType="text"
                 android:text="Message.."
                 android:textColor="@color/blue"
-                tools:layout_editor_absoluteX="12dp"
-                tools:layout_editor_absoluteY="10dp" />
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="33dp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -229,13 +229,13 @@
         android:id="@+id/tvMessage"
         android:layout_width="wrap_content"
         android:layout_height="19dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:text="Add Comment"
         android:textColor="@color/blue"
         android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.054"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rvresources" />
 
