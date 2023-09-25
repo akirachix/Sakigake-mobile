@@ -46,15 +46,27 @@
         app:layout_constraintStart_toEndOf="@+id/imgBack"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/btnadd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="19dp"
+        android:backgroundTint="@color/blue"
+        android:text="Add assignment"
+        android:textColor="@color/white"
+        app:cornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAccountSettings" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvAssignmentTopics"
-
-        android:layout_width="404dp"
-        android:layout_height="732dp"
-        android:layout_marginTop="14dp"
+        android:layout_width="409dp"
+        android:layout_height="759dp"
+        android:layout_marginTop="12dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvAccountSettings"
+        app:layout_constraintTop_toBottomOf="@+id/btnadd"
         tools:listitem="@layout/topic_item" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

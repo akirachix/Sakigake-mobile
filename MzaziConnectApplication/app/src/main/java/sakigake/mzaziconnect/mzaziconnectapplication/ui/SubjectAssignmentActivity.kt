@@ -23,6 +23,11 @@ class SubjectAssignmentActivity : AppCompatActivity() {
         setContentView(binding.root)
         myDialog = Dialog(this)
 
+        binding.btnadd.setOnClickListener {
+            val intent = Intent(this, EditAssignmentActivity::class.java)
+            startActivity(intent)
+        }
+
 
     val topics = listOf(
         TopicsData("Plants - ", "Due: 10th Nov", "In this assignment, you will explore the world of plants and learn about their basic needs for growth.", "Posted at 25/12/2023"),

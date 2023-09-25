@@ -53,13 +53,13 @@
 
         <TextView
             android:id="@+id/tvDueDate"
-            android:layout_width="150dp"
-            android:layout_height="26dp"
+            android:layout_width="116dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="26dp"
             android:layout_marginTop="39dp"
-            android:layout_marginEnd="4dp"
             android:text="Due:30th August"
             android:textSize="15sp"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imgCalendar"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView

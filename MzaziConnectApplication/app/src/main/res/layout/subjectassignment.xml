@@ -48,13 +48,14 @@
 
         <TextView
             android:id="@+id/tvDueDate"
-            android:layout_width="160dp"
-            android:layout_height="28dp"
-            android:layout_marginStart="9dp"
+            android:layout_width="94dp"
+            android:layout_height="21dp"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="34dp"
             android:text="30th August"
             android:textSize="15sp"
             app:layout_constraintStart_toEndOf="@+id/imgCalendar"
-            app:layout_constraintTop_toTopOf="@+id/imgCalendar" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tvAssignmentDetails"
@@ -84,7 +85,7 @@
             android:id="@+id/tvPostedAtTime"
             android:layout_width="174dp"
             android:layout_height="19dp"
-            android:layout_marginTop="65dp"
+            android:layout_marginTop="92dp"
             android:layout_marginEnd="16dp"
 
             android:text="Posted on 12PM, 16 Aug 2023"

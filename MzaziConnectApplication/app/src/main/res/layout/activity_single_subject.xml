@@ -45,6 +45,8 @@
         app:layout_constraintStart_toEndOf="@+id/imgBack"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvAssignmentTopics"
         android:layout_width="394dp"
