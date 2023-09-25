@@ -30,7 +30,7 @@
         app:srcCompat="@drawable/baseline_more_vert_24"
         app:tint="@color/blue"/>
 
-    />
+
 
 
 
@@ -48,8 +48,7 @@
         android:textColor="@color/black"
         android:textSize="25sp"
         android:layout_marginStart="10dp"
-        android:textStyle="bold"
-        />
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tvGrade"
@@ -71,10 +70,10 @@
         android:id="@+id/btnViewAssignments"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="92dp"
-        android:backgroundTint="@color/grey"
+        android:layout_marginTop="100dp"
+        android:backgroundTint="@color/blue"
         android:text="View Assignments"
-        android:textColor="@color/darkblue"
+        android:textColor="@color/white"
 
         app:cornerRadius="7dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -86,7 +85,9 @@
         android:id="@+id/RvSubjectCards"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

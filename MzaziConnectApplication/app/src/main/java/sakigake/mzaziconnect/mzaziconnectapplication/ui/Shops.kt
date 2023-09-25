@@ -23,21 +23,29 @@ class Shops : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
         val shops = listOf(
-            ShopsDataclass("Utawala New", "Kinca", "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695633304/Frame_190_nd6hf5.jpg"),
-            ShopsDataclass("Utawala New", "Kinca", "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695633304/Frame_190_nd6hf5.jpg"),
-            ShopsDataclass("Utawala New", "Kinca", "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695633304/Frame_190_nd6hf5.jpg"),
-            ShopsDataclass("Utawala New", "Kinca", "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695633304/Frame_190_nd6hf5.jpg"),
-            ShopsDataclass("Utawala New", "Kinca", "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695633304/Frame_190_nd6hf5.jpg"),
-            ShopsDataclass("Utawala New", "Kinca", "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695633304/Frame_190_nd6hf5.jpg"),
-            ShopsDataclass("Utawala New", "Kinca", "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695633304/Frame_190_nd6hf5.jpg")
-        )
+            ShopsDataclass("Utawala New", "Kinca", "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695639596/Frame_208_tdmxjf.png"),
+            ShopsDataclass("Utawala New", "Kinca", "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695639596/Frame_208_tdmxjf.png"),
+            ShopsDataclass("Utawala New", "Kinca", "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695633304/Frame_208_tdmxjf.png"),
+            ShopsDataclass("Utawala New", "Kinca", "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695633304/Frame_208_tdmxjf.png"),
+            ShopsDataclass("Utawala New", "Kinca", "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695633304/Frame_208_tdmxjf.png"),
+            ShopsDataclass("Utawala New", "Kinca", "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695633304/Frame_208_tdmxjf.png"),
+            ShopsDataclass("Utawala New", "Kinca", "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695633304/Frame_208_tdmxjf.png"),
+            ShopsDataclass("Utawala New", "Kinca", "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695633304/Frame_208_tdmxjf.png")
+            )
 
         shopsAdapter = ShopsAdapter(shops) { selectedShop ->
-
+//            val intent = Intent(this, SubjectChoosenAssignments::class.java)
+//            intent.putExtra(this, SubjectChoosenAssignments::class.java)
+//            intent.putExtra("TopicName", selectedShop.shopName)
+//            intent.putExtra("AssignmentDetails", selectedShop.shoplocation)
+//            intent.putExtra("DueDate", selectedShop.shopImage)
+//            startActivity(intent)
         }
         val layoutManager = GridLayoutManager(this, 2)
         binding.rvshops.layoutManager = layoutManager
         recyclerView.adapter = shopsAdapter
+
+
     }
 
     override fun onResume() {

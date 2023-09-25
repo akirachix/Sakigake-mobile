@@ -25,7 +25,8 @@
         android:layout_marginTop="24dp"
         android:text="Utawala New"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="22sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/imgSubject"
         app:layout_constraintEnd_toEndOf="@+id/imgSubject"
         app:layout_constraintHorizontal_bias="0.281"
@@ -39,22 +40,24 @@
         android:layout_height="wrap_content"
         android:text="Kinca"
         android:textColor="@color/white"
+        android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="@+id/imgSubject"
         app:layout_constraintEnd_toEndOf="@+id/imgSubject"
-        app:layout_constraintHorizontal_bias="0.452"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="@+id/imgSubject"
         app:layout_constraintTop_toTopOf="@+id/imgSubject"
-        app:layout_constraintVertical_bias="0.763" />
+        app:layout_constraintVertical_bias="0.769" />
 
     <ImageView
         android:id="@+id/ivlocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="4dp"
+        android:tint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/imgSubject"
         app:layout_constraintTop_toTopOf="@+id/imgSubject"
-        app:layout_constraintVertical_bias="0.793"
+        app:layout_constraintVertical_bias="0.769"
         app:srcCompat="@drawable/baseline_location_on_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

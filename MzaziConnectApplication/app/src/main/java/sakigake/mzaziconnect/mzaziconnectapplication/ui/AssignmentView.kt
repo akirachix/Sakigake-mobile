@@ -29,7 +29,10 @@ class AssignmentView : AppCompatActivity() {
             Resources("Dustcoat"),
             Resources("Rabbit"),
             Resources("Seedlings"),
-            Resources("Gumboots")
+            Resources("Gumboots"),
+            Resources("Jembe"),
+            Resources("Basket"),
+            Resources("Trees")
         )
 
         resourcesAdapter = ResourcesAdapter(resources) { selectedResource ->
@@ -37,18 +40,12 @@ class AssignmentView : AppCompatActivity() {
             intent.putExtra("Name", selectedResource.name)
             startActivity(intent)
         }
-//        resourcesAdapter.onItemClick = { selectedResource ->
-//            val intent = Intent(this@AssignmentView, Shops::class.java)
-//            intent.putExtra("Name", selectedResource.name)
-//            startActivity(intent)
-//        }
-//        recyclerView.adapter = resourcesAdapter
-
-//        resourcesAdapter = ResourcesAdapter(resources) { selectedResource ->
-//            val intent = Intent(this@AssignmentView, Shops::class.java)
-//            intent.putExtra("Name", selectedResource.name)
-//            startActivity(intent)
-//        }
+        binding.ivarrowfoward.setOnClickListener {
+            scrollRecyclerView(true)
+        }
+        binding.ivarrowback.setOnClickListener {
+            scrollRecyclerView(false)
+        }
         recyclerView.adapter = resourcesAdapter
     }
     override fun onResume() {
@@ -57,7 +54,22 @@ class AssignmentView : AppCompatActivity() {
             val intent = Intent(this, SubjectChoosenAssignments::class.java)
             startActivity(intent)
         }
-
-
     }
+    private fun scrollRecyclerView(forward: Boolean) {
+        val layoutManager = binding.rvresources.layoutManager as LinearLayoutManager
+
+        val visibleItemCount = layoutManager.childCount
+        val totalItemCount = layoutManager.itemCount
+        val firstVisibleItemPosition = layoutManager.findFirstVisibleItemPosition()
+
+        val scrollAmount = if (forward) visibleItemCount else -visibleItemCount
+        val targetPosition = firstVisibleItemPosition + scrollAmount
+
+        if (targetPosition >= 0 && targetPosition < totalItemCount) {
+            binding.rvresources.smoothScrollToPosition(targetPosition)
+        }
+    }
+
+
+
 }

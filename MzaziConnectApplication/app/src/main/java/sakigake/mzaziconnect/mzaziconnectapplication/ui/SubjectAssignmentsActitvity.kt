@@ -65,11 +65,12 @@ class SubjectAssignmentsActitvity : AppCompatActivity() {
                 "Posted at 25/12/2023"),
         )
         val adapter = SubjectAssignmentsAdapter(assignments) { selectedassignment ->
-            val intent = Intent(this, SubjectChoosenAssignments::class.java)
+            val intent = Intent(this, AssignmentView::class.java)
             intent.putExtra("", selectedassignment.subjectName)
             intent.putExtra("", selectedassignment.topicName)
             intent.putExtra("", selectedassignment.dueDate)
             intent.putExtra("", selectedassignment.updatedAt)
+            startActivity(intent)
         }
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
