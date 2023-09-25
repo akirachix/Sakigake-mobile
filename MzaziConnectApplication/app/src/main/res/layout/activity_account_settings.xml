@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.AccountSettingsActivity">
+
+
+    <ImageView
+        android:id="@+id/ivbackset"
+        android:layout_width="31dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/backarrow" />
+
+    <ImageView
+        android:id="@+id/ivdotsset"
+        android:layout_width="37dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="27dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/dots" />
+
+    <TextView
+        android:id="@+id/tvasett"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="32dp"
+        android:text="Account Settings"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/ivbackset"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivschoologo"
+        android:layout_width="190dp"
+        android:layout_height="157dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvasett"
+        app:srcCompat="@drawable/blackwmn" />
+
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="320dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="63dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="138dp"
+        android:drawableRight="@drawable/edit"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Caroline Varina"
+        android:textColor="#433F3F"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.163"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvtitlename" />
+
+
+    <EditText
+        android:id="@+id/etphonenumber"
+        android:layout_width="320dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="7dp"
+        android:drawableRight="@drawable/edit"
+        android:ems="10"
+        android:inputType="phone"
+        android:text="+254768905423"
+        android:textColor="#433F3F"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvtitlenum" />
+
+    <EditText
+        android:id="@+id/etemail"
+        android:layout_width="320dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="44dp"
+        android:drawableRight="@drawable/edit"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:text="caroline@gmail.com"
+        android:textColor="#433F3F"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvtitleemail" />
+
+    <EditText
+        android:id="@+id/etpassword"
+        android:layout_width="320dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="44dp"
+        android:drawableRight="@drawable/edit"
+        android:password="true"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:text="............"
+        android:textColor="#433F3F"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvtitlepass" />
+
+    <Button
+        android:id="@+id/btnupdate"
+        android:layout_width="351dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="44dp"
+        android:backgroundTint="@color/blue"
+        android:clickable="true"
+        android:text="Update Changes"
+        app:cornerRadius="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvtitlename"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="16dp"
+        android:text="PARENT NAME"
+        android:textColor="@color/darkblue"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivschoologo" />
+
+    <TextView
+        android:id="@+id/tvtitlenum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="19dp"
+        android:text="PHONE NUMBER"
+        android:textColor="@color/darkblue"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etName" />
+
+    <TextView
+        android:id="@+id/tvtitleemail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="7dp"
+        android:text="EMAIL"
+        android:textColor="@color/darkblue"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etphonenumber" />
+
+    <TextView
+        android:id="@+id/tvtitlepass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="15dp"
+        android:text="PASSWORD"
+        android:textColor="@color/darkblue"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etemail" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

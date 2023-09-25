@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,7 +15,57 @@
         android:theme="@style/Theme.MzaziConnectApplication"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.CommentsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_comments"
+            android:theme="@style/Theme.MzaziConnectApplication" />
+
+
+
+        <activity
+            android:name=".ui.Assign_detailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.EditAssignmentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.SubjectAssignmentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.SingleSubjectActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ParentLoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.LogoutActivity"
+            android:exported="false"
+            android:label="@string/title_activity_logout"
+            android:theme="@style/Theme.MzaziConnectApplication" />
+        <activity
+            android:name=".ui.SwitchUserActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.NavActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.MyClassesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.AccountSettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.SubjectActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MzaziConnectApplication" />
+        <activity
+            android:name=".ui.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ChooseUserActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
