@@ -18,10 +18,6 @@ class ViewChild : AppCompatActivity() {
             val intent = Intent(this, ChildGrade::class.java)
             startActivity(intent)
         }
-        binding.btnChildName1.setOnClickListener {
-            val intent = Intent(this, ChildGrade::class.java)
-            startActivity(intent)
-        }
         binding.imgMore.setOnClickListener{
             startActivity(Intent(this@ViewChild, AccountSettings::class.java))
         }

@@ -30,8 +30,12 @@ class Shops : AppCompatActivity() {
             ShopsDataclass("Utawala New", "Kinca", "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695633304/Frame_208_tdmxjf.png"),
             ShopsDataclass("Utawala New", "Kinca", "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695633304/Frame_208_tdmxjf.png"),
             ShopsDataclass("Utawala New", "Kinca", "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695633304/Frame_208_tdmxjf.png"),
+            ShopsDataclass("Utawala New", "Kinca", "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695633304/Frame_208_tdmxjf.png"),
+            ShopsDataclass("Utawala New", "Kinca", "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695633304/Frame_208_tdmxjf.png"),
+            ShopsDataclass("Utawala New", "Kinca", "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695633304/Frame_208_tdmxjf.png"),
             ShopsDataclass("Utawala New", "Kinca", "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695633304/Frame_208_tdmxjf.png")
-            )
+
+        )
 
         shopsAdapter = ShopsAdapter(shops) { selectedShop ->
 //            val intent = Intent(this, SubjectChoosenAssignments::class.java)

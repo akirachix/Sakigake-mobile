@@ -15,9 +15,6 @@ class ResourcesAdapter (val resources:List<Resources>, var onItemClick: (Resourc
        val inflater = LayoutInflater.from(parent.context)
         val binding = ResourceItemBinding.inflate(inflater,parent, false)
         return ResourceViewHolder(binding)
-
-
-
     }
 
     override fun onBindViewHolder(holder: ResourceViewHolder, position: Int) {
