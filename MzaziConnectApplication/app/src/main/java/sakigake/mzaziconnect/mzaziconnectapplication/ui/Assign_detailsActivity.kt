@@ -3,6 +3,7 @@ package sakigake.mzaziconnect.mzaziconnectapplication.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import sakigake.mzaziconnect.mzaziconnectapplication.R
@@ -20,7 +21,7 @@ class Assign_detailsActivity : AppCompatActivity() {
 
 
         val recyclerView: RecyclerView = binding.rvresources
-        recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        recyclerView.layoutManager = LinearLayoutManager(this, GridLayoutManager.HORIZONTAL, false)
         val resources = listOf(
             Resource("Panga"),
             Resource("Dustcoat"),

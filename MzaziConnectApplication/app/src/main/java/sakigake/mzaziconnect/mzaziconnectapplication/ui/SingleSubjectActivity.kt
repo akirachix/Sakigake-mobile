@@ -52,14 +52,17 @@ class SingleSubjectActivity : AppCompatActivity() {
                 "Posted at 25/12/2023"
             )
         )
-        val adapter = AssignmentAdapter(assignments) { selectedassignment ->
-            val intent = Intent(this@SingleSubjectActivity, SubjectAssignmentActivity::class.java)
-            intent.putExtra("", selectedassignment.subjectName)
-            intent.putExtra("", selectedassignment.topicName)
-            intent.putExtra("", selectedassignment.dueDate)
-            intent.putExtra("", selectedassignment.updatedAt)
+        val adapterAssign = AssignmentAdapter(assignments) { selectedassignment ->
+            val intent = Intent(this@SingleSubjectActivity, Assign_detailsActivity::class.java)
+            intent.putExtra("subjectName", selectedassignment.subjectName)
+            intent.putExtra("topicName", selectedassignment.topicName)
+            intent.putExtra("dueDate", selectedassignment.dueDate)
+            intent.putExtra("updateAt", selectedassignment.updatedAt)
+            startActivity(intent)
+
         }
-        recyclerView.adapter = adapter
+        var rvassign= binding.rvAssignmentTopics
+        rvassign.adapter=adapterAssign
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         binding.imgBack.setOnClickListener {

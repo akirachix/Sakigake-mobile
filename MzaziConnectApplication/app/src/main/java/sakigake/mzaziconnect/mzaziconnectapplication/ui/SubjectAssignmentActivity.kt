@@ -37,7 +37,7 @@ class SubjectAssignmentActivity : AppCompatActivity() {
     )
 
         val TopicsAdapter = TopicsAdapter(topics) { selectedTopic ->
-            val intent = Intent(this, SubjectAssignmentActivity::class.java)
+            val intent = Intent(this, Assign_detailsActivity::class.java)
             intent.putExtra("TopicName", selectedTopic.topicName)
             intent.putExtra("AssignmentDetails", selectedTopic.topicName)
             intent.putExtra("DueDate", selectedTopic.dueDate)

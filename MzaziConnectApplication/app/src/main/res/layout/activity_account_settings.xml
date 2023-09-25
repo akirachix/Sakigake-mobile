@@ -100,6 +100,7 @@
         android:layout_height="59dp"
         android:layout_marginStart="44dp"
         android:drawableRight="@drawable/edit"
+        android:password="true"
         android:ems="10"
         android:inputType="textEmailAddress"
         android:text="............"

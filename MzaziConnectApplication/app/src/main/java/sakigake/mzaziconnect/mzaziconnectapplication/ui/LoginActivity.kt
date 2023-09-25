@@ -22,7 +22,8 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        clearErrorOnType()
+      clearErrorOnType()
+//        clearErrors()
         binding.btnlogin.setOnClickListener {
             validateLoginUser()
 
@@ -57,6 +58,12 @@ class LoginActivity : AppCompatActivity() {
             }
         })
     }
+
+//    fun clearErrors() {
+//        binding.tilname.error = null
+//        binding.tilpassword.error = null
+//
+//    }
 
     fun validateLoginUser() {
         val name = binding.etname.text.toString()

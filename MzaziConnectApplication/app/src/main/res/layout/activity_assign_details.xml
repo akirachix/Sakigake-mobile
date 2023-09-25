@@ -144,40 +144,27 @@
         app:layout_constraintTop_toBottomOf="@+id/cardView3"
         tools:listitem="@layout/resource" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="343dp"
-        android:layout_height="121dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:backgroundTint="@color/grey"
-        android:padding="150dp"
+
+    <EditText
+        android:id="@+id/etMessage"
+        android:layout_width="342dp"
+        android:layout_height="103dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/grey"
+        android:ems="10"
+        android:hint="Comment.."
+        android:inputType="text"
+        android:textColor="@color/blue"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvMessage"
-        tools:ignore="MissingConstraints">
-
-        <EditText
-            android:id="@+id/etMessage"
-            android:layout_width="match_parent"
-            android:layout_height="97dp"
-            android:layout_marginTop="15dp"
-            android:backgroundTint="@color/blue"
-            android:ems="10"
-            android:hint="Comment.."
-            android:inputType="text"
-            android:textColor="@color/blue"
-            tools:layout_editor_absoluteX="1dp"
-            tools:layout_editor_absoluteY="3dp" />
-
-
-    </androidx.cardview.widget.CardView>
+        app:layout_constraintTop_toBottomOf="@+id/tvMessage" />
 
     <TextView
         android:id="@+id/tvMessage"
         android:layout_width="wrap_content"
         android:layout_height="19dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="56dp"
         android:text="Add Comment"
         android:textColor="@color/blue"
         android:textSize="18dp"
@@ -199,12 +186,9 @@
         android:id="@+id/ivsend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="104dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="136dp"
+        android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/cardView"
         app:layout_constraintTop_toBottomOf="@+id/rvresources"
         app:srcCompat="@drawable/send"
         app:tint="@color/blue" />

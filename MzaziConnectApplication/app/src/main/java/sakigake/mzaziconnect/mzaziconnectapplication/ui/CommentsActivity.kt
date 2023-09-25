@@ -21,9 +21,7 @@ class CommentsActivity : AppCompatActivity() {
             MessageDetails("Karina ", "https://res.cloudinary.com/dtu8pkzkp/image/upload/v1695649064/fulqzp1eplyg08ho0vkm.png", "good work" ),
             MessageDetails("Maria ", "https://res.cloudinary.com/dtu8pkzkp/image/upload/v1695649064/fulqzp1eplyg08ho0vkm.png", "good work" ),
             MessageDetails("Vandar ", "https://res.cloudinary.com/dtu8pkzkp/image/upload/v1695649064/fulqzp1eplyg08ho0vkm.png", "good work" ),
-            MessageDetails("Nicky - ", "https://res.cloudinary.com/dtu8pkzkp/image/upload/v1695649064/fulqzp1eplyg08ho0vkm.png", "good work" ),
-            MessageDetails("Kamau- ", "https://res.cloudinary.com/dtu8pkzkp/image/upload/v1695649064/fulqzp1eplyg08ho0vkm.png", "good work" ),
-            MessageDetails("Visha ", "https://res.cloudinary.com/dtu8pkzkp/image/upload/v1695649064/fulqzp1eplyg08ho0vkm.png", "good work" )
+            MessageDetails("Nicky  ", "https://res.cloudinary.com/dtu8pkzkp/image/upload/v1695649064/fulqzp1eplyg08ho0vkm.png", "good work" ),
         )
         val adapter= MessageAdapter(messages)
         recyclerview.adapter=adapter
@@ -31,6 +29,10 @@ class CommentsActivity : AppCompatActivity() {
 
         binding.ivbackmssg.setOnClickListener {
             startActivity(Intent(this, Assign_detailsActivity::class.java))
+        }
+
+        binding.ivsend.setOnClickListener {
+            startActivity(Intent(this@CommentsActivity, CommentsActivity::class.java ))
         }
     }
 }

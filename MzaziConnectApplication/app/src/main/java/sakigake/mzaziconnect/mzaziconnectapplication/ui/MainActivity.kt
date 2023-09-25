@@ -3,6 +3,7 @@ package sakigake.mzaziconnect.mzaziconnectapplication.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -11,15 +12,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding=ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        onResume()
-    }
 
-    override fun onResume() {
-        super.onResume()
-        binding.btnstart1.setOnClickListener {
-            val intent = Intent(this@MainActivity, ChooseUserActivity::class.java)
+        Handler().postDelayed({
+            val intent = Intent(this, ChooseUserActivity::class.java)
             startActivity(intent)
-        }
-
+            finish()
+        }, 3000)
     }
+
+
+
+
 }

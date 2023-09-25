@@ -19,6 +19,9 @@
             android:exported="false"
             android:label="@string/title_activity_comments"
             android:theme="@style/Theme.MzaziConnectApplication" />
+
+
+
         <activity
             android:name=".ui.Assign_detailsActivity"
             android:exported="false" />
