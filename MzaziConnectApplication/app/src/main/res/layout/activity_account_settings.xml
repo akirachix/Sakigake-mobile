@@ -127,7 +127,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
         android:layout_marginTop="16dp"
-        android:text="PARENT NAME"
+        android:text="NAME"
         android:textColor="@color/darkblue"
         android:textSize="10sp"
         android:textStyle="bold"

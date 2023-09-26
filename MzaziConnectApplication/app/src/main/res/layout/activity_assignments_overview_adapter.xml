@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/imgBack"
+        android:layout_width="40dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="44dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.026"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baseline_arrow_back_ios_24"
+        app:tint="@color/blue" />
+
+    <ImageView
+        android:id="@+id/imgMore"
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="83dp"
+        app:layout_constraintStart_toEndOf="@+id/tvAccountSettings"
+        app:layout_constraintTop_toTopOf="@+id/tvAccountSettings"
+        app:srcCompat="@drawable/baseline_more_vert_24"
+        app:tint="@color/blue" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvAssignmentTopics"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="1332dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="73dp"/>
+
+    <TextView
+        android:id="@+id/tvAccountSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="170dp"
+        android:layout_marginEnd="82dp"
+        android:text="Assignment"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toStartOf="@+id/imgMore"
+        app:layout_constraintStart_toEndOf="@+id/imgBack"
+        app:layout_constraintTop_toTopOf="@+id/imgBack" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -23,7 +23,7 @@
         android:background="@color/grey"
         android:backgroundTint="@color/grey"
         app:cardCornerRadius="10dp"
-        app:cardBackgroundColor="@color/darkerblue"
+        app:cardBackgroundColor="@color/darkblue"
         app:layout_constraintStart_toEndOf="@+id/imgMessagerImage"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -58,8 +58,8 @@
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="6dp"
             android:text="11:00, 16 Aug 2023"
+            android:textColor="@color/darkgrey"
             android:textSize="10dp"
-            android:textColor="@color/darkergrey"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 

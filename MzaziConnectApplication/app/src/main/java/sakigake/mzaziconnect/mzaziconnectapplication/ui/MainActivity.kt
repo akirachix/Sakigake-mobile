@@ -1,5 +1,4 @@
 package sakigake.mzaziconnect.mzaziconnectapplication.ui
-
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

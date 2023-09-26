@@ -53,7 +53,7 @@ class SingleSubjectActivity : AppCompatActivity() {
             )
         )
         val adapterAssign = AssignmentAdapter(assignments) { selectedassignment ->
-            val intent = Intent(this@SingleSubjectActivity, Assign_detailsActivity::class.java)
+            val intent = Intent(this@SingleSubjectActivity,AssignmentView::class.java)
             intent.putExtra("subjectName", selectedassignment.subjectName)
             intent.putExtra("topicName", selectedassignment.topicName)
             intent.putExtra("dueDate", selectedassignment.dueDate)
