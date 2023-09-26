@@ -59,7 +59,7 @@ class Shops : AppCompatActivity() {
             startActivity(intent)
         }
         binding.imgMore.setOnClickListener{
-            startActivity(Intent(this@Shops, AccountSettings::class.java))
+            startActivity(Intent(this@Shops, AccountSettingsActivity::class.java))
         }
     }
 }

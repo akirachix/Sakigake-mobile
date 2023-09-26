@@ -30,7 +30,7 @@ class EditAssignmentActivity : AppCompatActivity() {
         binding.btnPostAssignment.setOnClickListener {
             if (validateEditAssignment()) {
 
-                val intent = Intent(this, Assign_detailsActivity::class.java)
+                val intent = Intent(this, AssignmentView::class.java)
                 startActivity(intent)
             }
         }

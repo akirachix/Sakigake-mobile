@@ -19,7 +19,7 @@ class ViewChild : AppCompatActivity() {
             startActivity(intent)
         }
         binding.imgMore.setOnClickListener{
-            startActivity(Intent(this@ViewChild, AccountSettings::class.java))
+            startActivity(Intent(this@ViewChild, AccountSettingsActivity::class.java))
         }
     }
 }

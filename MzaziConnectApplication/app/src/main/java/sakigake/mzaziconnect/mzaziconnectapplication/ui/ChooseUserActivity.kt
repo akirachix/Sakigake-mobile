@@ -13,16 +13,23 @@ class ChooseUserActivity : AppCompatActivity() {
         binding = ActivityChooseUserBinding.inflate(layoutInflater)
         setContentView(binding.root)
         onResume()
+
+
+
     }
 
     override fun onResume() {
         super.onResume()
+
         binding.btnparent.setOnClickListener {
             val intent = Intent(this@ChooseUserActivity, LoginActivity::class.java)
+            intent.putExtra("userType", "parent")
             startActivity(intent)
         }
+
         binding.btnteacher.setOnClickListener {
             val intent = Intent(this@ChooseUserActivity, LoginActivity::class.java)
+            intent.putExtra("userType", "teacher")
             startActivity(intent)
         }
 

@@ -28,7 +28,7 @@ class CommentsActivity : AppCompatActivity() {
         recyclerview.layoutManager = LinearLayoutManager(this)
 
         binding.ivbackmssg.setOnClickListener {
-            startActivity(Intent(this, Assign_detailsActivity::class.java))
+            startActivity(Intent(this, AssignmentView::class.java))
         }
 
         binding.ivsend.setOnClickListener {

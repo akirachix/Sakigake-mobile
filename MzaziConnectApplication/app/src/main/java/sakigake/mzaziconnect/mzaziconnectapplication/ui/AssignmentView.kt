@@ -55,7 +55,7 @@ class AssignmentView : AppCompatActivity() {
             startActivity(intent)
         }
         binding.ivmore1.setOnClickListener{
-            startActivity(Intent(this@AssignmentView, AccountSettings::class.java))
+            startActivity(Intent(this@AssignmentView, AccountSettingsActivity::class.java))
         }
     }
     private fun scrollRecyclerView(forward: Boolean) {

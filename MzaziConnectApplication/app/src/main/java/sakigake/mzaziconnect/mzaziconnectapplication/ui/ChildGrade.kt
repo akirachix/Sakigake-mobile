@@ -94,7 +94,7 @@ class ChildGrade: AppCompatActivity () {
             startActivity(intent)
         }
         binding.imgMore.setOnClickListener{
-            startActivity(Intent(this@ChildGrade, AccountSettings::class.java))
+            startActivity(Intent(this@ChildGrade, AccountSettingsActivity::class.java))
         }
     }
 

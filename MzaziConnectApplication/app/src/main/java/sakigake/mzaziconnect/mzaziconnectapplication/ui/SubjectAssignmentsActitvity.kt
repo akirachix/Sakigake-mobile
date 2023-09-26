@@ -80,7 +80,7 @@ class SubjectAssignmentsActitvity : AppCompatActivity() {
             startActivity(intent)
         }
         binding.imgMore.setOnClickListener{
-            startActivity(Intent(this@SubjectAssignmentsActitvity, AccountSettings::class.java))
+            startActivity(Intent(this@SubjectAssignmentsActitvity, AccountSettingsActivity::class.java))
         }
     }
 }

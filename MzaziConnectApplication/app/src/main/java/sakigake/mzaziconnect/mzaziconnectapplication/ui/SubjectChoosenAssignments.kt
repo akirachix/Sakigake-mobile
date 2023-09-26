@@ -43,7 +43,7 @@ class SubjectChoosenAssignments : AppCompatActivity() {
             startActivity(intent)
         }
         binding.imgMore.setOnClickListener{
-            startActivity(Intent(this@SubjectChoosenAssignments, AccountSettings::class.java))
+            startActivity(Intent(this@SubjectChoosenAssignments, AccountSettingsActivity::class.java))
         }
     }
 }

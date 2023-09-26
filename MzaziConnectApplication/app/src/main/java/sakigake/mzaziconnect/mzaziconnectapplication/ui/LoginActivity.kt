@@ -6,27 +6,35 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.Toast
-import sakigake.mzaziconnect.mzaziconnectapplication.R
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.ActivityLoginBinding
-import sakigake.mzaziconnect.mzaziconnectapplication.databinding.ActivitySubjectBinding
 
 class LoginActivity : AppCompatActivity() {
     lateinit var binding:ActivityLoginBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
         binding= ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
         onResume()
     }
-
     override fun onResume() {
         super.onResume()
       clearErrorOnType()
 //        clearErrors()
         binding.btnlogin.setOnClickListener {
             validateLoginUser()
-
+            val userType = intent.getStringExtra("userType")
+            when (userType) {
+                "parent" -> {
+                    val intent = Intent(this@LoginActivity, ViewChild::class.java)
+                    startActivity(intent)
+                    finish()
+                }
+                "teacher" -> {
+                    val intent = Intent(this@LoginActivity, SubjectActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
+            }
         }
     }
 
@@ -35,11 +43,9 @@ class LoginActivity : AppCompatActivity() {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
 
             }
-
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 binding.tilname.error = null
             }
-
             override fun afterTextChanged(s: Editable?) {
 
             }
@@ -91,8 +97,5 @@ class LoginActivity : AppCompatActivity() {
             startActivity(Intent(this@LoginActivity, SubjectActivity::class.java))
 
         }
-
-
-
     }
 }
