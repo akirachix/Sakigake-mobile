@@ -15,26 +15,28 @@
         android:theme="@style/Theme.MzaziConnectApplication"
         tools:targetApi="31">
         <activity
-
-            android:name=".ui.Shops"
+            android:name=".ui.teacher.AssignDetails2Activity"
             android:exported="false" />
         <activity
-            android:name=".ui.AssignmentView"
+            android:name=".ui.parent.Shops"
             android:exported="false" />
         <activity
-            android:name=".ui.SubjectAssignmentsActitvity"
+            android:name=".ui.parent.AssignmentView"
             android:exported="false" />
         <activity
-            android:name=".ui.SubjectChoosenAssignments"
+            android:name=".ui.parent.SubjectAssignmentsActitvity"
             android:exported="false" />
         <activity
-            android:name=".ui.ChildGrade"
+            android:name=".ui.parent.SubjectChoosenAssignments"
             android:exported="false" />
         <activity
-            android:name=".ui.ViewChild"
-            android:exported="false"/>
+            android:name=".ui.parent.ChildGrade"
+            android:exported="false" />
         <activity
-            android:name=".ui.CommentsActivity"
+            android:name=".ui.parent.ViewChild"
+            android:exported="false" />
+        <activity
+            android:name=".ui.teacher.CommentsActivity"
             android:exported="false"
             android:label="@string/title_activity_comments"
             android:theme="@style/Theme.MzaziConnectApplication" />
@@ -42,16 +44,16 @@
             android:name=".ui.Assign_detailsActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.EditAssignmentActivity"
+            android:name=".ui.teacher.EditAssignmentActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.SubjectAssignmentActivity"
+            android:name=".ui.teacher.SubjectAssignmentActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.SingleSubjectActivity"
+            android:name=".ui.teacher.SingleSubjectActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.ParentLoginActivity"
+            android:name=".ui.parent.ParentLoginActivity"
             android:exported="false" />
         <activity
             android:name=".ui.LogoutActivity"
@@ -62,17 +64,17 @@
             android:name=".ui.SwitchUserActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.NavActivity"
+            android:name=".ui.teacher.NavActivity"
             android:exported="false" />
         <activity
             android:name=".ui.AccountSettingsActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.SubjectActivity"
+            android:name=".ui.teacher.SubjectActivity"
             android:exported="false"
             android:theme="@style/Theme.MzaziConnectApplication" />
         <activity
-            android:name=".ui.LoginActivity"
+            android:name=".ui.teacher.LoginActivity"
             android:exported="false" />
         <activity
             android:name=".ui.ChooseUserActivity"

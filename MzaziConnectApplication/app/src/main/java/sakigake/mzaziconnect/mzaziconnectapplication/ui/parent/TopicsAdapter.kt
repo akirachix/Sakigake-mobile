@@ -1,11 +1,8 @@
-package sakigake.mzaziconnect.mzaziconnectapplication.ui
+package sakigake.mzaziconnect.mzaziconnectapplication.ui.parent
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
-import sakigake.mzaziconnect.mzaziconnectapplication.R
-import sakigake.mzaziconnect.mzaziconnectapplication.databinding.SubjectassignmentBinding
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.TopicItemBinding
 import sakigake.mzaziconnect.mzaziconnectapplication.model.TopicsData
 

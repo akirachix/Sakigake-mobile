@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.ViewChild">
+    tools:context=".ui.parent.ViewChild">
 
     <TextView
         android:id="@+id/tvParentName"
@@ -52,7 +52,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvChildNameTitle" />
 
     <ImageView
-        android:id="@+id/imgMore"
+        android:id="@+id/imgHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -68,7 +68,7 @@
         android:layout_width="281dp"
         android:layout_height="207dp"
         android:layout_marginTop="72dp"
-        app:layout_constraintEnd_toStartOf="@+id/imgMore"
+        app:layout_constraintEnd_toStartOf="@+id/imgHome"
         app:layout_constraintHorizontal_bias="0.722"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvParentName"

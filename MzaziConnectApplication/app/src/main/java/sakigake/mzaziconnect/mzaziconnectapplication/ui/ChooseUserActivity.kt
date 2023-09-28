@@ -3,8 +3,8 @@ package sakigake.mzaziconnect.mzaziconnectapplication.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import sakigake.mzaziconnect.mzaziconnectapplication.R
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.ActivityChooseUserBinding
+import sakigake.mzaziconnect.mzaziconnectapplication.ui.teacher.LoginActivity
 
 class ChooseUserActivity : AppCompatActivity() {
     lateinit var binding: ActivityChooseUserBinding

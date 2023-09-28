@@ -1,18 +1,12 @@
-package sakigake.mzaziconnect.mzaziconnectapplication.ui
+package sakigake.mzaziconnect.mzaziconnectapplication.ui.teacher
 
-import android.adservices.topics.Topic
 import android.app.Dialog
 import android.content.Intent
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
-import android.widget.ImageView
-import sakigake.mzaziconnect.mzaziconnectapplication.R
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.ActivitySubjectAssignmentBinding
 import sakigake.mzaziconnect.mzaziconnectapplication.model.TopicsData
+import sakigake.mzaziconnect.mzaziconnectapplication.ui.parent.TopicsAdapter
 
 class SubjectAssignmentActivity : AppCompatActivity() {
     lateinit var binding:ActivitySubjectAssignmentBinding
@@ -37,7 +31,7 @@ class SubjectAssignmentActivity : AppCompatActivity() {
     )
 
         val TopicsAdapter = TopicsAdapter(topics) { selectedTopic ->
-            val intent = Intent(this, AssignmentView::class.java)
+            val intent = Intent(this, AssignDetails2Activity::class.java)
             intent.putExtra("TopicName", selectedTopic.topicName)
             intent.putExtra("AssignmentDetails", selectedTopic.topicName)
             intent.putExtra("DueDate", selectedTopic.dueDate)
@@ -45,13 +39,21 @@ class SubjectAssignmentActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.ivhome.setOnClickListener {
+            startActivity(Intent(this, NavActivity::class.java))
+        }
+
         val recyclerView = binding.rvAssignmentTopics
         recyclerView.adapter=TopicsAdapter
 
         binding.imgBack.setOnClickListener {
-            val intent = Intent(this, SubjectActivity::class.java)
+            val intent = Intent(this, NavActivity::class.java)
             startActivity(intent)
         }
+        binding.ivhome.setOnClickListener {
+            val intent = Intent(this, NavActivity::class.java)
+            startActivity(intent)
         }
+    }
 
 }

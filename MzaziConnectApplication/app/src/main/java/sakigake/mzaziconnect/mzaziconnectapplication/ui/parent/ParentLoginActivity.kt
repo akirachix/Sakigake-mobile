@@ -1,4 +1,4 @@
-package sakigake.mzaziconnect.mzaziconnectapplication.ui
+package sakigake.mzaziconnect.mzaziconnectapplication.ui.parent
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,35 +6,24 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.Toast
-import sakigake.mzaziconnect.mzaziconnectapplication.databinding.ActivityLoginBinding
+import sakigake.mzaziconnect.mzaziconnectapplication.databinding.ActivityParentLoginBinding
+import sakigake.mzaziconnect.mzaziconnectapplication.ui.teacher.SubjectActivity
 
-class LoginActivity : AppCompatActivity() {
-    lateinit var binding:ActivityLoginBinding
+class ParentLoginActivity : AppCompatActivity() {
+    lateinit var binding:ActivityParentLoginBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding= ActivityLoginBinding.inflate(layoutInflater)
+        binding= ActivityParentLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        onResume()
+
     }
+
     override fun onResume() {
         super.onResume()
-      clearErrorOnType()
-//        clearErrors()
+        clearErrorOnType()
         binding.btnlogin.setOnClickListener {
             validateLoginUser()
-            val userType = intent.getStringExtra("userType")
-            when (userType) {
-                "parent" -> {
-                    val intent = Intent(this@LoginActivity, ViewChild::class.java)
-                    startActivity(intent)
-                    finish()
-                }
-                "teacher" -> {
-                    val intent = Intent(this@LoginActivity, SubjectActivity::class.java)
-                    startActivity(intent)
-                    finish()
-                }
-            }
+
         }
     }
 
@@ -43,20 +32,22 @@ class LoginActivity : AppCompatActivity() {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
 
             }
+
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 binding.tilname.error = null
             }
+
             override fun afterTextChanged(s: Editable?) {
 
             }
         })
 
-        binding.etpassword.addTextChangedListener(object : TextWatcher {
+        binding.etnum.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                binding.tilpassword.error = null
+                binding.tilphonenum.error = null
             }
 
             override fun afterTextChanged(s: Editable?) {
@@ -65,15 +56,9 @@ class LoginActivity : AppCompatActivity() {
         })
     }
 
-//    fun clearErrors() {
-//        binding.tilname.error = null
-//        binding.tilpassword.error = null
-//
-//    }
-
     fun validateLoginUser() {
         val name = binding.etname.text.toString()
-        val password = binding.etpassword.text.toString()
+        val phonenum = binding.etnum.text.toString()
         var error = false
 
         if (name.isBlank()) {
@@ -83,19 +68,22 @@ class LoginActivity : AppCompatActivity() {
             binding.tilname.error = null
         }
 
-        if (password.isBlank()) {
-            binding.etpassword.error = "Password is required"
+        if (phonenum.isBlank() ) {
+            binding.etnum.error = "Phone Number is required"
             error = true
 
         }
         else {
-            binding.tilpassword.error = null
+            binding.tilphonenum.error = null
         }
 
         if (!error) {
             Toast.makeText(this, "Successfully logged in", Toast.LENGTH_LONG).show()
-            startActivity(Intent(this@LoginActivity, SubjectActivity::class.java))
+            startActivity(Intent(this@ParentLoginActivity, SubjectActivity::class.java))
 
         }
+
+
+
     }
 }

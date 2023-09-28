@@ -1,4 +1,4 @@
-package sakigake.mzaziconnect.mzaziconnectapplication.ui
+package sakigake.mzaziconnect.mzaziconnectapplication.ui.parent
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,9 +6,9 @@ import android.os.Bundle
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import sakigake.mzaziconnect.mzaziconnectapplication.R
 import sakigake.mzaziconnect.mzaziconnectapplication.database.ShopsDataclass
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.ActivityShopsBinding
+import sakigake.mzaziconnect.mzaziconnectapplication.ui.teacher.NavActivity
 
 class Shops : AppCompatActivity() {
     lateinit var binding: ActivityShopsBinding
@@ -58,8 +58,9 @@ class Shops : AppCompatActivity() {
             val intent = Intent(this@Shops, AssignmentView::class.java)
             startActivity(intent)
         }
-        binding.imgMore.setOnClickListener{
-            startActivity(Intent(this@Shops, AccountSettingsActivity::class.java))
+        binding.ivHome.setOnClickListener {
+            val intent = Intent(this@Shops, NavActivity::class.java)
+            startActivity(intent)
         }
     }
 }

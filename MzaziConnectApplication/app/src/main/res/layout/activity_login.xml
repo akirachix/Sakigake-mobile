@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.LoginActivity">
+    tools:context=".ui.teacher.LoginActivity">
 
     <TextView
         android:id="@+id/tvlogin"
@@ -44,9 +44,10 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etname"
+            android:inputType="phone"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="User Name" />
+            android:hint="Phone Number" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout

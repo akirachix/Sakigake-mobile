@@ -1,4 +1,4 @@
-package sakigake.mzaziconnect.mzaziconnectapplication.ui
+package sakigake.mzaziconnect.mzaziconnectapplication.ui.teacher
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import sakigake.mzaziconnect.mzaziconnectapplication.R
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.SubjectBinding
-import sakigake.mzaziconnect.mzaziconnectapplication.model.AssignmentData
 
 
 class SubjectsAdapter (private val subjects: List<Subjects>,val onItemClick: (Subjects) -> Unit) : RecyclerView.Adapter<SubjectsAdapter.SubjectViewHolder>()

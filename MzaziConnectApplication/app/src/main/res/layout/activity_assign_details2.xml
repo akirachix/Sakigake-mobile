@@ -4,29 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.Assign_detailsActivity">
-
-    <ImageView
-        android:id="@+id/ivmore1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/dots"
-        app:tint="@color/blue" />
+    tools:context=".ui.teacher.AssignDetails2Activity">
 
     <TextView
         android:id="@+id/tvAgric"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="100dp"
+        android:layout_marginEnd="135dp"
         android:text="Agriculture"
-        android:textSize="26sp"
+        android:textSize="25dp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/ivmore1"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -35,7 +24,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="120dp"
         android:layout_marginTop="28dp"
-        android:text="Due date  :"
+        android:text="Due Date  :"
+        android:textSize="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvAgric" />
 
@@ -45,6 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginTop="28dp"
+        android:textSize="15dp"
         android:text="30th August"
         app:layout_constraintStart_toEndOf="@+id/tvDuedate"
         app:layout_constraintTop_toBottomOf="@+id/tvAgric" />
@@ -64,19 +55,20 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView3"
-        android:layout_width="375dp"
-        android:layout_height="241dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="20dp"
         android:layout_marginStart="20dp"
 
-        android:layout_marginTop="16dp"
         android:background="@color/blue"
         android:backgroundTint="@color/grey"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvPlantss">
+        app:layout_constraintTop_toBottomOf="@+id/tvPlantss"
+        tools:layout_editor_absoluteX="20dp">
 
         <LinearLayout
-            android:layout_width="355dp"
-            android:layout_height="match_parent"
+            android:layout_width="384dp"
+            android:layout_height="252dp"
             android:orientation="vertical"
             android:padding="16dp">
 
@@ -125,73 +117,113 @@
         android:id="@+id/tvResourcesNeeded"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="32dp"
         android:text="Resources needed"
         android:textColor="@color/blue"
-        android:textSize="18dp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView3" />
 
+    <ImageView
+        android:id="@+id/ivarrow2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baseline_arrow_back_ios_24"
+        app:tint="@color/blue" />
+
+    <ImageView
+        android:id="@+id/ivhome"
+        android:layout_width="33dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baseline_home_24" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvresources"
-        android:layout_width="wrap_content"
-        android:layout_height="62dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="80dp"
+        android:layout_width="268dp"
+        android:layout_height="76dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="76dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView3"
-        tools:listitem="@layout/resource" />
-
-    <EditText
-        android:id="@+id/etMessage"
-        android:layout_width="342dp"
-        android:layout_height="103dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
-        android:background="@color/grey"
-        android:ems="10"
-        android:hint="Comment.."
-        android:inputType="text"
-        android:textColor="@color/blue"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvMessage" />
+        tools:listitem="@layout/resource_item" />
 
     <TextView
         android:id="@+id/tvMessage"
-        android:layout_width="wrap_content"
-        android:layout_height="19dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="133dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="20dp"
         android:text="Add Comment"
         android:textColor="@color/blue"
-        android:textSize="18dp"
+        android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rvresources" />
 
-    <ImageView
-        android:id="@+id/ivback"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="19dp"
+    <EditText
+        android:id="@+id/etMessage"
+        android:layout_width="345dp"
+        android:layout_height="96dp"
+        android:backgroundTint="@color/blue"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Message.."
+        android:textColor="@color/blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.303"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/backarrow" />
+        app:layout_constraintTop_toBottomOf="@+id/tvMessage"
+        tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/ivsend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="108dp"
-        android:layout_marginEnd="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/etMessage"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rvresources"
-        app:srcCompat="@drawable/send"
-        app:tint="@color/blue" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/etMessage"
+        app:layout_constraintTop_toTopOf="@+id/etMessage"
+        app:layout_constraintVertical_bias="0.555"
+        app:srcCompat="@drawable/baseline_send_24"
+        app:tint="@color/blue"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/ivarrowback"
+        android:layout_width="33dp"
+        android:layout_height="34dp"
+        app:tint="@color/blue"
+        app:layout_constraintBottom_toTopOf="@+id/tvMessage"
+        app:layout_constraintEnd_toStartOf="@+id/rvresources"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvResourcesNeeded"
+        app:layout_constraintVertical_bias="0.337"
+        app:srcCompat="@drawable/baseline_arrow_back_ios_24" />
+
+    <ImageView
+        android:id="@+id/ivarrowfoward"
+        android:layout_width="33dp"
+        android:layout_height="34dp"
+        app:tint="@color/blue"
+        app:layout_constraintBottom_toTopOf="@+id/etMessage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/rvresources"
+        app:layout_constraintTop_toBottomOf="@+id/cardView3"
+        app:srcCompat="@drawable/baseline_arrow_forward_ios_24" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

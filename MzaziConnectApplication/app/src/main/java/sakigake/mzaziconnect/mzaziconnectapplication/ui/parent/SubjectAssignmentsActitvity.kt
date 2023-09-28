@@ -1,4 +1,4 @@
-package sakigake.mzaziconnect.mzaziconnectapplication.ui
+package sakigake.mzaziconnect.mzaziconnectapplication.ui.parent
 
 import SubjectAssignmentsAdapter
 import android.content.Intent
@@ -79,8 +79,10 @@ class SubjectAssignmentsActitvity : AppCompatActivity() {
             val intent = Intent(this, ChildGrade::class.java)
             startActivity(intent)
         }
-        binding.imgMore.setOnClickListener{
-            startActivity(Intent(this@SubjectAssignmentsActitvity, AccountSettingsActivity::class.java))
+        binding.ivHomepage.setOnClickListener {
+            val intent = Intent(this, ChildGrade::class.java)
+            startActivity(intent)
         }
+
     }
 }

@@ -3,8 +3,9 @@ package sakigake.mzaziconnect.mzaziconnectapplication.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import sakigake.mzaziconnect.mzaziconnectapplication.R
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.ActivityAccountSettingsBinding
+import sakigake.mzaziconnect.mzaziconnectapplication.ui.teacher.NavActivity
+import sakigake.mzaziconnect.mzaziconnectapplication.ui.teacher.SubjectActivity
 
 class AccountSettingsActivity : AppCompatActivity() {
     lateinit var binding: ActivityAccountSettingsBinding
