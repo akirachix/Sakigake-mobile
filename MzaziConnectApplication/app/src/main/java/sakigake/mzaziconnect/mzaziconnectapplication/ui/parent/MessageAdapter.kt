@@ -1,4 +1,4 @@
-package sakigake.mzaziconnect.mzaziconnectapplication.ui
+package sakigake.mzaziconnect.mzaziconnectapplication.ui.parent
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

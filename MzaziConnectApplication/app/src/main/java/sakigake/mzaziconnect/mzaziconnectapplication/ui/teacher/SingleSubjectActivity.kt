@@ -1,14 +1,14 @@
-package sakigake.mzaziconnect.mzaziconnectapplication.ui
+package sakigake.mzaziconnect.mzaziconnectapplication.ui.teacher
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import sakigake.mzaziconnect.mzaziconnectapplication.R
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.ActivitySingleSubjectBinding
 import sakigake.mzaziconnect.mzaziconnectapplication.model.AssignmentData
+import sakigake.mzaziconnect.mzaziconnectapplication.ui.parent.AssignmentView
 
 class SingleSubjectActivity : AppCompatActivity() {
     lateinit var binding: ActivitySingleSubjectBinding
@@ -53,14 +53,15 @@ class SingleSubjectActivity : AppCompatActivity() {
             )
         )
         val adapterAssign = AssignmentAdapter(assignments) { selectedassignment ->
-            val intent = Intent(this@SingleSubjectActivity,AssignmentView::class.java)
+            val intent = Intent(this@SingleSubjectActivity, AssignmentView::class.java)
             intent.putExtra("subjectName", selectedassignment.subjectName)
             intent.putExtra("topicName", selectedassignment.topicName)
             intent.putExtra("dueDate", selectedassignment.dueDate)
             intent.putExtra("updateAt", selectedassignment.updatedAt)
             startActivity(intent)
-
         }
+
+
         var rvassign= binding.rvAssignmentTopics
         rvassign.adapter=adapterAssign
         recyclerView.layoutManager = LinearLayoutManager(this)
@@ -68,6 +69,10 @@ class SingleSubjectActivity : AppCompatActivity() {
         binding.imgBack.setOnClickListener {
             val intent = Intent(this, SubjectActivity::class.java)
             startActivity(intent)
+        }
+
+        binding.ivhome.setOnClickListener {
+            startActivity(Intent(this, NavActivity::class.java))
         }
     }
 }

@@ -1,10 +1,8 @@
-package sakigake.mzaziconnect.mzaziconnectapplication.ui
+package sakigake.mzaziconnect.mzaziconnectapplication.ui.parent
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.recyclerview.widget.RecyclerView
-import sakigake.mzaziconnect.mzaziconnectapplication.R
 import sakigake.mzaziconnect.mzaziconnectapplication.database.Topics
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.ActivitySubjectChoosenAssignmentsBinding
 
@@ -42,9 +40,10 @@ class SubjectChoosenAssignments : AppCompatActivity() {
             val intent = Intent(this, ChildGrade::class.java)
             startActivity(intent)
         }
-        binding.imgMore.setOnClickListener{
-            startActivity(Intent(this@SubjectChoosenAssignments, AccountSettingsActivity::class.java))
+        binding.imgHome.setOnClickListener{
+            startActivity(Intent(this@SubjectChoosenAssignments, ChildGrade::class.java))
         }
+
     }
 }
 

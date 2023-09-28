@@ -1,4 +1,4 @@
-package sakigake.mzaziconnect.mzaziconnectapplication.ui
+package sakigake.mzaziconnect.mzaziconnectapplication.ui.teacher
 
 import android.app.Dialog
 import android.content.Intent
@@ -13,6 +13,9 @@ import androidx.recyclerview.widget.GridLayoutManager
 import sakigake.mzaziconnect.mzaziconnectapplication.R
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.ActivitySubjectBinding
 import sakigake.mzaziconnect.mzaziconnectapplication.model.Subjects
+import sakigake.mzaziconnect.mzaziconnectapplication.ui.AccountSettingsActivity
+import sakigake.mzaziconnect.mzaziconnectapplication.ui.LogoutActivity
+import sakigake.mzaziconnect.mzaziconnectapplication.ui.SwitchUserActivity
 
 class SubjectActivity : AppCompatActivity() {
     lateinit var binding: ActivitySubjectBinding
@@ -22,6 +25,13 @@ class SubjectActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySubjectBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+//        val fragment = HomeFragment()
+//        val transaction = supportFragmentManager.beginTransaction()
+//        transaction.replace(R.id.home_frag, fragment)
+//        transaction.commit()
+
+
         supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.WHITE))
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeAsUpIndicator(R.drawable.dots)
@@ -53,8 +63,14 @@ class SubjectActivity : AppCompatActivity() {
 
         }
 
+        binding.ivhome.setOnClickListener {
+            startActivity(Intent(this, NavActivity::class.java))
+        }
 
-        val subjects = listOf(
+
+
+
+        val subjects = listOf (
             Subjects("Agriculture","https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695151509/Frame_180_1_kjclpx.jpg" ,"Ms Kiki" ),
             Subjects("Math","https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695151508/Frame_181_rfkkvo.jpg" ,"Ms Kiki"),
             Subjects("Science", "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695151508/Frame_186_1_ldcvij.jpg","Mr Kiki"),
@@ -110,11 +126,7 @@ class SubjectActivity : AppCompatActivity() {
                 startActivity(intent)
                 return true
             }
-            R.id.nav_switch -> {
-                val intent = Intent(this, SwitchUserActivity::class.java)
-                startActivity(intent)
-                return true
-            }
+
             R.id.nav_logout -> {
                 val intent = Intent(this, LogoutActivity::class.java)
                 startActivity(intent)
@@ -133,11 +145,9 @@ class SubjectActivity : AppCompatActivity() {
         super.onResume()
         binding.rvsub.layoutManager=GridLayoutManager(this@SubjectActivity,2)
 
+    }}
 
 
-    }
-
-}
 
 
 

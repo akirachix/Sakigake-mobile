@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.SubjectActivity">
-
-
+    android:id="@+id/sub_frag"
+    tools:context=".ui.teacher.SubjectActivity">
 
     <ImageView
         android:id="@+id/ivbackset"
@@ -87,6 +86,17 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/ivsettings"
         app:srcCompat="@drawable/baseline_person_add_alt_1_24" />
+
+
+    <ImageView
+        android:id="@+id/ivhome"
+        android:layout_width="33dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baseline_home_24" />
 
     <ImageView
         android:id="@+id/ivlogout"

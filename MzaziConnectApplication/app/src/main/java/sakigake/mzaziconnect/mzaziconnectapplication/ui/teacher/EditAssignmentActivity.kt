@@ -1,4 +1,4 @@
-package sakigake.mzaziconnect.mzaziconnectapplication.ui
+package sakigake.mzaziconnect.mzaziconnectapplication.ui.teacher
 
 import android.app.DatePickerDialog
 import android.content.Intent
@@ -6,8 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
-import sakigake.mzaziconnect.mzaziconnectapplication.R
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.ActivityEditAssignmentBinding
+import sakigake.mzaziconnect.mzaziconnectapplication.ui.parent.AssignmentView
 import java.util.Calendar
 import java.util.Locale
 

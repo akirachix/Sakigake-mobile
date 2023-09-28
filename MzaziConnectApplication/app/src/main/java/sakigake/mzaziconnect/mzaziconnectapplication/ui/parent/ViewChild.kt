@@ -1,9 +1,8 @@
-package sakigake.mzaziconnect.mzaziconnectapplication.ui
+package sakigake.mzaziconnect.mzaziconnectapplication.ui.parent
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import sakigake.mzaziconnect.mzaziconnectapplication.R
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.ActivityViewChildBinding
 
 class ViewChild : AppCompatActivity() {
@@ -18,8 +17,8 @@ class ViewChild : AppCompatActivity() {
             val intent = Intent(this, ChildGrade::class.java)
             startActivity(intent)
         }
-        binding.imgMore.setOnClickListener{
-            startActivity(Intent(this@ViewChild, AccountSettingsActivity::class.java))
-        }
+//        binding.imgMore.setOnClickListener{
+//            startActivity(Intent(this@ViewChild, AccountSettingsActivity::class.java))
+//        }
     }
 }

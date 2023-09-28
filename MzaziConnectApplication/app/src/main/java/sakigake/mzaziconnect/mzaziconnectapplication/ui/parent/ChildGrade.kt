@@ -1,4 +1,4 @@
-package sakigake.mzaziconnect.mzaziconnectapplication.ui
+package sakigake.mzaziconnect.mzaziconnectapplication.ui.parent
 
 import SubjectAdapter
 import android.content.Intent
@@ -7,7 +7,6 @@ import android.os.Bundle
 import androidx.recyclerview.widget.GridLayoutManager
 import sakigake.mzaziconnect.mzaziconnectapplication.database.Subjects
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.ActivityChildGradeBinding
-
 
 
 class ChildGrade: AppCompatActivity () {
@@ -93,9 +92,9 @@ class ChildGrade: AppCompatActivity () {
             val intent = Intent(this, SubjectAssignmentsActitvity::class.java)
             startActivity(intent)
         }
-        binding.imgMore.setOnClickListener{
-            startActivity(Intent(this@ChildGrade, AccountSettingsActivity::class.java))
-        }
+//        binding..setOnClickListener{
+//            startActivity(Intent(this@ChildGrade, AccountSettingsActivity::class.java))
+//        }
     }
 
 }
