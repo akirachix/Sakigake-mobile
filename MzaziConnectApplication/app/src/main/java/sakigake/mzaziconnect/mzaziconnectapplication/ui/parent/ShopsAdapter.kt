@@ -1,43 +1,40 @@
+
 package sakigake.mzaziconnect.mzaziconnectapplication.ui.parent
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
-import sakigake.mzaziconnect.mzaziconnectapplication.database.ShopsDataclass
+import sakigake.mzaziconnect.mzaziconnectapplication.model.Shops
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.ShopItemBinding
 
-class ShopsAdapter(val shops: List<ShopsDataclass>, val onItemClick: (ShopsDataclass) -> Unit): RecyclerView.Adapter<ShopsViewHolder>() {
+class ShopsAdapter(var shops: List<Shops>, val onItemClick: (Shops) -> Unit): RecyclerView.Adapter<ShopsViewHolder>() {
+    fun updateShops(newShops: List<Shops>) {
+        shops=newShops
+        notifyDataSetChanged()
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ShopsViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = ShopItemBinding.inflate(inflater, parent, false)
         return  ShopsViewHolder(binding)
     }
+
     override fun getItemCount() = shops.size
 
     override fun onBindViewHolder(holder: ShopsViewHolder, position: Int) {
-        val shops  = shops[position]
-        holder.bind(shops)
-        holder.itemView.setOnClickListener{
-
+        val shop = shops[position]
+        holder.bind(shop)
+        holder.itemView.setOnClickListener {
+            onItemClick(shop)
         }
     }
 }
-class ShopsViewHolder(val binding: ShopItemBinding): RecyclerView.ViewHolder(binding.root){
-    fun bind(shops: ShopsDataclass){
-        binding.tvSubjectName.text = shops.shopName
-        binding.tvShopLocation.text = shops.shoplocation
-        Picasso.get()
-            .load(shops.shopImage)
-            .into(binding.imgSubject)
-    }
-//    fun bind(subject: Subjects) {
-//            binding.tvSubjectName.text = subject.subjectName
-//            Picasso.get()
-//                .load(subject.subjectImageUrl)
-//                .error(R.drawable.english_image)
-//                .into(binding.imgSubject)
-//            binding.tvSubjectTeacherName.text = subject.subjectTeacherName
-//        }
-}
 
+class ShopsViewHolder(val binding: ShopItemBinding): RecyclerView.ViewHolder(binding.root){
+    fun bind(shops: Shops) {
+        binding.tvSubjectName.text = shops.name
+        binding.tvShopLocation.text = shops.location
+
+    }
+}

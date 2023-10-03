@@ -19,11 +19,6 @@ class AssignmentView : AppCompatActivity() {
         binding = ActivityAssignmentViewBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//        binding.rvresources.setOnClickListener {
-//            val intent = Intent(this@AssignmentView, Shops::class.java)
-//            startActivity(intent)
-//        }
-
         val recyclerView: RecyclerView = binding.rvresources
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         val resources = listOf(
@@ -38,7 +33,7 @@ class AssignmentView : AppCompatActivity() {
         )
 
         resourcesAdapter = ResourcesAdapter(resources) { selectedResource ->
-            val intent = Intent(this@AssignmentView, Shops::class.java)
+            val intent = Intent(this@AssignmentView, ShopsActivity::class.java)
             intent.putExtra("Name", selectedResource.name)
             startActivity(intent)
         }
@@ -84,3 +79,5 @@ class AssignmentView : AppCompatActivity() {
 
 
 }
+
+
