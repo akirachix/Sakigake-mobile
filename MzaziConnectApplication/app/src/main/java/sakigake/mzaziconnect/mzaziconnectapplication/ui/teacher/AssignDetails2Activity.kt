@@ -8,7 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import sakigake.mzaziconnect.mzaziconnectapplication.database.Resources
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.ActivityAssignDetails2Binding
 import sakigake.mzaziconnect.mzaziconnectapplication.ui.ResourcesAdapter
-import sakigake.mzaziconnect.mzaziconnectapplication.ui.parent.Shops
+//import sakigake.mzaziconnect.mzaziconnectapplication.ui.parent.Shops
+import sakigake.mzaziconnect.mzaziconnectapplication.ui.parent.ShopsActivity
 
 class AssignDetails2Activity : AppCompatActivity() {
     lateinit var binding:ActivityAssignDetails2Binding
@@ -43,7 +44,7 @@ class AssignDetails2Activity : AppCompatActivity() {
         )
 
         resourcesAdapter = ResourcesAdapter(resources) { selectedResource ->
-            val intent = Intent(this@AssignDetails2Activity, Shops::class.java)
+            val intent = Intent(this@AssignDetails2Activity, ShopsActivity::class.java)
             intent.putExtra("Name", selectedResource.name)
             startActivity(intent)
         }
