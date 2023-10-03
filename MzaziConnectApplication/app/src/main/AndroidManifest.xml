@@ -17,13 +17,14 @@
         android:theme="@style/Theme.MzaziConnectApplication"
         tools:targetApi="31">
         <activity
+
             android:name=".ui.teacher.TeacherLoginActivity"
             android:exported="false" />
         <activity
             android:name=".ui.teacher.AssignDetails2Activity"
             android:exported="false" />
         <activity
-            android:name=".ui.parent.Shops"
+            android:name=".ui.parent.ShopsActivity"
             android:exported="false" />
         <activity
             android:name=".ui.parent.AssignmentView"
@@ -45,6 +46,10 @@
             android:exported="false"
             android:label="@string/title_activity_comments"
             android:theme="@style/Theme.MzaziConnectApplication" />
+        <activity
+            android:name=".ui.parent.AssignmentView"
+            android:exported="false"
+            tools:ignore="DuplicateActivity" />
         <activity
             android:name=".ui.teacher.EditAssignmentActivity"
             android:exported="false" />

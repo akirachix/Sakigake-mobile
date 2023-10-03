@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import sakigake.mzaziconnect.mzaziconnectapplication.database.Resources
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.ActivityAssignmentViewBinding
+import sakigake.mzaziconnect.mzaziconnectapplication.model.Shops
 import sakigake.mzaziconnect.mzaziconnectapplication.ui.teacher.CommentsActivity
 import sakigake.mzaziconnect.mzaziconnectapplication.ui.ResourcesAdapter
 import sakigake.mzaziconnect.mzaziconnectapplication.ui.teacher.NavActivity
@@ -38,7 +39,7 @@ class AssignmentView : AppCompatActivity() {
         )
 
         resourcesAdapter = ResourcesAdapter(resources) { selectedResource ->
-            val intent = Intent(this@AssignmentView, Shops::class.java)
+            val intent = Intent(this@AssignmentView, ShopsActivity::class.java)
             intent.putExtra("Name", selectedResource.name)
             startActivity(intent)
         }
