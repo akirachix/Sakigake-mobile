@@ -4,45 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".ui.SubjectAssignmentActivity">
+    tools:context=".ui.teacher.SubjectAssignmentActivity">
 
     <ImageView
         android:id="@+id/imgBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="28dp"
+        android:layout_height="29dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="392dp"
-        app:layout_constraintEnd_toStartOf="@+id/imgMore"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/backarrow"
         app:tint="@color/blue" />
-
-    <ImageView
-        android:id="@+id/imgMore"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="328dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toEndOf="@+id/imgBack"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/dots"
-        app:tint="@color/blue" />
-
 
 
     <TextView
         android:id="@+id/tvAccountSettings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="24dp"
         android:text="Agriculture"
         android:textColor="@color/black"
-        android:textSize="25dp"
+        android:textSize="27dp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/imgMore"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/imgBack"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -50,8 +35,8 @@
         android:id="@+id/btnadd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="19dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
         android:backgroundTint="@color/blue"
         android:text="Add assignment"
         android:textColor="@color/white"
@@ -71,5 +56,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnadd"
         tools:listitem="@layout/topic_item" />
+
+    <ImageView
+        android:id="@+id/ivhome"
+        android:layout_width="33dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baseline_home_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

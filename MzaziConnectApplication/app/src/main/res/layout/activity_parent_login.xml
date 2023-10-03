@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.ParentLoginActivity">
+    tools:context=".ui.parent.ParentLoginActivity">
 
     <TextView
         android:id="@+id/tvplogin"
@@ -32,21 +32,24 @@
         app:layout_constraintTop_toBottomOf="@+id/tvplogin" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilname"
+        android:id="@+id/tilPhoneNumber"
         android:layout_width="355dp"
         android:layout_height="61dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="72dp"
         android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvwelcome">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etname"
+            android:id="@+id/etPhoneNumber"
+            android:inputType="phone"
+            app:prefixText="+254"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="User Name" />
+            android:hint="Phone Number" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -58,14 +61,15 @@
         android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tilname">
+        app:layout_constraintTop_toBottomOf="@+id/tilPhoneNumber">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etnum"
+            android:id="@+id/etPassword"
             android:layout_width="match_parent"
-            android:inputType="phone"
             android:layout_height="wrap_content"
-            android:hint="Phone Number" />
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:password="true" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -106,4 +110,15 @@
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/tvaccount"
         app:layout_constraintTop_toBottomOf="@+id/btnlogin" />
+
+    <ProgressBar
+        android:id="@+id/pbProgressBar1"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

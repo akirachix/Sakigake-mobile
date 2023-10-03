@@ -1,10 +1,10 @@
 package sakigake.mzaziconnect.mzaziconnectapplication.ui
-
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import sakigake.mzaziconnect.mzaziconnectapplication.R
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.ActivityChooseUserBinding
+import sakigake.mzaziconnect.mzaziconnectapplication.ui.parent.ParentLoginActivity
+import sakigake.mzaziconnect.mzaziconnectapplication.ui.teacher.TeacherLoginActivity
 
 class ChooseUserActivity : AppCompatActivity() {
     lateinit var binding: ActivityChooseUserBinding
@@ -12,26 +12,17 @@ class ChooseUserActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityChooseUserBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        onResume()
-
-
-
     }
 
     override fun onResume() {
         super.onResume()
-
         binding.btnparent.setOnClickListener {
-            val intent = Intent(this@ChooseUserActivity, LoginActivity::class.java)
-            intent.putExtra("userType", "parent")
+            val intent = Intent(this@ChooseUserActivity, ParentLoginActivity::class.java)
             startActivity(intent)
         }
-
         binding.btnteacher.setOnClickListener {
-            val intent = Intent(this@ChooseUserActivity, LoginActivity::class.java)
-            intent.putExtra("userType", "teacher")
+            val intent = Intent(this@ChooseUserActivity, TeacherLoginActivity::class.java)
             startActivity(intent)
         }
-
     }
 }

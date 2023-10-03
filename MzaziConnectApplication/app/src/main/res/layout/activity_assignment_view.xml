@@ -4,30 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.AssignmentView">
-
-    <ImageView
-        android:id="@+id/ivmore1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/baseline_more_vert_24"
-        app:tint="@color/blue" />
+    tools:context=".ui.parent.AssignmentView">
 
     <TextView
         android:id="@+id/tvAgric"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="106dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="96dp"
         android:text="Agriculture"
         android:textSize="25dp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/ivmore1"
+        app:layout_constraintStart_toEndOf="@+id/ivarrow2"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivhome"
+        android:layout_width="33dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baseline_home_24" />
+
+
 
     <TextView
         android:id="@+id/tvDuedate"
@@ -35,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="120dp"
         android:layout_marginTop="28dp"
-        android:text="Due Date  :"
+        android:text="@string/due_date"
         android:textSize="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvAgric" />
@@ -46,7 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginTop="28dp"
-        android:textSize="15dp"
+        android:textSize="15sp"
         android:text="30th August"
         app:layout_constraintStart_toEndOf="@+id/tvDuedate"
         app:layout_constraintTop_toBottomOf="@+id/tvAgric" />
