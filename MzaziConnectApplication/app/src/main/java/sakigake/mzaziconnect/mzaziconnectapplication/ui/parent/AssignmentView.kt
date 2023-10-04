@@ -19,7 +19,7 @@ class AssignmentView : AppCompatActivity() {
         binding = ActivityAssignmentViewBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val assignmentId = intent.getStringExtra("Assignment_id")
+        val assignmentId = intent.getStringExtra("selected")
         val topic = intent.getStringExtra("Assignment_topic")
         val competency = intent.getStringExtra("Assignment_competency")
         val task = intent.getStringExtra("Assignment_task")
@@ -29,8 +29,7 @@ class AssignmentView : AppCompatActivity() {
         val due_date = intent.getStringExtra("Assignment_due_date")
 
         populateAssignmentDetails(
-            assignmentId = 0, topic= arrayOf(),competency,task,  materials, subject = 1, category = 1, due_date = ""
-
+            assignmentId = 0, topic= arrayOf(),competency,task,  materials, subject = 0 , category = 0, due_date = ""
         )
 
         binding.rvresources.setOnClickListener {
@@ -38,9 +37,10 @@ class AssignmentView : AppCompatActivity() {
             startActivity(intent)
         }
 
-//        val bundle: Bundle? = intent.extras
-//        val selectedAssignmentId = bundle?.getString("selectedAssignmentId")
+        val bundle: Bundle? = intent.extras
+        val selectedAssignmentId = bundle?.getString("selectedAssignmentId")
         val recyclerView: RecyclerView = binding.rvresources
+
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         val resources = listOf(
             Resources("Panga"),
@@ -70,13 +70,8 @@ class AssignmentView : AppCompatActivity() {
         binding.ivsend.setOnClickListener {
             startActivity(Intent(this, CommentsActivity::class.java))
         }
-
         recyclerView.adapter = resourcesAdapter
     }
-
-
-
-
 
     override fun onResume() {
         super.onResume()
@@ -104,7 +99,6 @@ class AssignmentView : AppCompatActivity() {
         }
     }
 
-
     private fun populateAssignmentDetails(
         assignmentId:Int,
         topic:Array<String>,
@@ -117,15 +111,12 @@ class AssignmentView : AppCompatActivity() {
 
     ){
         binding.tvtopic.text = topic.joinToString(", ")
-//        binding.tvresources.tag = resources
         binding.tvresources.text = resources
-//        binding.tvcompentency.text = competency
         binding.tvcompentency.text = competency ?: ""
         binding.tvcategory.text = category.toString()
         binding.tvtask.text= task
         binding.tvsubject.text = subject.toString()
-       binding.tvduedate.text= due_date
-//        binding.tvtopic.text= topic.toString()
+        binding.tvduedate.text= due_date
 
     }
 }

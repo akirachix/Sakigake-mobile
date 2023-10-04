@@ -26,9 +26,7 @@ class SubjectChoosenAssignments : AppCompatActivity() {
         binding.imgHome.setOnClickListener {
             startActivity(Intent(this@SubjectChoosenAssignments, ChildGrade::class.java))
         }
-
     }
-
     override fun onResume() {
         super.onResume()
         assignViewModel.fetchAssign()
@@ -36,7 +34,6 @@ class SubjectChoosenAssignments : AppCompatActivity() {
         assignViewModel.errorLiveData.observe(this, Observer { err ->
             Toast.makeText(this, err, Toast.LENGTH_LONG).show()
         })
-
         assignViewModel.assignLiveData.observe(this, Observer { productsList ->
             binding.rvAssignmentTopics.layoutManager = LinearLayoutManager(this)
             binding.rvAssignmentTopics.adapter = SubjectChoosenAssignmentsAdapter(productsList, this)
