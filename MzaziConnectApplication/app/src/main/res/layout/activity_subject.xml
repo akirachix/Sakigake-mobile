@@ -7,16 +7,16 @@
     android:id="@+id/sub_frag"
     tools:context=".ui.teacher.SubjectActivity">
 
+
     <ImageView
         android:id="@+id/ivbackset"
         android:layout_width="31dp"
         android:layout_height="31dp"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tvgrade3"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/backarrow" />
-
+        app:layout_constraintVertical_bias="0.186"
+        app:srcCompat="@drawable/backarrow"
+        tools:layout_editor_absoluteX="21dp" />
 
     <TextView
         android:id="@+id/tvschool2"
@@ -25,6 +25,7 @@
         android:layout_marginStart="52dp"
         android:layout_marginTop="12dp"
         android:text="Lake Wood School Utawala"
+        android:fontFamily="@font/baloobhai2_bold"
         android:textSize="25dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,6 +38,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="28dp"
         android:text="My classes"
+        android:fontFamily="@font/baloobhai2_semibold"
         android:textColor="@color/blue"
         android:textSize="23dp"
         android:textStyle="bold"
@@ -53,6 +55,7 @@
         android:backgroundTint="@color/blue"
         android:textColor="@color/white"
         android:text="View all assignments"
+        android:fontFamily="@font/jost_regular"
         app:cornerRadius="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvschool2" />
@@ -92,10 +95,12 @@
         android:id="@+id/ivhome"
         android:layout_width="33dp"
         android:layout_height="37dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnassign"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.932"
+        app:layout_constraintStart_toEndOf="@+id/ivbackset"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.22"
         app:srcCompat="@drawable/baseline_home_24" />
 
     <ImageView

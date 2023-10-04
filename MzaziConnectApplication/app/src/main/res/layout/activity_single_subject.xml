@@ -27,6 +27,7 @@
         android:text="Assignments"
         android:textColor="@color/black"
         android:textSize="25dp"
+        android:fontFamily="@font/baloobhai2_bold"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/imgBack"
         app:layout_constraintTop_toTopOf="parent" />

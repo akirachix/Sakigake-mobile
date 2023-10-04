@@ -40,7 +40,7 @@ interface ApiInterface {
     @GET("/subjects/subjectsList/")
     suspend fun getSubjects(): Response<List<Subjects>>
 
-    @GET("/assignment/assignments/{assignmentId}/")
+    @GET("/assignment/assignments/{assignmentId}")
     suspend fun getAssignmentid(@Path("assignmentId") assignmentId: Int): Response<List<Subjects>>
 
     @GET("/comments/list/")

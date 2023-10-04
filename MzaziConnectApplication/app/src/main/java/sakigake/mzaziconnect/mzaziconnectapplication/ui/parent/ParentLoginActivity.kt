@@ -30,7 +30,6 @@ class ParentLoginActivity : AppCompatActivity() {
             validateLogin()
 
         }
-
         parentLoginViewModel.errLiveData.observe(this, Observer { error ->
             binding.pbProgressBar1.visibility = View.GONE
             Toast.makeText(this, error, Toast.LENGTH_LONG).show()
@@ -49,12 +48,12 @@ class ParentLoginActivity : AppCompatActivity() {
     }
     private fun validateLogin() {
         val phoneNumber = binding.etPhoneNumber.text.toString()
-        val password = binding.etPassword.text.toString()
+        val password = binding.etpassword.text.toString()
 
         var error = false
 
         if (password.isBlank()) {
-            binding.etPassword.error = "Password is required"
+            binding.etpassword.error = "Password is required"
             error = true
         }
 

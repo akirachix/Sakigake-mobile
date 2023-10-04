@@ -13,6 +13,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="164dp"
         android:text="Comments"
+        android:fontFamily="@font/baloobhai2_bold"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,6 +59,7 @@
         android:textColor="@color/blue"
         android:textSize="18dp"
         android:textStyle="bold"
+        android:fontFamily="@font/baloobhai2_medium"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
 
@@ -71,6 +73,7 @@
         android:ems="10"
         android:hint="Comment.."
         android:inputType="text"
+        android:fontFamily="@font/jost_regular"
         android:shadowRadius="@integer/material_motion_duration_long_2"
         android:textColor="@color/blue"
         app:layout_constraintStart_toStartOf="parent"

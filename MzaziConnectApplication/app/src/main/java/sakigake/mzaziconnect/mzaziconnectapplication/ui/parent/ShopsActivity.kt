@@ -32,7 +32,7 @@ class ShopsActivity : AppCompatActivity() {
             startActivity(intent)
         }
         binding.ivHome.setOnClickListener {
-            val intent = Intent(this@ShopsActivity, NavActivity::class.java)
+            val intent = Intent(this@ShopsActivity, ChildGrade::class.java)
             startActivity(intent)
         }
 
@@ -46,7 +46,7 @@ class ShopsActivity : AppCompatActivity() {
             }
             Toast.makeText(
                 baseContext,
-                "Fetched ${shopsList?.size} shops",
+                "Found ${shopsList?.size} shops",
                 Toast.LENGTH_LONG
             ).show()
 

@@ -10,6 +10,7 @@
         android:id="@+id/tvAgric"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/baloobhai2_bold"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="135dp"
         android:text="Agriculture"
@@ -25,6 +26,7 @@
         android:layout_marginStart="120dp"
         android:layout_marginTop="28dp"
         android:text="Due Date  :"
+        android:fontFamily="@font/baloobhai2_medium"
         android:textSize="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvAgric" />
@@ -34,6 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
+        android:fontFamily="@font/baloobhai2_medium"
         android:layout_marginTop="28dp"
         android:textSize="15dp"
         android:text="30th August"
@@ -47,6 +50,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:text="Plants"
+        android:fontFamily="@font/baloobhai2_semibold"
         android:textColor="@color/blue"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -75,17 +79,20 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/jost_semibold"
                 android:text="Task 1: Introduction to Plants"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/jost_regular"
                 android:text="Write or draw three different kinds of plants you know." />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/jost_regular"
                 android:text="Label their parts - roots, stem, leaves, and flowers" />
 
             <Space
@@ -95,17 +102,20 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/jost_semibold"
                 android:text="Task 2: What do Plants Need?"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
+                android:fontFamily="@font/jost_regular"
                 android:layout_height="wrap_content"
                 android:text="Plants need certain things to grow healthy and strong." />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/jost_regular"
                 android:text="Write or draw at least three things that plants need. For example, sunlight, water, and soil." />
 
         </LinearLayout>
@@ -120,6 +130,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="32dp"
         android:text="Resources needed"
+        android:fontFamily="@font/baloobhai2_semibold"
         android:textColor="@color/blue"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -165,6 +176,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="20dp"
         android:text="Add Comment"
+        android:fontFamily="@font/baloobhai2_semibold"
         android:textColor="@color/blue"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -181,6 +193,7 @@
         android:ems="10"
         android:inputType="text"
         android:text="Message.."
+        android:fontFamily="@font/jost_regular"
         android:textColor="@color/blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.303"

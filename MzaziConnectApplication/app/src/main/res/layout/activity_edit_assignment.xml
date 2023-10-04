@@ -17,8 +17,9 @@
             android:layout_height="37dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="124dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/baloobhai2_semibold"
             android:gravity="top"
             android:text="Agriculture"
             android:textColor="@color/blue"
@@ -47,6 +48,7 @@
             android:layout_marginTop="68dp"
             android:focusable="false"
             android:hint="25th June 2023"
+            android:fontFamily="@font/baloobhai2_medium"
             android:onClick="showDatePickerDialog"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.516"
@@ -75,6 +77,7 @@
             android:layout_marginStart="28dp"
             android:layout_marginTop="24dp"
             android:text="Categories"
+            android:fontFamily="@font/baloobhai2_bold"
             android:textSize="25sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
@@ -93,6 +96,7 @@
                 android:id="@+id/etcategories"
                 android:layout_width="match_parent"
                 android:layout_height="51dp"
+                android:fontFamily="@font/jost_regular"
                 android:hint="Enter categories" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -104,6 +108,7 @@
             android:layout_marginTop="24dp"
             android:text="Resources"
             android:textSize="25sp"
+            android:fontFamily="@font/baloobhai2_bold"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tilcategories" />
@@ -120,6 +125,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etresources"
                 android:layout_width="match_parent"
+                android:fontFamily="@font/jost_regular"
                 android:layout_height="49dp"
                 android:hint="Enter Resources needed" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -135,6 +141,7 @@
             android:text="Post Assignment"
             android:textColor="@color/white"
             app:cornerRadius="5dp"
+            android:fontFamily="@font/jost_regular"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tilresources" />
 
@@ -153,6 +160,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/ettypemessage"
                 android:layout_width="match_parent"
+                android:fontFamily="@font/jost_regular"
                 android:layout_height="121dp"
                 android:hint="Type a message" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -164,6 +172,7 @@
             android:layout_marginStart="28dp"
             android:layout_marginTop="24dp"
             android:text="Topic"
+            android:fontFamily="@font/baloobhai2_bold"
             android:textSize="25sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
@@ -181,6 +190,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/ettopic"
                 android:layout_width="match_parent"
+                android:fontFamily="@font/jost_regular"
                 android:layout_height="wrap_content"
                 android:hint="Topic" />
         </com.google.android.material.textfield.TextInputLayout>

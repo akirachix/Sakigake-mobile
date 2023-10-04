@@ -47,7 +47,7 @@ class ChildGrade : AppCompatActivity() {
             subjectsAdapter.updateSubjects(subjectsList ?: emptyList())
             Toast.makeText(
                 baseContext,
-                "Fetched ${subjectsList?.size} subjects",
+                "Found ${subjectsList?.size} subjects",
                 Toast.LENGTH_LONG
             ).show()
         })

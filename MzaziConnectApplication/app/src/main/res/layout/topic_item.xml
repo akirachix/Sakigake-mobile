@@ -30,6 +30,7 @@
             android:textColor="@color/blue"
             android:textSize="25sp"
             android:textStyle="bold"
+            android:fontFamily="@font/baloobhai2_semibold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/tvDueDate"
             app:layout_constraintHorizontal_bias="0.043"
@@ -55,8 +56,9 @@
             android:id="@+id/tvDueDate"
             android:layout_width="116dp"
             android:layout_height="20dp"
-            android:layout_marginStart="26dp"
-            android:layout_marginTop="39dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="36dp"
+            android:fontFamily="@font/baloobhai2_medium"
             android:text="Due:30th August"
             android:textSize="15sp"
             app:layout_constraintStart_toEndOf="@+id/imgCalendar"
@@ -66,8 +68,9 @@
             android:id="@+id/tvAssignmentDetails"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/jost_regular"
             android:text="In this assignment, you will explore the world of plants and learn about their basic needs for growth."
             android:textColor="@color/black"
             android:textSize="15sp"
@@ -76,7 +79,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.592" />
+            app:layout_constraintVertical_bias="0.617" />
 
         <TextView
             android:id="@+id/tvPostedAtTime"
@@ -85,6 +88,7 @@
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="15dp"
             android:text="Posted on 12PM, 16 Aug 2023"
+            android:fontFamily="@font/baloobhai2"
             android:textSize="10sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
