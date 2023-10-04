@@ -3,87 +3,73 @@ package sakigake.mzaziconnect.mzaziconnectapplication.ui.parent
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
+import android.view.View
 import android.widget.Toast
+import androidx.activity.viewModels
+import androidx.lifecycle.Observer
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.ActivityParentLoginBinding
-import sakigake.mzaziconnect.mzaziconnectapplication.ui.teacher.SubjectActivity
+import sakigake.mzaziconnect.mzaziconnectapplication.model.ParentLoginRequest
+import sakigake.mzaziconnect.mzaziconnectapplication.viewmodel.ParentLoginViewModel
+
 
 class ParentLoginActivity : AppCompatActivity() {
-    lateinit var binding:ActivityParentLoginBinding
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding= ActivityParentLoginBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+    private lateinit var binding: ActivityParentLoginBinding
+    private val parentLoginViewModel: ParentLoginViewModel by viewModels()
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        binding = ActivityParentLoginBinding.inflate(layoutInflater)
+        super.onCreate(savedInstanceState)
+        setContentView(binding.root)
     }
 
     override fun onResume() {
         super.onResume()
-        clearErrorOnType()
+        setContentView(binding.root)
+
         binding.btnlogin.setOnClickListener {
-            validateLoginUser()
+            validateLogin()
 
         }
-    }
 
-    fun clearErrorOnType() {
-        binding.etname.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-
-            }
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                binding.tilname.error = null
-            }
-
-            override fun afterTextChanged(s: Editable?) {
-
-            }
+        parentLoginViewModel.errLiveData.observe(this, Observer { error ->
+            binding.pbProgressBar1.visibility = View.GONE
+            Toast.makeText(this, error, Toast.LENGTH_LONG).show()
         })
+        parentLoginViewModel.regLiveData.observe(this, Observer { loginResponse ->
+            binding.pbProgressBar1.visibility = View.GONE
+            Toast.makeText(this, loginResponse.message, Toast.LENGTH_LONG).show()
 
-        binding.etnum.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-            }
+            val userPhoneNumber = binding.etPhoneNumber.text.toString()
+            intent.putExtra("userPhoneNumber", userPhoneNumber)
+            startActivity(intent)
 
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                binding.tilphonenum.error = null
-            }
-
-            override fun afterTextChanged(s: Editable?) {
-
-            }
+            startActivity(Intent(this, ChildGrade::class.java))
+                finish()
         })
     }
+    private fun validateLogin() {
+        val phoneNumber = binding.etPhoneNumber.text.toString()
+        val password = binding.etPassword.text.toString()
 
-    fun validateLoginUser() {
-        val name = binding.etname.text.toString()
-        val phonenum = binding.etnum.text.toString()
         var error = false
 
-        if (name.isBlank()) {
-            binding.etname.error = "user name is required"
+        if (password.isBlank()) {
+            binding.etPassword.error = "Password is required"
             error = true
-        }else {
-            binding.tilname.error = null
         }
 
-        if (phonenum.isBlank() ) {
-            binding.etnum.error = "Phone Number is required"
+        if (phoneNumber.isBlank()) {
+            binding.etPhoneNumber.error = "Phone Number is required"
             error = true
-
-        }
-        else {
-            binding.tilphonenum.error = null
         }
 
         if (!error) {
-            Toast.makeText(this, "Successfully logged in", Toast.LENGTH_LONG).show()
-            startActivity(Intent(this@ParentLoginActivity, SubjectActivity::class.java))
-
+            val loginRequest = ParentLoginRequest(
+                phoneNumber = phoneNumber,
+                password = password
+            )
+            binding.pbProgressBar1.visibility = View.VISIBLE
+            parentLoginViewModel.parentLogin(loginRequest)
         }
-
-
-
     }
 }

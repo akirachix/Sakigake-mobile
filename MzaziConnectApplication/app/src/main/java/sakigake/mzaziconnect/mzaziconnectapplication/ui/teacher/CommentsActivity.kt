@@ -3,6 +3,7 @@ package sakigake.mzaziconnect.mzaziconnectapplication.ui.teacher
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.ActivityCommentsBinding
@@ -40,4 +41,6 @@ class CommentsActivity : AppCompatActivity() {
             startActivity(Intent(this, NavActivity::class.java))
         }
     }
+
+
 }

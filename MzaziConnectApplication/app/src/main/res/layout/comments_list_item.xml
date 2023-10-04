@@ -6,7 +6,8 @@
     android:layout_height="130dp"
     android:layout_margin="6dp"
     tools:layout_editor_absoluteX="1dp"
-    tools:layout_editor_absoluteY="1dp">
+    tools:layout_editor_absoluteY="1dp"
+    android:id="@+id/cvComments">
 
     <ImageView
         android:id="@+id/imgMessagerImage"

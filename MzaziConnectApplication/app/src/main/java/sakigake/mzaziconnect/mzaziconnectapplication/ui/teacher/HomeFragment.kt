@@ -45,24 +45,24 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val subjects = listOf(
-            Subjects("Agriculture","https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695151509/Frame_180_1_kjclpx.jpg" ,"Ms Kiki" ),
-            Subjects("Math","https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695151508/Frame_181_rfkkvo.jpg" ,"Ms Kiki"),
-            Subjects("Science", "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695151508/Frame_186_1_ldcvij.jpg","Mr Kiki"),
-            Subjects("Art", "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695151509/Frame_180_1_kjclpx.jpg", "Ms Kiki"),
-            Subjects("CRE", "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695151509/Frame_182_hgbhpy.jpg","Mr Kiki"),
-            Subjects("Islam", "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695151508/Frame_183_1_pdflt4.jpg","Mr Kiki"),
-        )
+//        val subjects = listOf(
+//            Subjects("Agriculture","https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695151509/Frame_180_1_kjclpx.jpg" ,"Ms Kiki" ),
+//            Subjects("Math","https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695151508/Frame_181_rfkkvo.jpg" ,"Ms Kiki"),
+//            Subjects("Science", "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695151508/Frame_186_1_ldcvij.jpg","Mr Kiki"),
+//            Subjects("Art", "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695151509/Frame_180_1_kjclpx.jpg", "Ms Kiki"),
+//            Subjects("CRE", "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695151509/Frame_182_hgbhpy.jpg","Mr Kiki"),
+//            Subjects("Islam", "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695151508/Frame_183_1_pdflt4.jpg","Mr Kiki"),
+//        )
+//
+//        val subjectsAdapter = SubjectsAdapter(subjects) { selectedSubject ->
+//            val intent = Intent(requireContext(), SubjectAssignmentActivity::class.java)
+//            intent.putExtra("TopicName", selectedSubject.subjectName)
+//            intent.putExtra("AssignmentDetails", selectedSubject.subjectTeacherName)
+//            intent.putExtra("DueDate", selectedSubject.subjectImageUrl)
+//            startActivity(intent)
+//        }
 
-        val subjectsAdapter = SubjectsAdapter(subjects) { selectedSubject ->
-            val intent = Intent(requireContext(), SubjectAssignmentActivity::class.java)
-            intent.putExtra("TopicName", selectedSubject.subjectName)
-            intent.putExtra("AssignmentDetails", selectedSubject.subjectTeacherName)
-            intent.putExtra("DueDate", selectedSubject.subjectImageUrl)
-            startActivity(intent)
-        }
-
-        binding.rvsub.adapter = subjectsAdapter
+//        binding.rvsub.adapter = subjectsAdapter
 
 
          binding.btnassign.setOnClickListener {
@@ -70,7 +70,7 @@ class HomeFragment : Fragment() {
          }
 
         binding.ivbackset.setOnClickListener {
-            startActivity(Intent(requireContext(), LoginActivity::class.java))
+            startActivity(Intent(requireContext(), TeacherLoginActivity::class.java))
         }
 
 

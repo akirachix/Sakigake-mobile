@@ -9,7 +9,11 @@ import sakigake.mzaziconnect.mzaziconnectapplication.R
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.CommentsListItemBinding
 import sakigake.mzaziconnect.mzaziconnectapplication.model.MessageDetails
 
-class MessageAdapter (val messages: List<MessageDetails>) : RecyclerView.Adapter<MessageAdapter.MessageViewHolder>() {
+class MessageAdapter (var messages: List<MessageDetails>) : RecyclerView.Adapter<MessageAdapter.MessageViewHolder>() {
+    fun updateMessages(newMessages: List<MessageDetails>) {
+        messages = newMessages
+        notifyDataSetChanged()
+    }
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int

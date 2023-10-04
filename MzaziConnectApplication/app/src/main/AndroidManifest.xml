@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
 
     <application
         android:allowBackup="true"
@@ -15,10 +17,14 @@
         android:theme="@style/Theme.MzaziConnectApplication"
         tools:targetApi="31">
         <activity
+
+            android:name=".ui.teacher.TeacherLoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.teacher.AssignDetails2Activity"
             android:exported="false" />
         <activity
-            android:name=".ui.parent.Shops"
+            android:name=".ui.parent.ShopsActivity"
             android:exported="false" />
         <activity
             android:name=".ui.parent.AssignmentView"
@@ -41,8 +47,9 @@
             android:label="@string/title_activity_comments"
             android:theme="@style/Theme.MzaziConnectApplication" />
         <activity
-            android:name=".ui.Assign_detailsActivity"
-            android:exported="false" />
+            android:name=".ui.parent.AssignmentView"
+            android:exported="false"
+            tools:ignore="DuplicateActivity" />
         <activity
             android:name=".ui.teacher.EditAssignmentActivity"
             android:exported="false" />
@@ -73,9 +80,6 @@
             android:name=".ui.teacher.SubjectActivity"
             android:exported="false"
             android:theme="@style/Theme.MzaziConnectApplication" />
-        <activity
-            android:name=".ui.teacher.LoginActivity"
-            android:exported="false" />
         <activity
             android:name=".ui.ChooseUserActivity"
             android:exported="false" />
