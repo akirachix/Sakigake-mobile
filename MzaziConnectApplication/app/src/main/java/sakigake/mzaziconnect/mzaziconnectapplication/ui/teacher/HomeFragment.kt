@@ -66,7 +66,7 @@ class HomeFragment : Fragment() {
 
 
          binding.btnassign.setOnClickListener {
-         startActivity(Intent(requireContext(), SingleSubjectActivity::class.java))
+         startActivity(Intent(requireContext(), SubjectAssignmentActivity::class.java))
          }
 
         binding.ivbackset.setOnClickListener {

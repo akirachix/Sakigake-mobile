@@ -25,6 +25,7 @@ class TeacherLoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnlogin.setOnClickListener {
+            startActivity(Intent(baseContext, NavActivity::class.java))
             validateLogin()
         }
         teacherLoginViewModel.errLiveData.observe(this, Observer { error ->
