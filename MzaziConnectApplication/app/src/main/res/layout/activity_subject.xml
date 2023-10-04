@@ -12,11 +12,12 @@
         android:id="@+id/ivbackset"
         android:layout_width="31dp"
         android:layout_height="31dp"
+        android:layout_marginStart="16dp"
         app:layout_constraintBottom_toTopOf="@+id/tvgrade3"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.186"
-        app:srcCompat="@drawable/backarrow"
-        tools:layout_editor_absoluteX="21dp" />
+        app:layout_constraintVertical_bias="0.19"
+        app:srcCompat="@drawable/backarrow" />
 
     <TextView
         android:id="@+id/tvschool2"
@@ -68,7 +69,7 @@
         android:layout_marginTop="3dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnassign"
-        tools:listitem="@layout/subject" />
+        tools:listitem="@layout/subject_overview_item" />
 
     <ImageView
         android:id="@+id/ivsettings"

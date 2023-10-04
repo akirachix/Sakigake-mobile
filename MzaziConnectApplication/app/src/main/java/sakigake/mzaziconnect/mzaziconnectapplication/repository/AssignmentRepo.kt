@@ -13,9 +13,9 @@ class AssignmentRepo {
 
     val apiClient = ApiClient.buildApiClient(ApiInterface::class.java)
 
-    suspend fun  getAssignment(): Response<List<TopicsData>> {
+    suspend fun  getAssignment(): Response<List<AssignmentsData>> {
         return withContext(Dispatchers.IO){
-            apiClient.getAssignments()
+            apiClient.getAssignment()
         }
     }
 

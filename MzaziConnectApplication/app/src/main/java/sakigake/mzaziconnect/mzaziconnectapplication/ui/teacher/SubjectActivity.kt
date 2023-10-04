@@ -71,6 +71,28 @@ class SubjectActivity : AppCompatActivity() {
         binding.rvsub.layoutManager = layoutManager
     }
 
+    override fun onResume() {
+        super.onResume()
+        fetchSubject()
+    }
+
+
+    fun fetchSubject() {
+        subjectViewModel.fetchSubjects()
+        subjectViewModel.subjectsLiveData.observe(this, Observer { subjectsList ->
+            subjectsAdapter.updateSubjects(subjectsList ?: emptyList())
+            Toast.makeText(
+                baseContext,
+                "Found ${subjectsList?.size} subjects",
+                Toast.LENGTH_LONG
+            ).show()
+        })
+        subjectViewModel.errorLiveData.observe(this, Observer { error ->
+            Toast.makeText(baseContext, error, Toast.LENGTH_LONG).show()
+        })
+
+    }
+
     private fun showPopup() {
         myDialog.setContentView(R.layout.logout)
         val btnLogout: Button = myDialog.findViewById(R.id.btnyes)
@@ -82,6 +104,7 @@ class SubjectActivity : AppCompatActivity() {
         myDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         myDialog.show()
     }
+
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.nav_menu, menu)
@@ -95,26 +118,18 @@ class SubjectActivity : AppCompatActivity() {
                 startActivity(intent)
                 return true
             }
+
             R.id.nav_logout -> {
                 val intent = Intent(this, LogoutActivity::class.java)
                 startActivity(intent)
                 return true
             }
+
             else -> return super.onOptionsItemSelected(item)
         }
     }
 
-    override fun onResume() {
-        super.onResume()
-        subjectViewModel.fetchSubjects()
-        subjectViewModel.subjectsLiveData.observe(
-            this,
-            Observer { subjectsList ->
-                subjectsAdapter.updateSubjects(subjectsList ?: emptyList())
-            }
-        )
-        subjectViewModel.errorLiveData.observe(this, Observer { error ->
-            Toast.makeText(baseContext, error, Toast.LENGTH_LONG).show()
-        })
-    }
+
 }
+
+

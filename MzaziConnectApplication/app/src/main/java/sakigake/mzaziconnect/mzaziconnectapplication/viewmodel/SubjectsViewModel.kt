@@ -15,10 +15,10 @@ class SubjectsViewModel:ViewModel() {
     val subjectsLiveData = MutableLiveData<List<Subjects>>()
     val errorLiveData = MutableLiveData<String>()
 
-    @SuppressLint("SuspiciousIndentation")
     fun fetchSubjects(){
         viewModelScope.launch {
             val response = subjectRepo.getSubjects()
+
             if (response.isSuccessful){
                 val subjectsLists =response.body()?: emptyList()
                 subjectsLiveData.postValue(subjectsLists as List<Subjects>)

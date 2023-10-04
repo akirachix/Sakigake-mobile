@@ -10,7 +10,7 @@ import sakigake.mzaziconnect.mzaziconnectapplication.model.Shops
 class SubjectAdapter(private var subjects: List<Subjects>, private val onItemClick: (Subjects) -> Unit) : RecyclerView.Adapter<SubjectAdapter.SubjectViewHolder>() {
     fun updateSubjects(newSubjects: List<Subjects>) {
         subjects=newSubjects
-        notifyDataSetChanged()
+//        notifyDataSetChanged()
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SubjectViewHolder {
         val inflater = LayoutInflater.from(parent.context)

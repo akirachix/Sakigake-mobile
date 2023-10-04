@@ -42,6 +42,11 @@ class ChildGrade : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+        fetchSubject()
+
+    }
+
+    fun fetchSubject() {
         subjectsViewModel.fetchSubjects()
         subjectsViewModel.subjectsLiveData.observe(this, Observer { subjectsList ->
             subjectsAdapter.updateSubjects(subjectsList ?: emptyList())
@@ -54,5 +59,9 @@ class ChildGrade : AppCompatActivity() {
         subjectsViewModel.errorLiveData.observe(this, Observer { error ->
             Toast.makeText(baseContext, error, Toast.LENGTH_LONG).show()
         })
+
     }
+
+
+
 }

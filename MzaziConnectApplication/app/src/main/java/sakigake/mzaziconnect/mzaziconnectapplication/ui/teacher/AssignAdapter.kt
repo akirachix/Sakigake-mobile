@@ -6,7 +6,6 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.TopicItemBinding
-import sakigake.mzaziconnect.mzaziconnectapplication.model.AssignmentData
 import sakigake.mzaziconnect.mzaziconnectapplication.model.AssignmentsData
 
 class AssignAdapter (var assignList: List<AssignmentsData>): RecyclerView.Adapter<AssignViewHolder>() {
@@ -27,10 +26,12 @@ class AssignAdapter (var assignList: List<AssignmentsData>): RecyclerView.Adapte
 //            topic.text= currentassign.topic.toString()
             tvDueDate.text = currentassign.due_date.toString()
             tvAssignmentDetails.text = currentassign.task.toString()
+            tvTopicName.text = currentassign.topic.toList().toString()
 //            subject.text = currentassign.subject.toString()
 //            resources.text = currentassign.resources.toString()
 //            category.text = currentassign.category.toString()
 //            tv.text=currentassign.competency
+
 
 
         }

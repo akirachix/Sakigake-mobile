@@ -44,6 +44,9 @@ class EditAssignmentActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityEditAssignmentBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        subjectSpinner = binding.spinnerSubject
+        shopSpinner = binding.spinnercategories
+        postrepo=AssignmentRepo()
     }
 
     override fun onResume() {
@@ -55,20 +58,16 @@ class EditAssignmentActivity : AppCompatActivity() {
         }
 
         binding.btnPostAssignment.setOnClickListener {
-            if (validateEditAssignment()) {
                 postAsignment()
                 showToast()
                 val intent = Intent(this, AssignmentView::class.java)
                 startActivity(intent)
-            }
         }
 
         binding.ivcancel.setOnClickListener {
             val intent = Intent(this, SubjectAssignmentActivity::class.java)
             startActivity(intent)
         }
-
-
         getCustomSubjectsData()
         getCustomShopData()
 
@@ -170,24 +169,6 @@ class EditAssignmentActivity : AppCompatActivity() {
         }
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
