@@ -11,11 +11,13 @@
         android:id="@+id/tvAgric"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:text="Agriculture"
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="99dp"
         android:fontFamily="@font/baloobhai2_bold"
+        android:text="Agriculture"
         android:textSize="25dp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/ivhome"
         app:layout_constraintStart_toEndOf="@+id/ivarrow2"
         app:layout_constraintTop_toTopOf="@+id/ivarrow2" />
 
