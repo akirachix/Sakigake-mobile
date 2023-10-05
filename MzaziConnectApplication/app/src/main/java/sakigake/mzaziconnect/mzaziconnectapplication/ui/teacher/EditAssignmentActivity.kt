@@ -10,7 +10,6 @@ import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.Spinner
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.ActivityEditAssignmentBinding
-import sakigake.mzaziconnect.mzaziconnectapplication.ui.parent.AssignmentView
 import java.util.Calendar
 import java.util.Locale
 import android.widget.Toast
@@ -59,7 +58,7 @@ class EditAssignmentActivity : AppCompatActivity() {
         binding.btnPostAssignment.setOnClickListener {
             postAsignment()
             showToast()
-            val intent = Intent(this, AssignmentView::class.java)
+            val intent = Intent(this, SubjectAssignmentActivity::class.java)
             startActivity(intent)
         }
 
