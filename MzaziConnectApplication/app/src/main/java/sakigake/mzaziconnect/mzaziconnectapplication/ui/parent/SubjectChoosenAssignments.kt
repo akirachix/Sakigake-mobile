@@ -20,7 +20,7 @@ class SubjectChoosenAssignments : AppCompatActivity() {
         val recyclerView = binding.rvAssignmentTopics
 
         binding.imgBack.setOnClickListener {
-            val intent = Intent(this, ChildGrade::class.java)
+            val intent = Intent(this, ParentsNavActivity::class.java)
             startActivity(intent)
         }
         binding.imgHome.setOnClickListener {
