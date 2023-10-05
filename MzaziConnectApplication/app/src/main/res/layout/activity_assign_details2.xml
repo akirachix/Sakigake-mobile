@@ -10,23 +10,31 @@
         android:id="@+id/tvAgric"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/baloobhai2_bold"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="135dp"
+        android:layout_marginStart="28dp"
         android:text="Agriculture"
+        android:fontFamily="@font/baloobhai2_bold"
         android:textSize="25dp"
         android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/ivarrow2"
+        app:layout_constraintTop_toTopOf="@+id/ivarrow2" />
+
+    <ImageView
+        android:id="@+id/ivhome"
+        android:layout_width="33dp"
+        android:layout_height="37dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/tvAgric"
+        app:srcCompat="@drawable/baseline_home_24" />
 
     <TextView
         android:id="@+id/tvDuedate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="28dp"
+        android:fontFamily="@font/inter_medium"
         android:text="Due Date  :"
-        android:fontFamily="@font/baloobhai2_medium"
         android:textSize="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvAgric" />
@@ -36,8 +44,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
-        android:fontFamily="@font/baloobhai2_medium"
         android:layout_marginTop="28dp"
+        android:fontFamily="@font/inter_medium"
         android:textSize="15dp"
         android:text="30th August"
         app:layout_constraintStart_toEndOf="@+id/tvDuedate"
@@ -49,7 +57,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:text="Plants"
+        android:text="Competency "
         android:fontFamily="@font/baloobhai2_semibold"
         android:textColor="@color/blue"
         android:textSize="20sp"
@@ -71,52 +79,20 @@
         tools:layout_editor_absoluteX="20dp">
 
         <LinearLayout
-            android:layout_width="384dp"
-            android:layout_height="252dp"
+            android:layout_width="match_parent"
+            android:layout_height="169dp"
             android:orientation="vertical"
             android:padding="16dp">
 
+
             <TextView
+                android:id="@+id/tvtask"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/jost_semibold"
-                android:text="Task 1: Introduction to Plants"
+                android:fontFamily="@font/jost_regular"
+                android:text="task"
                 android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/jost_regular"
-                android:text="Write or draw three different kinds of plants you know." />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/jost_regular"
-                android:text="Label their parts - roots, stem, leaves, and flowers" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="16dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/jost_semibold"
-                android:text="Task 2: What do Plants Need?"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:fontFamily="@font/jost_regular"
-                android:layout_height="wrap_content"
-                android:text="Plants need certain things to grow healthy and strong." />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/jost_regular"
-                android:text="Write or draw at least three things that plants need. For example, sunlight, water, and soil." />
 
         </LinearLayout>
 
@@ -127,116 +103,40 @@
         android:id="@+id/tvResourcesNeeded"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="108dp"
         android:text="Resources needed"
-        android:fontFamily="@font/baloobhai2_semibold"
         android:textColor="@color/blue"
         android:textSize="20sp"
         android:textStyle="bold"
+        android:fontFamily="@font/baloobhai2_semibold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView3" />
 
     <ImageView
         android:id="@+id/ivarrow2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="31dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/baseline_arrow_back_ios_24"
         app:tint="@color/blue" />
 
-    <ImageView
-        android:id="@+id/ivhome"
-        android:layout_width="33dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/baseline_home_24" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvresources"
-        android:layout_width="268dp"
-        android:layout_height="76dp"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="76dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView3"
-        tools:listitem="@layout/resource_item" />
-
     <TextView
-        android:id="@+id/tvMessage"
-        android:layout_width="133dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="20dp"
-        android:text="Add Comment"
-        android:fontFamily="@font/baloobhai2_semibold"
-        android:textColor="@color/blue"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rvresources" />
-
-    <EditText
-        android:id="@+id/etMessage"
-        android:layout_width="345dp"
-        android:layout_height="96dp"
-        android:backgroundTint="@color/blue"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Message.."
-        android:fontFamily="@font/jost_regular"
-        android:textColor="@color/blue"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.303"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvMessage"
-        tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/ivsend"
+        android:id="@+id/tvresources"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/etMessage"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:text="resources"
+        android:fontFamily="@font/jost_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/etMessage"
-        app:layout_constraintTop_toTopOf="@+id/etMessage"
-        app:layout_constraintVertical_bias="0.555"
-        app:srcCompat="@drawable/baseline_send_24"
-        app:tint="@color/blue"
-        tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/ivarrowback"
-        android:layout_width="33dp"
-        android:layout_height="34dp"
-        app:tint="@color/blue"
-        app:layout_constraintBottom_toTopOf="@+id/tvMessage"
-        app:layout_constraintEnd_toStartOf="@+id/rvresources"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvResourcesNeeded"
-        app:layout_constraintVertical_bias="0.337"
-        app:srcCompat="@drawable/baseline_arrow_back_ios_24" />
-
-    <ImageView
-        android:id="@+id/ivarrowfoward"
-        android:layout_width="33dp"
-        android:layout_height="34dp"
-        app:tint="@color/blue"
-        app:layout_constraintBottom_toTopOf="@+id/etMessage"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/rvresources"
-        app:layout_constraintTop_toBottomOf="@+id/cardView3"
-        app:srcCompat="@drawable/baseline_arrow_forward_ios_24" />
-
+        tools:ignore="HardcodedText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

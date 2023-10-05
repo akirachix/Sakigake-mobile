@@ -44,6 +44,10 @@ interface ApiInterface {
     @GET("/assignment/assignments/")
     suspend fun getAssignments(): Response<List<TopicsData>>
 
+    @GET("/assignment/assignments/")
+    suspend fun getAssignment(): Response<List<AssignmentsData>>
+
+
     @GET("/subjects/subjectsList/")
     suspend fun getSubjects(): Response<List<Subjects>>
     @GET("/subjects/subjectsList/")

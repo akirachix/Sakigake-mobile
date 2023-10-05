@@ -31,17 +31,9 @@ class SubjectAdapter(private var subjects: List<Subjects>, private val onItemCli
     override fun getItemCount() = subjects.size
     class SubjectViewHolder(private val binding: SubjectOverviewItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(subject: Subjects) {
-
-//            Picasso.get()
-//                .load(subject.subjectImageUrl)
-//                .error(R.drawable.english_image)
-//                .into(binding.imgSubject)
             binding.tvSubjectTeacherName.text = subject.description
             binding.tvSubjectName.text = subject.subjectName
             binding.tvSubjectTeacherName.text = subject.teacher.toString()
-
-
-
         }
     }
 }

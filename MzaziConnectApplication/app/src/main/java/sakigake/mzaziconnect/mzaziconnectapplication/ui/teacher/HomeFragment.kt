@@ -12,18 +12,27 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
+import androidx.recyclerview.widget.RecyclerView
+import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
 import sakigake.mzaziconnect.mzaziconnectapplication.R
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.FragmentHomeBinding
 import sakigake.mzaziconnect.mzaziconnectapplication.model.Subjects
 import sakigake.mzaziconnect.mzaziconnectapplication.ui.AccountSettingsActivity
 import sakigake.mzaziconnect.mzaziconnectapplication.ui.LogoutActivity
+import sakigake.mzaziconnect.mzaziconnectapplication.ui.parent.SubjectChoosenAssignments
+import sakigake.mzaziconnect.mzaziconnectapplication.viewmodel.SubjectsViewModel
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
-    private lateinit var myDialog: Dialog
+    lateinit var myDialog: Dialog
+    val subjectViewModel: SubjectsViewModel by viewModels()
+    lateinit var subjectsAdapter: SubjectsAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -32,48 +41,32 @@ class HomeFragment : Fragment() {
     ): View? {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val view = binding.root
-
         myDialog = Dialog(requireContext())
 
-        // Set up your UI components and listeners here
 
-        // ...
+        val recyclerView: RecyclerView = binding.rvsub
+        val layoutManager = GridLayoutManager(requireContext(), 2)
+        recyclerView.layoutManager = layoutManager
+
+        subjectsAdapter = SubjectsAdapter(emptyList() ) {selectedSubject ->
+            val intent = Intent(requireContext(), SubjectAssignmentActivity::class.java)
+            intent.putExtra("Subject Name", selectedSubject.subjectName)
+            intent.putExtra("SubjectTeacherName", selectedSubject.teacher)
+            startActivity(intent)
+        }
+        recyclerView.adapter = subjectsAdapter
+        fetchSubject()
+
 
         return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-//        val subjects = listOf(
-//            Subjects("Agriculture","https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695151509/Frame_180_1_kjclpx.jpg" ,"Ms Kiki" ),
-//            Subjects("Math","https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695151508/Frame_181_rfkkvo.jpg" ,"Ms Kiki"),
-//            Subjects("Science", "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695151508/Frame_186_1_ldcvij.jpg","Mr Kiki"),
-//            Subjects("Art", "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695151509/Frame_180_1_kjclpx.jpg", "Ms Kiki"),
-//            Subjects("CRE", "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695151509/Frame_182_hgbhpy.jpg","Mr Kiki"),
-//            Subjects("Islam", "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695151508/Frame_183_1_pdflt4.jpg","Mr Kiki"),
-//        )
-//
-//        val subjectsAdapter = SubjectsAdapter(subjects) { selectedSubject ->
-//            val intent = Intent(requireContext(), SubjectAssignmentActivity::class.java)
-//            intent.putExtra("TopicName", selectedSubject.subjectName)
-//            intent.putExtra("AssignmentDetails", selectedSubject.subjectTeacherName)
-//            intent.putExtra("DueDate", selectedSubject.subjectImageUrl)
-//            startActivity(intent)
-//        }
-
-//        binding.rvsub.adapter = subjectsAdapter
-
-
-         binding.btnassign.setOnClickListener {
-         startActivity(Intent(requireContext(), SubjectAssignmentActivity::class.java))
-         }
-
-        binding.ivbackset.setOnClickListener {
-            startActivity(Intent(requireContext(), TeacherLoginActivity::class.java))
+        binding.btnassign.setOnClickListener {
+            startActivity(Intent(requireContext(), SubjectAssignmentActivity::class.java))
         }
-
-
+        
         val layoutManager = GridLayoutManager(requireContext(), 2)
         binding.rvsub.layoutManager = layoutManager
     }
@@ -90,8 +83,6 @@ class HomeFragment : Fragment() {
         }
         myDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         myDialog.show()
-
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -120,6 +111,22 @@ class HomeFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    fun fetchSubject() {
+        subjectViewModel.fetchSubjects()
+        subjectViewModel.subjectsLiveData.observe(viewLifecycleOwner, Observer { subjectsList ->
+            subjectsAdapter.updateSubjects(subjectsList ?: emptyList())
+            Toast.makeText(
+                requireContext(),
+                "Found ${subjectsList?.size} subjects",
+                Toast.LENGTH_LONG
+            ).show()
+        })
+        subjectViewModel.errorLiveData.observe(viewLifecycleOwner, Observer { error ->
+            Toast.makeText(requireContext(), error, Toast.LENGTH_LONG).show()
+        })
+
     }
 
 

@@ -26,6 +26,10 @@ class SubjectsAdapter (private var subjects: List<Subjects>,  val onItemClick: (
             val subject = subjects[position]
             holder.bind(subject)
 
+            holder.itemView.setOnClickListener{
+                onItemClick(subject)
+            }
+
         }
         override fun getItemCount() = subjects.size
         class SubjectViewHolder(private val binding: SubjectBinding) :

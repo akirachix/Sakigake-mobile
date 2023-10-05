@@ -19,11 +19,9 @@ class SubjectChoosenAssignmentsAdapter(private val topics: List<TopicsData>, pri
     override fun onBindViewHolder(holder: SubjectChoosenAssignmentViewHolder, position: Int) {
         val topic = topics[position]
         val binding = holder.binding
-
-        binding.tvTopicName.text = topic.topic.joinToString(", ")
+        binding.tvTopicName.text = topic.topic.joinToString(",")
         binding.tvDueDate.text = topic.due_date
         binding.tvAssignmentDetails.text = topic.task
-
         holder.binding.cvAssignment.setOnClickListener {
             val intent = Intent(context, AssignmentView::class.java)
             intent.putExtra("selectedAssignmentId", topic.id)
@@ -37,7 +35,6 @@ class SubjectChoosenAssignmentsAdapter(private val topics: List<TopicsData>, pri
             context.startActivity(intent)
         }
     }
-
     override fun getItemCount(): Int {
         return topics.size
     }

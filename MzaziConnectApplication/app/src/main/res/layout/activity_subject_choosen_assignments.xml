@@ -19,31 +19,30 @@
         app:srcCompat="@drawable/baseline_arrow_back_ios_24"
         app:tint="@color/blue" />
 
+
     <ImageView
         android:id="@+id/imgHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="328dp"
+        android:layout_marginStart="280dp"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toEndOf="@+id/imgBack"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/baseline_home_24"
         app:tint="@color/blue" />
 
-
-
     <TextView
         android:id="@+id/tvAccountSettings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/baloobhai2_bold"
         android:text="Assignment"
         android:textColor="@color/black"
-        android:fontFamily="@font/baloobhai2_bold"
         android:textSize="25dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/imgHome"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.524"
         app:layout_constraintStart_toEndOf="@+id/imgBack"
         app:layout_constraintTop_toTopOf="parent" />
 

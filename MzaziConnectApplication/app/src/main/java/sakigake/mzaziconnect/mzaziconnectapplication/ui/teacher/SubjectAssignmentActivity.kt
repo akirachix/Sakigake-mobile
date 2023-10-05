@@ -49,7 +49,7 @@ class SubjectAssignmentActivity : AppCompatActivity() {
         assignViewModel.postsLiveData.observe(
             this,
             Observer { assignmentList ->
-                val postsAdapter = AssignAdapter(assignmentList?: emptyList())
+                val postsAdapter = AssignAdapter(assignmentList?: emptyList(), this)
                 binding.rvAssignmentTopics.layoutManager = LinearLayoutManager(this@SubjectAssignmentActivity)
                 binding.rvAssignmentTopics.adapter=postsAdapter
             })

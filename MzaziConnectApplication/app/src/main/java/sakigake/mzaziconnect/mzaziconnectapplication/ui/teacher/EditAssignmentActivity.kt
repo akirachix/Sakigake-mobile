@@ -18,7 +18,6 @@ import androidx.activity.viewModels
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import sakigake.mzaziconnect.mzaziconnectapplication.model.AssignmentData
 import sakigake.mzaziconnect.mzaziconnectapplication.model.AssignmentsData
 import sakigake.mzaziconnect.mzaziconnectapplication.model.ShopData
 import sakigake.mzaziconnect.mzaziconnectapplication.model.SubjectData
@@ -44,6 +43,9 @@ class EditAssignmentActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityEditAssignmentBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        subjectSpinner = binding.spinnerSubject
+        shopSpinner = binding.spinnercategories
+        postrepo=AssignmentRepo()
     }
 
     override fun onResume() {
@@ -55,20 +57,16 @@ class EditAssignmentActivity : AppCompatActivity() {
         }
 
         binding.btnPostAssignment.setOnClickListener {
-            if (validateEditAssignment()) {
-                postAsignment()
-                showToast()
-                val intent = Intent(this, AssignmentView::class.java)
-                startActivity(intent)
-            }
+            postAsignment()
+            showToast()
+            val intent = Intent(this, AssignmentView::class.java)
+            startActivity(intent)
         }
 
         binding.ivcancel.setOnClickListener {
             val intent = Intent(this, SubjectAssignmentActivity::class.java)
             startActivity(intent)
         }
-
-
         getCustomSubjectsData()
         getCustomShopData()
 
@@ -170,24 +168,6 @@ class EditAssignmentActivity : AppCompatActivity() {
         }
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

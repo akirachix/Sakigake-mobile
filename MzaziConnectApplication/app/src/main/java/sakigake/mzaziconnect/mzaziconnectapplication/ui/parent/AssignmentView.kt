@@ -12,115 +12,68 @@ import sakigake.mzaziconnect.mzaziconnectapplication.ui.ResourcesAdapter
 import sakigake.mzaziconnect.mzaziconnectapplication.ui.teacher.NavActivity
 
 class AssignmentView : AppCompatActivity() {
-    lateinit var  binding: ActivityAssignmentViewBinding
+    lateinit var binding: ActivityAssignmentViewBinding
     private lateinit var resourcesAdapter: ResourcesAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAssignmentViewBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val assignmentId = intent.getStringExtra("selected")
-        val topic = intent.getStringExtra("Assignment_topic")
-        val competency = intent.getStringExtra("Assignment_competency")
-        val task = intent.getStringExtra("Assignment_task")
-        val materials = intent.getStringExtra("Assignment_resources")
-        val subject = intent.getStringExtra("Assignment_subject")
-        val category = intent.getStringExtra("Assignment_category")
-        val due_date = intent.getStringExtra("Assignment_due_date")
+//        val assignmentId = intent.getIntExtra("selectedAssignmentId", 0)
+        val topic = intent.getStringArrayExtra("selectedAssignmentTopic") ?: emptyArray()
+        val competency = intent.getStringExtra("selectedAssignmentCompetency") ?: ""
+        val task = intent.getStringExtra("selectedAssignmentTask") ?: ""
+        val resources = intent.getStringArrayExtra("selectedAssignmentResources") ?: emptyArray()
+        val subject = intent.getIntExtra("selectedAssignmentSubject", 0)
+        val category = intent.getIntExtra("selectedAssignmentCategory", 0)
+        val due_date = intent.getStringExtra("selectedAssignmentDueDate") ?: ""
+
+
 
         populateAssignmentDetails(
-            assignmentId = 0, topic= arrayOf(),competency,task,  materials, subject = 0 , category = 0, due_date = ""
+//            assignmentId,
+            topic,
+            competency,
+            task,
+            resources,
+            subject,
+            category,
+            due_date
+
         )
 
-        binding.rvresources.setOnClickListener {
-            val intent = Intent(this@AssignmentView, Shops::class.java)
-            startActivity(intent)
-        }
-
-        val bundle: Bundle? = intent.extras
-        val selectedAssignmentId = bundle?.getString("selectedAssignmentId")
-        val recyclerView: RecyclerView = binding.rvresources
-
-        recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        val resources = listOf(
-            Resources("Panga"),
-            Resources("Dustcoat"),
-            Resources("Rabbit"),
-            Resources("Seedlings"),
-            Resources("Gumboots"),
-            Resources("Jembe"),
-            Resources("Basket"),
-            Resources("Trees")
-        )
-
-        resourcesAdapter = ResourcesAdapter(resources) { selectedResource ->
-            val intent = Intent(this@AssignmentView, ShopsActivity::class.java)
-            intent.putExtra("Name", selectedResource.name)
-            startActivity(intent)
-        }
-
-
-        binding.ivarrowfoward.setOnClickListener {
-            scrollRecyclerView(true)
-        }
-        binding.ivarrowback.setOnClickListener {
-            scrollRecyclerView(false)
-        }
-
-        binding.ivsend.setOnClickListener {
-            startActivity(Intent(this, CommentsActivity::class.java))
-        }
-        recyclerView.adapter = resourcesAdapter
     }
+
 
     override fun onResume() {
         super.onResume()
         binding.ivarrow2.setOnClickListener {
-            val intent = Intent(this, SubjectChoosenAssignments::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, SubjectChoosenAssignments::class.java))
         }
         binding.ivhome.setOnClickListener {
-            val intent =Intent(this, NavActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, NavActivity::class.java))
         }
-    }
-    private fun scrollRecyclerView(forward: Boolean) {
-        val layoutManager = binding.rvresources.layoutManager as LinearLayoutManager
-
-        val visibleItemCount = layoutManager.childCount
-        val totalItemCount = layoutManager.itemCount
-        val firstVisibleItemPosition = layoutManager.findFirstVisibleItemPosition()
-
-        val scrollAmount = if (forward) visibleItemCount else -visibleItemCount
-        val targetPosition = firstVisibleItemPosition + scrollAmount
-
-        if (targetPosition in 0 until totalItemCount) {
-            binding.rvresources.smoothScrollToPosition(targetPosition)
+        binding.tvresources.setOnClickListener {
+            startActivity(Intent(this, ShopsActivity::class.java))
         }
     }
 
     private fun populateAssignmentDetails(
-        assignmentId:Int,
-        topic:Array<String>,
-        competency:String?,
-        task:String?,
-        resources: String?,
-        subject:Int,
+//        assignmentId: Int,
+        topic: Array<String>,
+        competency: String,
+        task: String,
+        resources: Array<String>,
+        subject: Int,
         category: Int,
-        due_date:String
-
-    ){
-        binding.tvtopic.text = topic.joinToString(", ")
-        binding.tvresources.text = resources
-        binding.tvcompentency.text = competency ?: ""
-        binding.tvcategory.text = category.toString()
-        binding.tvtask.text= task
-        binding.tvsubject.text = subject.toString()
-        binding.tvduedate.text= due_date
-
+        due_date: String
+    ) {
+        binding.tvAgric.text = topic.joinToString(", ")
+        binding.tvresources.text = resources.joinToString(", ")
+        binding.tvPlantss.text = competency
+//        binding.tvcategory.text = category.toString()
+        binding.tvtask .text = task
+        binding.tv30th.text = due_date
     }
+
 }
-
-
-
-
