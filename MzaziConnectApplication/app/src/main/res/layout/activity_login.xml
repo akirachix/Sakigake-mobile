@@ -85,10 +85,11 @@
         android:id="@+id/tvaccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
         android:layout_marginTop="76dp"
+        android:layout_marginEnd="2dp"
         android:text="Don’t have an account yet?"
         android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/tvcontact"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnlogin" />
 
@@ -96,13 +97,12 @@
         android:id="@+id/tvcontact"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="76dp"
         android:text="Contact your school"
         android:textColor="@color/blue"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tvaccount"
-        app:layout_constraintTop_toBottomOf="@+id/btnlogin" />
+        app:layout_constraintTop_toTopOf="@+id/tvaccount" />
 
     <ProgressBar
         android:id="@+id/pbProgressBar"

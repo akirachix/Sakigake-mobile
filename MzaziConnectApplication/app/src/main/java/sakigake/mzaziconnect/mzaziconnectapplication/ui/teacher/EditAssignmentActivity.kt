@@ -59,7 +59,7 @@ class EditAssignmentActivity : AppCompatActivity() {
         binding.btnPostAssignment.setOnClickListener {
             postAsignment()
             showToast()
-            val intent = Intent(this, AssignmentView::class.java)
+            val intent = Intent(this, SubjectAssignmentActivity::class.java)
             startActivity(intent)
         }
 

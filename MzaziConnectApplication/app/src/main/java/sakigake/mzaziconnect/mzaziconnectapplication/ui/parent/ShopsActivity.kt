@@ -28,7 +28,7 @@ class ShopsActivity : AppCompatActivity() {
         recyclerView.adapter = shopsAdapter
 
         binding.imgBack.setOnClickListener {
-            val intent = Intent(this@ShopsActivity, AssignmentView::class.java)
+            val intent = Intent(this@ShopsActivity, SubjectChoosenAssignments::class.java)
             startActivity(intent)
         }
         binding.ivHome.setOnClickListener {

@@ -49,7 +49,7 @@ class AssignDetails2Activity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         binding.ivarrow2.setOnClickListener {
-            startActivity(Intent(this, SubjectChoosenAssignments::class.java))
+            startActivity(Intent(this, SubjectAssignmentActivity::class.java))
         }
         binding.ivhome.setOnClickListener {
             startActivity(Intent(this, NavActivity::class.java))

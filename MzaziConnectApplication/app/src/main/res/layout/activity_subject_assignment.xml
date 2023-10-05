@@ -49,8 +49,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvAssignmentTopics"
-        android:layout_width="387dp"
-        android:layout_height="674dp"
+        android:layout_width="365dp"
+        android:layout_height="572dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="8dp"
