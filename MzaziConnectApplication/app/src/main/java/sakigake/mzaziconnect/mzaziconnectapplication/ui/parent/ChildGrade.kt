@@ -67,7 +67,8 @@ class ChildGrade: AppCompatActivity () {
             Subjects(
                 "Music",
                 "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695493939/Frame_190_tgdtpr.png" ,
-                "Ms Florence"),
+                "Ms Florence"
+            ),
         )
 
         val subjectAdapter = SubjectAdapter(subjects) { selectedSubject ->

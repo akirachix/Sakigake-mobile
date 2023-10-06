@@ -9,7 +9,6 @@ import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.ActivityParentLoginBinding
 import sakigake.mzaziconnect.mzaziconnectapplication.model.ParentLoginRequest
-//import sakigake.mzaziconnect.mzaziconnectapplication.ui.ChildGrade
 import sakigake.mzaziconnect.mzaziconnectapplication.viewmodel.ParentLoginViewModel
 
 
@@ -22,14 +21,12 @@ class ParentLoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
     }
-
     override fun onResume() {
         super.onResume()
         setContentView(binding.root)
 
         binding.btnlogin.setOnClickListener {
             validateLogin()
-
         }
         parentLoginViewModel.errLiveData.observe(this, Observer { error ->
             binding.pbProgressBar1.visibility = View.GONE

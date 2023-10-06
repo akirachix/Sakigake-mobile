@@ -153,7 +153,7 @@ class EditAssignmentActivity : AppCompatActivity() {
 
 
         val assignmentData = AssignmentsData(
-            topic = arrayOf(topic),
+            topic = topic,
             task = task,
             category = selectedShop.id,
             competency= compentecy,

@@ -7,7 +7,7 @@ import sakigake.mzaziconnect.mzaziconnectapplication.database.Subjects
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.SubjectOverviewItemBinding
 
 class SubjectAdapter(private val subjects: List<Subjects>,  private val onItemClick: (Subjects) -> Unit) : RecyclerView.Adapter<SubjectAdapter.SubjectViewHolder>() {
-
+    
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SubjectViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = SubjectOverviewItemBinding.inflate(inflater, parent, false)

@@ -11,6 +11,7 @@ import sakigake.mzaziconnect.mzaziconnectapplication.model.SubjectData
 
 class SubjectAdapter(private val context: Context, private var subjectList:List<SubjectData>)
     : ArrayAdapter<SubjectData>(context, R.layout.subject_item, subjectList)
+
 {
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         val view: View = convertView ?: LayoutInflater.from(context).inflate(R.layout.subject_item, parent, false)
@@ -29,8 +30,6 @@ class SubjectAdapter(private val context: Context, private var subjectList:List<
     override fun getItemId(p0: Int): Long {
         return p0.toLong()
     }
-
-
 
 
 }

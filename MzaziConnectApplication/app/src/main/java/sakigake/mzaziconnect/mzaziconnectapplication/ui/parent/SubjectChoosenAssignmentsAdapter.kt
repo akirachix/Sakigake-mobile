@@ -19,7 +19,7 @@ class SubjectChoosenAssignmentsAdapter(private val topics: List<TopicsData>, pri
     override fun onBindViewHolder(holder: SubjectChoosenAssignmentViewHolder, position: Int) {
         val topic = topics[position]
         val binding = holder.binding
-        binding.tvTopicName.text = topic.topic.joinToString(",")
+        binding.tvTopicName.text = topic.topic.toString()
         binding.tvDueDate.text = topic.due_date
         binding.tvAssignmentDetails.text = topic.task
         holder.binding.cvAssignment.setOnClickListener {

@@ -1,6 +1,5 @@
 package sakigake.mzaziconnect.mzaziconnectapplication.ui.parent
 
-import SubjectAdapter
 import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
@@ -9,15 +8,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.activity.viewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import sakigake.mzaziconnect.mzaziconnectapplication.R
-import sakigake.mzaziconnect.mzaziconnectapplication.databinding.FragmentHomeBinding
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.FragmentParentsNavBinding
-import sakigake.mzaziconnect.mzaziconnectapplication.ui.teacher.SubjectAssignmentActivity
 import sakigake.mzaziconnect.mzaziconnectapplication.ui.teacher.SubjectsAdapter
 import sakigake.mzaziconnect.mzaziconnectapplication.viewmodel.SubjectsViewModel
 
@@ -26,7 +21,7 @@ class ParentsNavFragment : Fragment() {
     private val binding get() = _binding!!
     lateinit var myDialog: Dialog
     private val subjectsViewModel: SubjectsViewModel by viewModels()
-    private lateinit var subjectsAdapter: SubjectAdapter
+    private lateinit var subjectsAdapter: SubjectsAdapter
 
 
     override fun onCreateView(
@@ -42,7 +37,7 @@ class ParentsNavFragment : Fragment() {
         recyclerView.layoutManager = layoutManager
 
 
-        subjectsAdapter = SubjectAdapter(emptyList() ) {selectedSubject ->
+        subjectsAdapter = SubjectsAdapter(emptyList() ) {selectedSubject ->
             val intent = Intent(requireContext(), SubjectChoosenAssignments::class.java)
             intent.putExtra("Subject Name", selectedSubject.subjectName)
             intent.putExtra("SubjectTeacherName", selectedSubject.teacher)
@@ -63,7 +58,7 @@ class ParentsNavFragment : Fragment() {
 
     fun fetchParentSubject(){
         subjectsViewModel.fetchSubjects()
-        subjectsViewModel.subjectsLiveData.observe(this, Observer { subjectsList ->
+        subjectsViewModel.subjectsLiveData.observe(viewLifecycleOwner, Observer { subjectsList ->
             subjectsAdapter.updateSubjects(subjectsList ?: emptyList())
 //            Toast.makeText(
 //                baseContext,
@@ -71,7 +66,7 @@ class ParentsNavFragment : Fragment() {
 //                Toast.LENGTH_LONG
 //            ).show()
         })
-        subjectsViewModel.errorLiveData.observe(this, Observer { error ->
+        subjectsViewModel.errorLiveData.observe(viewLifecycleOwner, Observer { error ->
             Toast.makeText(requireContext(), error, Toast.LENGTH_LONG).show()
         })
     }

@@ -1,7 +1,7 @@
 package sakigake.mzaziconnect.mzaziconnectapplication.model
 
 data class AssignmentsData (
-    var topic:Array<String>,
+    var topic:String,
     var competency:String,
     var task:String,
     var resources:Array<String>,

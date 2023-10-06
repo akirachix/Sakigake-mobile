@@ -22,13 +22,12 @@ class AssignAdapter (var assignList: List<AssignmentsData>, private val context:
     override fun onBindViewHolder(holder: AssignViewHolder, position: Int) {
         var currentassign=assignList[position]
         val binding = holder.binding
-        binding.tvTopicName.text= currentassign.topic.toString()
-        binding.tvDueDate.text = currentassign.due_date.toString()
+        binding.tvTopicName.text= currentassign.topic
+//        binding.tvDueDate.text = currentassign.due_date.toString()
         binding.tvAssignmentDetails.text = currentassign.task.toString()
-        binding.tvTopicName.text = currentassign.topic.toList().toString()
         holder.binding.cvAssignment.setOnClickListener {
             val intent = Intent(context, AssignDetails2Activity::class.java)
-            intent.putExtra("selectedAssignmentTask", currentassign.task)
+            intent.putExtra("selectedAssignmentTask", currentassign.task.toString())
             intent.putExtra("selectedAssignmentCategory", currentassign.category)
             intent.putExtra("selectedAssignmentCompetency", currentassign.competency)
             intent.putExtra("selectedAssignmentSubject", currentassign.subject)
