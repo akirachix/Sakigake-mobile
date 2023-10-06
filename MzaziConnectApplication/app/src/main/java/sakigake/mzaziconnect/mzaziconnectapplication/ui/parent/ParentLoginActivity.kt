@@ -9,6 +9,7 @@ import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.ActivityParentLoginBinding
 import sakigake.mzaziconnect.mzaziconnectapplication.model.ParentLoginRequest
+//import sakigake.mzaziconnect.mzaziconnectapplication.ui.ChildGrade
 import sakigake.mzaziconnect.mzaziconnectapplication.viewmodel.ParentLoginViewModel
 
 

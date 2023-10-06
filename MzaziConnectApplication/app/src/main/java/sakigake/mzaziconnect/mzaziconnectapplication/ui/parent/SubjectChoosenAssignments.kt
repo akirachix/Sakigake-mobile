@@ -8,6 +8,7 @@ import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.ActivitySubjectChoosenAssignmentsBinding
+
 class SubjectChoosenAssignments : AppCompatActivity() {
     lateinit var binding: ActivitySubjectChoosenAssignmentsBinding
     private val assignViewModel: TopicViewModel by viewModels()
@@ -39,9 +40,6 @@ class SubjectChoosenAssignments : AppCompatActivity() {
             binding.rvAssignmentTopics.adapter = SubjectChoosenAssignmentsAdapter(productsList, this)
         })
     }
-
-
-
 }
 
 

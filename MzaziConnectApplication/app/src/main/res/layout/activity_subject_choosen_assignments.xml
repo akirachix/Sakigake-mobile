@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/baloobhai2_bold"
-        android:text="Assignment"
+        android:text="Assignments"
         android:textColor="@color/black"
         android:textSize="25dp"
         android:textStyle="bold"

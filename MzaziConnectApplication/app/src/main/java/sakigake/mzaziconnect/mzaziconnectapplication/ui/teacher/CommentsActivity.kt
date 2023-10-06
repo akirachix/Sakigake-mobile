@@ -47,11 +47,11 @@ class CommentsActivity : AppCompatActivity() {
 
         commentsViewModel.commentsLiveData.observe(this) { commentsList ->
             commentsAdapter.updateMessages(commentsList)
-            Toast.makeText(
-                baseContext,
-                "Found ${commentsList.size} comments",
-                Toast.LENGTH_LONG
-            ).show()
+//            Toast.makeText(
+//                baseContext,
+//                "Found ${commentsList.size} comments",
+//                Toast.LENGTH_LONG
+//            ).show()
         }
 
         commentsViewModel.errorLiveData.observe(this) { error ->
