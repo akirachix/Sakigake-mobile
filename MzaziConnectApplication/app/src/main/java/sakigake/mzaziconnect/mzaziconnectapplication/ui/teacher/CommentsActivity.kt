@@ -32,15 +32,11 @@ class CommentsActivity : AppCompatActivity() {
         binding.ivbackmssg.setOnClickListener {
             startActivity(Intent(this, AssignmentView::class.java))
         }
-
         binding.ivsend.setOnClickListener {
             startActivity(Intent(this@CommentsActivity, CommentsActivity::class.java ))
         }
-
         binding.ivhome.setOnClickListener {
             startActivity(Intent(this, NavActivity::class.java))
         }
     }
-
-
 }

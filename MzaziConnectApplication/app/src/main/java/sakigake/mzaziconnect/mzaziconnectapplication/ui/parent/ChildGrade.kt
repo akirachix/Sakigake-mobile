@@ -30,7 +30,7 @@ class ChildGrade : AppCompatActivity() {
         subjectsAdapter = SubjectAdapter(emptyList() ) {selectedSubject ->
             val intent = Intent(this, SubjectChoosenAssignments::class.java)
             intent.putExtra("Subject Name", selectedSubject.subjectName)
-            intent.putExtra("SubjectTeacherName", selectedSubject.teacher)
+            intent.putExtra("SubjectTeacherName", selectedSubject.description)
             startActivity(intent)
         }
         recyclerView.adapter = subjectsAdapter
@@ -45,11 +45,11 @@ class ChildGrade : AppCompatActivity() {
         subjectsViewModel.fetchSubjects()
         subjectsViewModel.subjectsLiveData.observe(this, Observer { subjectsList ->
             subjectsAdapter.updateSubjects(subjectsList ?: emptyList())
-            Toast.makeText(
-                baseContext,
-                "Found ${subjectsList?.size} subjects",
-                Toast.LENGTH_LONG
-            ).show()
+//            Toast.makeText(
+//                baseContext,
+//                "Found ${subjectsList?.size} subjects",
+//                Toast.LENGTH_LONG
+//            ).show()
         })
         subjectsViewModel.errorLiveData.observe(this, Observer { error ->
             Toast.makeText(baseContext, error, Toast.LENGTH_LONG).show()

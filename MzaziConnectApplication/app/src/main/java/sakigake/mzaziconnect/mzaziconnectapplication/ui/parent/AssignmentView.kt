@@ -42,6 +42,44 @@ class AssignmentView : AppCompatActivity() {
 
         )
 
+        binding.rvresources.setOnClickListener {
+            val intent = Intent(this@AssignmentView, Shops::class.java)
+            startActivity(intent)
+        }
+
+        val recyclerView: RecyclerView = binding.rvresources
+        recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        val resources1 = listOf(
+            Resources("Panga"),
+            Resources("Dustcoat"),
+            Resources("Rabbit"),
+            Resources("Seedlings"),
+            Resources("Gumboots"),
+            Resources("Jembe"),
+            Resources("Basket"),
+            Resources("Trees")
+        )
+
+        resourcesAdapter = ResourcesAdapter(resources1) { selectedResource ->
+
+            val intent = Intent(this@AssignmentView, ShopsActivity::class.java)
+            intent.putExtra("Name", selectedResource.name)
+            startActivity(intent)
+        }
+
+        binding.ivarrowfoward.setOnClickListener {
+            scrollRecyclerView(true)
+        }
+        binding.ivarrowback.setOnClickListener {
+            scrollRecyclerView(false)
+        }
+
+        binding.ivsend.setOnClickListener {
+            startActivity(Intent(this, CommentsActivity::class.java))
+        }
+
+        recyclerView.adapter = resourcesAdapter
+
     }
 
 
@@ -53,9 +91,9 @@ class AssignmentView : AppCompatActivity() {
         binding.ivhome.setOnClickListener {
             startActivity(Intent(this, NavActivity::class.java))
         }
-        binding.tvresources.setOnClickListener {
-            startActivity(Intent(this, ShopsActivity::class.java))
-        }
+//        binding..setOnClickListener {
+//            startActivity(Intent(this, ShopsActivity::class.java))
+//        }
     }
 
     private fun populateAssignmentDetails(
@@ -69,11 +107,23 @@ class AssignmentView : AppCompatActivity() {
         due_date: String
     ) {
         binding.tvAgric.text = topic.joinToString(", ")
-        binding.tvresources.text = resources.joinToString(", ")
         binding.tvPlantss.text = competency
-//        binding.tvcategory.text = category.toString()
-        binding.tvtask .text = task
+        binding.tvTask .text = task
         binding.tv30th.text = due_date
     }
 
+    private fun scrollRecyclerView(forward: Boolean) {
+        val layoutManager = binding.rvresources.layoutManager as LinearLayoutManager
+
+        val visibleItemCount = layoutManager.childCount
+        val totalItemCount = layoutManager.itemCount
+        val firstVisibleItemPosition = layoutManager.findFirstVisibleItemPosition()
+
+        val scrollAmount = if (forward) visibleItemCount else -visibleItemCount
+        val targetPosition = firstVisibleItemPosition + scrollAmount
+
+        if (targetPosition >= 0 && targetPosition < totalItemCount) {
+            binding.rvresources.smoothScrollToPosition(targetPosition)
+        }
+    }
 }
