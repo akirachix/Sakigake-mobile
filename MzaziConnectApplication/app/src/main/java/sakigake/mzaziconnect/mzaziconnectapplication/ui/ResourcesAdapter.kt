@@ -3,11 +3,10 @@ package sakigake.mzaziconnect.mzaziconnectapplication.ui
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import sakigake.mzaziconnect.mzaziconnectapplication.database.AssignmentDataClass
 import sakigake.mzaziconnect.mzaziconnectapplication.database.Resources
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.ResourceItemBinding
 
-class ResourcesAdapter (val resources:List<Resources>, var onItemClick: (Resources) -> Unit): RecyclerView.Adapter<ResourceViewHolder>() {
+class ResourcesAdapter(val resources: List<Resources>, var onItemClick: (Resources) -> Unit): RecyclerView.Adapter<ResourceViewHolder>() {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -35,3 +34,4 @@ class ResourceViewHolder(val binding: ResourceItemBinding): RecyclerView.ViewHol
         binding.btnResources.text = resources.name
     }
 }
+

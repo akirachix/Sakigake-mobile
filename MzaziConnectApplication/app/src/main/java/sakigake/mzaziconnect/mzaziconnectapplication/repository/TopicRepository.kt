@@ -11,8 +11,6 @@ class TopicRepository {
     suspend fun getAssignments(): Response<List<TopicsData>> {
         return withContext(Dispatchers.IO){
             apiClient.getAssignments()
-
         }
-
     }
 }
