@@ -25,6 +25,7 @@
         android:layout_marginStart="88dp"
         android:layout_marginTop="16dp"
         android:text="Assignments"
+        android:fontFamily="@font/baloobhai2_bold"
         android:textColor="@color/black"
         android:textSize="25dp"
         android:textStyle="bold"

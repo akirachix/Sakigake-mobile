@@ -6,6 +6,7 @@
     android:padding="5dp"
     android:orientation="vertical"
     android:layout_gravity="center">
+
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

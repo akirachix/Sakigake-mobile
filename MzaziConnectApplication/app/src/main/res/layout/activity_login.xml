@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.teacher.LoginActivity">
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/tvlogin"
@@ -25,14 +24,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="120dp"
         android:layout_marginTop="24dp"
-
         android:text="Welcome To Your Account!"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvlogin" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilname"
+        android:id="@+id/tilPhoneNumber"
         android:layout_width="355dp"
         android:layout_height="61dp"
         android:layout_marginStart="32dp"
@@ -43,7 +41,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvwelcome">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etname"
+            android:id="@+id/etPhoneNumber"
             android:inputType="phone"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -51,7 +49,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilpassword"
+        android:id="@+id/tilPassword"
         android:layout_width="355dp"
         android:layout_height="61dp"
         android:layout_marginStart="32dp"
@@ -60,14 +58,14 @@
         app:passwordToggleEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tilname">
+        app:layout_constraintTop_toBottomOf="@+id/tilPhoneNumber">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etpassword"
             android:layout_width="match_parent"
-            android:inputType="textPassword"
             android:layout_height="wrap_content"
-            android:hint="Password" />
+            android:hint="Password"
+            android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -81,16 +79,17 @@
         android:text="Log in"
         app:cornerRadius="5dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tilpassword" />
+        app:layout_constraintTop_toBottomOf="@+id/tilPassword" />
 
     <TextView
         android:id="@+id/tvaccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
         android:layout_marginTop="76dp"
+        android:layout_marginEnd="2dp"
         android:text="Don’t have an account yet?"
         android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/tvcontact"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnlogin" />
 
@@ -98,11 +97,21 @@
         android:id="@+id/tvcontact"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="76dp"
         android:text="Contact your school"
         android:textColor="@color/blue"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tvaccount"
-        app:layout_constraintTop_toBottomOf="@+id/btnlogin" />
+        app:layout_constraintTop_toTopOf="@+id/tvaccount" />
+
+    <ProgressBar
+        android:id="@+id/pbProgressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

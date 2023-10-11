@@ -7,6 +7,8 @@ import android.os.Bundle
 import androidx.recyclerview.widget.GridLayoutManager
 import sakigake.mzaziconnect.mzaziconnectapplication.database.Subjects
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.ActivityChildGradeBinding
+import sakigake.mzaziconnect.mzaziconnectapplication.ui.parent.SubjectAssignmentsActitvity
+import sakigake.mzaziconnect.mzaziconnectapplication.ui.parent.SubjectChoosenAssignments
 
 
 class ChildGrade: AppCompatActivity () {
@@ -17,6 +19,11 @@ class ChildGrade: AppCompatActivity () {
         setContentView(binding.root)
 
         val subjects = listOf(
+            Subjects(
+                "Agriculture",
+                "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695151509/Frame_185_1_c2jysn.jpg",
+                "Mr Kimamo"
+            ),
             Subjects(
                 "English",
                 "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695151509/Frame_180_1_kjclpx.jpg" ,
@@ -32,12 +39,6 @@ class ChildGrade: AppCompatActivity () {
                 "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695151508/Frame_186_1_ldcvij.jpg",
                 "Mr Pepeo"
             ),
-            Subjects(
-                "Agriculture",
-                "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695151509/Frame_185_1_c2jysn.jpg",
-                "Mr Kimamo"
-            ),
-
             Subjects(
                 "Kiswahili",
                 "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695151509/Frame_182_hgbhpy.jpg",
@@ -66,8 +67,9 @@ class ChildGrade: AppCompatActivity () {
             Subjects(
                 "Music",
                 "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695493939/Frame_190_tgdtpr.png" ,
-                "Ms Florence"),
-            )
+                "Ms Florence"
+            ),
+        )
 
         val subjectAdapter = SubjectAdapter(subjects) { selectedSubject ->
             val intent = Intent(this, SubjectChoosenAssignments::class.java)
@@ -84,15 +86,15 @@ class ChildGrade: AppCompatActivity () {
 
     override fun onResume() {
         super.onResume()
-        binding.imgBack.setOnClickListener {
-            val intent = Intent(this, ViewChild::class.java)
-            startActivity(intent)
-        }
+//        binding.imgBack.setOnClickListener {
+//            val intent = Intent(this, ViewChild::class.java)
+//            startActivity(intent)
+//        }
         binding.btnViewAssignments.setOnClickListener {
-            val intent = Intent(this, SubjectAssignmentsActitvity::class.java)
+            val intent = Intent(this, SubjectChoosenAssignments::class.java)
             startActivity(intent)
         }
-//        binding..setOnClickListener{
+//        binding.imgMore.setOnClickListener{
 //            startActivity(Intent(this@ChildGrade, AccountSettingsActivity::class.java))
 //        }
     }

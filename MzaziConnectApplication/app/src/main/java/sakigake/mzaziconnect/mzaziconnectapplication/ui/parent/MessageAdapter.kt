@@ -7,9 +7,14 @@ import com.squareup.picasso.Picasso
 import jp.wasabeef.picasso.transformations.CropCircleTransformation
 import sakigake.mzaziconnect.mzaziconnectapplication.R
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.CommentsListItemBinding
+import sakigake.mzaziconnect.mzaziconnectapplication.model.Comments
 import sakigake.mzaziconnect.mzaziconnectapplication.model.MessageDetails
 
-class MessageAdapter (val messages: List<MessageDetails>) : RecyclerView.Adapter<MessageAdapter.MessageViewHolder>() {
+class MessageAdapter (var messages: List<Comments>) : RecyclerView.Adapter<MessageAdapter.MessageViewHolder>() {
+    fun updateMessages(newMessages: List<Comments>) {
+        messages = newMessages
+        notifyDataSetChanged()
+    }
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -32,14 +37,16 @@ class MessageAdapter (val messages: List<MessageDetails>) : RecyclerView.Adapter
 
     class MessageViewHolder(val binding: CommentsListItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(message: MessageDetails) {
-            binding.tvmessengerName.text = message.name
-            binding.tvmessage.text = message.textMessage
-            Picasso.get()
-                .load(message.nameImageUrl)
-                .error(R.drawable.greenbg)
-                .transform(CropCircleTransformation())
-                .into(binding.imgMessagerImage)
+        fun bind(message: Comments) {
+            binding.tvmessengerName.text = message.assignment
+            binding.tvmessage.text = message.content
+            binding.tvmessengerName.text = message.assignment
+
+//            Picasso.get()
+//                .load(message.nameImageUrl)
+//                .error(R.drawable.greenbg)
+//                .transform(CropCircleTransformation())
+//                .into(binding.imgMessagerImage)
         }
 
     }

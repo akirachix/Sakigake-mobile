@@ -4,21 +4,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    android:layout_width="330dp"
     android:layout_height="180dp"
     android:layout_marginTop="20dp"
-    android:layout_marginStart="16dp"
-    android:layout_marginEnd="16dp"
+    android:layout_marginStart="36dp"
+    android:layout_marginEnd="36dp"
     android:orientation="vertical"
     android:backgroundTint="@color/grey"
     app:cardCornerRadius="20dp"
+    android:id="@+id/cvAssignment"
     >
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="10dp"
         android:layout_marginEnd="20dp">
 
 
@@ -26,7 +27,8 @@
             android:id="@+id/tvTopicName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="English      - "
+            android:fontFamily="@font/baloobhai2_medium"
+            android:text="@string/Subject"
             android:textColor="@color/blue"
             android:textSize="25sp"
             android:textStyle="bold"
@@ -41,8 +43,8 @@
             android:id="@+id/imgCalendar"
             android:layout_width="25dp"
             android:layout_height="20dp"
-            android:layout_marginTop="8dp"
             android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:src="@drawable/baseline_calendar_today_24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.004"
@@ -50,49 +52,68 @@
             app:layout_constraintTop_toTopOf="@+id/tvTopicName"
             app:tint="@color/blue" />
 
+
         <TextView
             android:id="@+id/tvDueDate"
-            android:layout_width="306dp"
-            android:layout_height="48dp"
+            android:layout_width="154dp"
+            android:layout_height="18dp"
             android:layout_marginStart="9dp"
-            android:textColor="@color/blacklight"
+            android:layout_marginEnd="30dp"
+            android:fontFamily="@font/baloobhai2_medium"
             android:text="30th August"
+            android:textColor="@color/blacklight"
             android:textSize="15sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/imgCalendar"
-            app:layout_constraintTop_toTopOf="@+id/imgCalendar"
-            app:layout_constraintVertical_bias="0.0" />
-
+            app:layout_constraintTop_toTopOf="@+id/imgCalendar" />
 
         <TextView
             android:id="@+id/tvAssignmentDetails"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="279dp"
+            android:layout_height="70dp"
             android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="29dp"
+            android:fontFamily="@font/jost_regular"
             android:text="In this assignment, you will explore the world of plants and learn about their basic needs for growth."
             android:textColor="@color/blacklight"
             android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.291"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.504" />
+            app:layout_constraintVertical_bias="0.645" />
 
         <TextView
             android:id="@+id/tvPostedAtTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
+            android:fontFamily="@font/baloobhai2_medium"
             android:text="Posted on 12PM, 16 Aug 2023"
             android:textSize="10sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.915"
+            app:layout_constraintHorizontal_bias="0.782"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.626" />
+            app:layout_constraintVertical_bias="0.84" />
+
+        <TextView
+            android:id="@+id/tvNewLabel"
+            android:layout_width="225dp"
+            android:layout_height="20dp"
+            android:text="New Assignment"
+            android:textSize="12sp"
+            android:visibility="gone"
+            android:layout_marginStart="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/tvTopicName"
+            app:layout_constraintEnd_toEndOf="@+id/tvTopicName"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,11 +17,11 @@ class TopicsAdapter (val topics: List<TopicsData>, val onItemClick:(TopicsData)-
 
     override fun onBindViewHolder(holder: SubjectChoosenAssignmentViewHolder, position: Int) {
         val topics = topics[position]
-        holder.bind(topics)
-//        val image = holder.binding.ivassigndots
-        holder.itemView.setOnClickListener {
-        onItemClick(topics)
-        }
+//        holder.bind(topics)
+////        val image = holder.binding.ivassigndots
+//        holder.itemView.setOnClickListener {
+//        onItemClick(topics)
+//        }
 
     }
 
@@ -29,13 +29,13 @@ class TopicsAdapter (val topics: List<TopicsData>, val onItemClick:(TopicsData)-
 
     class SubjectChoosenAssignmentViewHolder(val binding: TopicItemBinding) : RecyclerView.ViewHolder(binding.root)
     {
-        fun bind(topics: TopicsData) {
-            binding.tvTopicName.text = topics.topicName
-            binding.tvAssignmentDetails.text = topics.assignmentDetails
-            binding.tvDueDate.text = topics.dueDate
-            binding.tvPostedAtTime.text = topics.postedAt
-
-        }
+//        fun bind(topics: TopicsData) {
+//            binding.tvTopicName.text = topics.topicName
+//            binding.tvAssignmentDetails.text = topics.assignmentDetails
+//            binding.tvDueDate.text = topics.dueDate
+//            binding.tvPostedAtTime.text = topics.postedAt
+//
+//        }
 
     }
 

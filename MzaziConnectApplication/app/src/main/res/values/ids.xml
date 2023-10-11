@@ -10,4 +10,9 @@
     <item name="constraintLayout" type="id" />
     <item name="tvMessage" type="id" />
     <item name="ivsend" type="id" />
+    <item name="pbProgressBar1" type="id" />
+    <item name="tilphonenum" type="id" />
+    <item name="etPassword" type="id" />
+    <item name="tvplogin" type="id" />
+    <item name="tvNewAssignments" type="id" />
 </resources>

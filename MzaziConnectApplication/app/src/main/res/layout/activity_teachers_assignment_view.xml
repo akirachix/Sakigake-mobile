@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.teacher.TeachersAssignmentView">
+
+    <TextView
+        android:id="@+id/tvAgric"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="106dp"
+        android:layout_marginTop="16dp"
+        android:text="Agriculture"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/ivarrow2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivhome"
+        android:layout_width="33dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baseline_home_24" />
+
+
+
+    <TextView
+        android:id="@+id/tvDuedate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="28dp"
+        android:text="Due Date  :"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAgric" />
+
+    <TextView
+        android:id="@+id/tv30th"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="28dp"
+        android:textSize="15dp"
+        android:text="30th August"
+        app:layout_constraintStart_toEndOf="@+id/tvDuedate"
+        app:layout_constraintTop_toBottomOf="@+id/tvAgric" />
+
+    <TextView
+        android:id="@+id/tvPlantss"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Plants"
+        android:textColor="@color/blue"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDuedate" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+
+        android:background="@color/blue"
+        android:backgroundTint="@color/grey"
+        app:layout_constraintTop_toBottomOf="@+id/tvPlantss"
+        tools:layout_editor_absoluteX="20dp">
+
+        <LinearLayout
+            android:layout_width="369dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tvid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="id"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvtopic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="topic" />
+
+            <TextView
+                android:id="@+id/tvcompentency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="competency" />
+
+            <TextView
+                android:id="@+id/tvtask"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="task"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvresources"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="resources" />
+
+            <TextView
+                android:id="@+id/tvsubject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="subject" />
+
+
+            <TextView
+                android:id="@+id/tvcategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="category" />
+
+            <TextView
+                android:id="@+id/tvduedate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="duedate" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <ImageView
+        android:id="@+id/ivarrow2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baseline_arrow_back_ios_24"
+        app:tint="@color/blue" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

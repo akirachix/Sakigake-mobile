@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/english_image" />
+        app:srcCompat="@drawable/kiswahili_image" />
 
     <TextView
         android:id="@+id/tvSubjectName"
@@ -26,6 +26,7 @@
         android:text="English"
         android:textColor="@color/white"
         android:textSize="20sp"
+        android:fontFamily="@font/baloobhai2_bold"
         app:layout_constraintBottom_toTopOf="@+id/imgSubject"
         app:layout_constraintEnd_toEndOf="@+id/imgSubject"
         app:layout_constraintHorizontal_bias="0.13"
@@ -38,6 +39,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ms Joan Njiru"
+        android:fontFamily="@font/jost_regular"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/imgSubject"
         app:layout_constraintEnd_toEndOf="@+id/imgSubject"

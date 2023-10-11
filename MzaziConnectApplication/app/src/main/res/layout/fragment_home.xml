@@ -8,34 +8,26 @@
     tools:context=".ui.teacher.HomeFragment">
 
 
-    <ImageView
-        android:id="@+id/ivbackset"
-        android:layout_width="31dp"
-        android:layout_height="31dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/backarrow" />
-
     <TextView
         android:id="@+id/tvschool2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/baloobhai2_bold"
         android:text="Lake Wood School Utawala"
         android:textSize="23sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/ivbackset"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvgrade3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="28dp"
+        android:fontFamily="@font/baloobhai2_semibold"
         android:text="My classes"
         android:textColor="@color/blue"
         android:textSize="23dp"
@@ -43,14 +35,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvschool2" />
 
-
     <Button
         android:id="@+id/btnassign"
-        android:layout_width="192dp"
+        android:layout_width="180dp"
         android:layout_height="44dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="36dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="20dp"
         android:backgroundTint="@color/blue"
+        android:fontFamily="@font/jost_regular"
         android:text="View all assignments"
         android:textColor="@color/white"
         app:cornerRadius="5dp"
@@ -61,8 +53,9 @@
         android:id="@+id/rvsub"
         android:layout_width="375dp"
         android:layout_height="678dp"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnassign"
         tools:listitem="@layout/subject" />

@@ -6,7 +6,8 @@
     android:layout_height="130dp"
     android:layout_margin="6dp"
     tools:layout_editor_absoluteX="1dp"
-    tools:layout_editor_absoluteY="1dp">
+    tools:layout_editor_absoluteY="1dp"
+    android:id="@+id/cvComments">
 
     <ImageView
         android:id="@+id/imgMessagerImage"
@@ -34,6 +35,7 @@
             android:text="Nabachwechwe"
             android:layout_marginStart="10dp"
             android:textSize="18sp"
+            android:fontFamily="@font/baloobhai2_medium"
             android:textStyle="bold"
             android:textColor="@color/blue"
             app:layout_constraintStart_toStartOf="parent"
@@ -45,6 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
             android:layout_marginStart="10dp"
+            android:fontFamily="@font/jost_regular"
             android:text="I love all the comments"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvmessengerName" />
@@ -56,6 +59,7 @@
             android:layout_gravity="right"
             android:layout_marginTop="80dp"
             android:layout_marginEnd="20dp"
+            android:fontFamily="@font/baloobhai2_medium"
             android:layout_marginBottom="6dp"
             android:text="11:00, 16 Aug 2023"
             android:textColor="@color/darkgrey"
