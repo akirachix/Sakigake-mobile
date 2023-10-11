@@ -32,7 +32,7 @@ class ShopsActivity : AppCompatActivity() {
             startActivity(intent)
         }
         binding.ivHome.setOnClickListener {
-            val intent = Intent(this@ShopsActivity, ChildGrade::class.java)
+            val intent = Intent(this@ShopsActivity, SubjectChoosenAssignments::class.java)
             startActivity(intent)
         }
 

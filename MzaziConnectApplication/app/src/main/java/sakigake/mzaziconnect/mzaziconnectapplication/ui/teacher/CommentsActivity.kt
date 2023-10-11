@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.ActivityCommentsBinding
 import sakigake.mzaziconnect.mzaziconnectapplication.ui.parent.AssignmentView
 import sakigake.mzaziconnect.mzaziconnectapplication.ui.parent.MessageAdapter
+import sakigake.mzaziconnect.mzaziconnectapplication.ui.parent.SubjectChoosenAssignments
 import sakigake.mzaziconnect.mzaziconnectapplication.viewmodel.CommentsViewModel
 
 class CommentsActivity : AppCompatActivity() {
@@ -29,7 +30,7 @@ class CommentsActivity : AppCompatActivity() {
         recyclerView.adapter = commentsAdapter
 
         binding.ivbackmssg.setOnClickListener {
-            startActivity(Intent(this, AssignmentView::class.java))
+            startActivity(Intent(this, SubjectChoosenAssignments::class.java))
         }
 
         binding.ivsend.setOnClickListener {
@@ -47,11 +48,11 @@ class CommentsActivity : AppCompatActivity() {
 
         commentsViewModel.commentsLiveData.observe(this) { commentsList ->
             commentsAdapter.updateMessages(commentsList)
-            Toast.makeText(
-                baseContext,
-                "Found ${commentsList.size} comments",
-                Toast.LENGTH_LONG
-            ).show()
+//            Toast.makeText(
+//                baseContext,
+//                "Found ${commentsList.size} comments",
+//                Toast.LENGTH_LONG
+//            ).show()
         }
 
         commentsViewModel.errorLiveData.observe(this) { error ->

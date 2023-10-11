@@ -7,12 +7,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import sakigake.mzaziconnect.mzaziconnectapplication.database.Resources
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.ActivityAssignDetails2Binding
-import sakigake.mzaziconnect.mzaziconnectapplication.databinding.ActivityAssignmentViewBinding
 import sakigake.mzaziconnect.mzaziconnectapplication.model.Shops
 import sakigake.mzaziconnect.mzaziconnectapplication.ui.ResourcesAdapter
-//import sakigake.mzaziconnect.mzaziconnectapplication.ui.parent.Shops
 import sakigake.mzaziconnect.mzaziconnectapplication.ui.parent.ShopsActivity
-import sakigake.mzaziconnect.mzaziconnectapplication.ui.parent.SubjectChoosenAssignments
 
 class AssignDetails2Activity : AppCompatActivity() {
     lateinit var binding:ActivityAssignDetails2Binding
@@ -23,7 +20,6 @@ class AssignDetails2Activity : AppCompatActivity() {
         binding = ActivityAssignDetails2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//        val assignmentId = intent.getIntExtra("selectedAssignmentId", 0)
         val topic = intent.getStringArrayExtra("selectedAssignmentTopic") ?: emptyArray()
         val competency = intent.getStringExtra("selectedAssignmentCompetency") ?: ""
         val task = intent.getStringExtra("selectedAssignmentTask") ?: ""
@@ -35,7 +31,6 @@ class AssignDetails2Activity : AppCompatActivity() {
 
 
         populateAssignmentDetails(
-//            assignmentId,
             topic,
             competency,
             task,
@@ -45,29 +40,14 @@ class AssignDetails2Activity : AppCompatActivity() {
             due_date
 
         )
-//        binding.rvresources.setOnClickListener {
-//            val intent = Intent(this@AssignDetails2Activity, Shops::class.java)
-//            startActivity(intent)
-//        }
+
+        binding.rvresources.setOnClickListener {
+            val intent = Intent(this@AssignDetails2Activity, Shops::class.java)
+            startActivity(intent)
+        }
 
         val recyclerView: RecyclerView = binding.rvresources
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        val resources1 = listOf(
-            Resources("Panga"),
-            Resources("Dustcoat"),
-            Resources("Rabbit"),
-            Resources("Seedlings"),
-            Resources("Gumboots"),
-            Resources("Jembe"),
-            Resources("Basket"),
-            Resources("Trees")
-        )
-
-        resourcesAdapter = ResourcesAdapter(resources1) { selectedResource ->
-//            val intent = Intent(this@AssignDetails2Activity, ShopsActivity::class.java)
-            intent.putExtra("Name", selectedResource.name)
-            startActivity(intent)
-        }
 
         binding.ivarrowfoward.setOnClickListener {
             scrollRecyclerView(true)
@@ -94,7 +74,6 @@ class AssignDetails2Activity : AppCompatActivity() {
     }
 
     private fun populateAssignmentDetails(
-//        assignmentId: Int,
         topic: Array<String>,
         competency: String,
         task: String,
@@ -103,12 +82,17 @@ class AssignDetails2Activity : AppCompatActivity() {
         category: Int,
         due_date: String
     ) {
-        binding.tvAgric.text = topic.joinToString(", ")
-//        binding.tvresources.text = resources.joinToString(", ")
         binding.tvPlantss.text = competency
-//        binding.tvcategory.text = category.toString()
         binding.tvtask .text = task
         binding.tv30th.text = due_date
+
+        binding.rvresources.layoutManager = LinearLayoutManager(this)
+
+        val resourcesList = resources.map { Resources(it) }
+        resourcesAdapter = ResourcesAdapter(resourcesList) { selectedResource ->
+            intent.putExtra("Name", selectedResource.name)
+            startActivity(intent)
+        }
     }
 
     private fun scrollRecyclerView(forward: Boolean) {
