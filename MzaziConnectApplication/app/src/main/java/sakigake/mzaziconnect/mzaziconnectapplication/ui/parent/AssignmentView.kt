@@ -106,7 +106,8 @@ class AssignmentView : AppCompatActivity() {
         category: Int,
         due_date: String
     ) {
-        binding.tvAgric.text = topic.joinToString(", ")
+//        binding.tvAgric.text = topic.joinToString(", ")
+//        binding.tvAgric.text = topic.toString()
         binding.tvPlantss.text = competency
         binding.tvTask .text = task
         binding.tv30th.text = due_date

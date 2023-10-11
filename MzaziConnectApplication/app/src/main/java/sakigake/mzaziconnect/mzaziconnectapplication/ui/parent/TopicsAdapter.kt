@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.TopicItemBinding
 import sakigake.mzaziconnect.mzaziconnectapplication.model.TopicsData
 
-class TopicsAdapter (val topics: List<TopicsData>, val onItemClick:(TopicsData)-> Unit)
+class TopicsAdapter (val topics: List<TopicsData>)
     : RecyclerView.Adapter<TopicsAdapter.SubjectChoosenAssignmentViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SubjectChoosenAssignmentViewHolder {
         val inflater = LayoutInflater.from(parent.context)

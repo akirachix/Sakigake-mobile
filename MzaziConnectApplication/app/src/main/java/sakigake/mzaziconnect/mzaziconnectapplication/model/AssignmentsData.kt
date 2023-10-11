@@ -1,5 +1,8 @@
 package sakigake.mzaziconnect.mzaziconnectapplication.model
 
+import android.support.annotation.NonNull
+import androidx.room.PrimaryKey
+
 data class AssignmentsData (
     var topic:String,
     var competency:String,

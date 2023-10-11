@@ -74,7 +74,7 @@ class EditAssignmentActivity : AppCompatActivity() {
 
 
 
-    private fun getCustomSubjectsData(){
+    private fun getCustomSubjectsData() {
         subjectViewModel.subjectsLiveData.observe(this) { subjectsList ->
             adapter = SubjectAdapter(this, subjectsList)
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -88,7 +88,6 @@ class EditAssignmentActivity : AppCompatActivity() {
                 override fun onItemSelected(p0: AdapterView<*>?, p1: View?, position: Int, p3: Long) {
 
                     val selectedObject = subjectSpinner.selectedItem as SubjectData
-
 
 
                     Toast.makeText (
@@ -220,7 +219,6 @@ class EditAssignmentActivity : AppCompatActivity() {
             binding.tilresources.error = "Resources is required"
             error = true
         }
-
         return !error
     }
 

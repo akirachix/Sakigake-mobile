@@ -11,6 +11,11 @@ class AssignmentViewModel: ViewModel() {
     val postsLiveData = MutableLiveData<List<AssignmentsData>>()
     val errorLiveData = MutableLiveData<String>()
 
+//    fun saveAssign(assignment:AssignmentsData){
+//        viewModelScope.launch {
+//            postsRepo.getAssignments(assignment)
+//        }
+//    }
 
     fun fetchAssign() {
         viewModelScope.launch {

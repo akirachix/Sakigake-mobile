@@ -7,54 +7,60 @@
     tools:context=".ui.parent.ParentsNavFragment">
 
 
-    <TextView
-        android:id="@+id/tvGrade"
+    <ImageView
+        android:id="@+id/imgBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/baloobhai2_semibold"
-        android:text="Grade 1 "
-        android:textColor="@color/blue"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.07"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="392dp"
+        app:layout_constraintEnd_toStartOf="@+id/imgHome"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvSchoolNameTitle"
-        app:layout_constraintVertical_bias="0.01999998" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baseline_arrow_back_ios_24"
+        app:tint="@color/blue" />
 
-    <Button
-            android:id="@+id/btnViewAssignments"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
-            android:layout_marginLeft="220dp"
-            android:backgroundTint="@color/blue"
-            android:text="View Assignments"
-            android:textColor="@color/white"
-            android:fontFamily="@font/jost_regular"
-            app:cornerRadius="7dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.893"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="280dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toEndOf="@+id/imgBack"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baseline_home_24"
+        app:tint="@color/blue" />
+
+    <TextView
+        android:id="@+id/tvAccountSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/baloobhai2_bold"
+        android:text="Assignments"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/imgHome"
+        app:layout_constraintHorizontal_bias="0.524"
+        app:layout_constraintStart_toEndOf="@+id/imgBack"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/RvSubjectCards"
-        android:layout_width="393dp"
-        android:layout_height="650dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="70dp"
-        android:layout_marginEnd="8dp"
+        android:id="@+id/rvAssignmentTopics"
+        android:layout_width="411dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="24dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.269"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvGrade"
+        app:layout_constraintTop_toBottomOf="@+id/tvAccountSettings"
         app:layout_constraintVertical_bias="0.0"
-        tools:listitem="@layout/subject_overview_item" />
+        tools:listitem="@layout/subject_choosen_assignment_item" />
 
 
 </FrameLayout>
