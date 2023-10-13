@@ -220,7 +220,6 @@ class EditAssignmentActivity : AppCompatActivity() {
             binding.tilresources.error = "Resources is required"
             error = true
         }
-
         return !error
     }
 

@@ -2,15 +2,18 @@ package sakigake.mzaziconnect.mzaziconnectapplication.ui.teacher
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.ActivityCommentsBinding
+import sakigake.mzaziconnect.mzaziconnectapplication.model.Comments
 import sakigake.mzaziconnect.mzaziconnectapplication.ui.parent.AssignmentView
 import sakigake.mzaziconnect.mzaziconnectapplication.ui.parent.MessageAdapter
 import sakigake.mzaziconnect.mzaziconnectapplication.viewmodel.CommentsViewModel
+import java.lang.Exception
 
 class CommentsActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCommentsBinding
@@ -33,7 +36,9 @@ class CommentsActivity : AppCompatActivity() {
         }
 
         binding.ivsend.setOnClickListener {
-            startActivity(Intent(this@CommentsActivity, CommentsActivity::class.java))
+            saveComments()
+            binding.etMessage.setText("")
+//            startActivity(Intent(this@CommentsActivity, CommentsActivity::class.java))
         }
 
         binding.ivhome.setOnClickListener {
@@ -43,20 +48,37 @@ class CommentsActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        commentsViewModel.fetchComments()
+        try{
 
-        commentsViewModel.commentsLiveData.observe(this) { commentsList ->
+
+        commentsViewModel.fetchComments().observe(this) { commentsList ->
             commentsAdapter.updateMessages(commentsList)
-//            Toast.makeText(
-//                baseContext,
-//                "Found ${commentsList.size} comments",
-//                Toast.LENGTH_LONG
-//            ).show()
+            Toast.makeText(
+                baseContext,
+                "Found ${commentsList.size} comments",
+                Toast.LENGTH_LONG
+            ).show()
         }
 
         commentsViewModel.errorLiveData.observe(this) { error ->
             Toast.makeText(baseContext, error, Toast.LENGTH_LONG).show()
         }
+        }catch (e : Exception){
+            Log.e("TAG", "onResume: ", e)
+        }
+    }
+
+
+    fun saveComments(){
+        val commentContent = binding.etMessage.text.toString()
+        val createdAt = System.currentTimeMillis().toString()
+        val updatedAt = System.currentTimeMillis().toString()
+        val username = "Bridget"
+
+        val comments = Comments(
+            0, commentContent ,createdAt ,updatedAt,"", username,commentContent,""
+        )
+        commentsViewModel.saveComments(comments)
     }
 
 

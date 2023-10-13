@@ -52,6 +52,7 @@
             app:layout_constraintTop_toTopOf="@+id/tvTopicName"
             app:tint="@color/blue" />
 
+
         <TextView
             android:id="@+id/tvDueDate"
             android:layout_width="154dp"
@@ -63,14 +64,15 @@
             android:textColor="@color/blacklight"
             android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/imgCalendar"
             app:layout_constraintTop_toTopOf="@+id/imgCalendar" />
 
-
         <TextView
             android:id="@+id/tvAssignmentDetails"
-            android:layout_width="301dp"
-            android:layout_height="47dp"
+            android:layout_width="279dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="16dp"
             android:layout_marginEnd="29dp"
             android:fontFamily="@font/jost_regular"
             android:text="In this assignment, you will explore the world of plants and learn about their basic needs for growth."
@@ -78,10 +80,10 @@
             android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.291"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.533" />
+            app:layout_constraintVertical_bias="0.645" />
 
         <TextView
             android:id="@+id/tvPostedAtTime"
@@ -97,6 +99,21 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.84" />
+
+        <TextView
+            android:id="@+id/tvNewLabel"
+            android:layout_width="225dp"
+            android:layout_height="20dp"
+            android:text="New Assignment"
+            android:textSize="12sp"
+            android:visibility="gone"
+            android:layout_marginStart="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/tvTopicName"
+            app:layout_constraintEnd_toEndOf="@+id/tvTopicName"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

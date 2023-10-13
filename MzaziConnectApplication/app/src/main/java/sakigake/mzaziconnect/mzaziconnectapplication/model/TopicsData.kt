@@ -1,4 +1,7 @@
 package sakigake.mzaziconnect.mzaziconnectapplication.model
+
+import org.jetbrains.exposed.sql.Op
+
 data class TopicsData(
     var id:Int,
     var topic:String,
@@ -7,5 +10,6 @@ data class TopicsData(
     var resources:Array<String>,
     var subject:Int,
     var category:Int,
-    var due_date:String
+    var due_date:String,
+    val isNew: Boolean = false
 )

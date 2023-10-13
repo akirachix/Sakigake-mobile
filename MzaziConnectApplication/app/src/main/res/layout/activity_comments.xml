@@ -1,94 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.teacher.CommentsActivity">
+    android:fillViewport="true"
+    android:isScrollContainer="true"
+    android:fitsSystemWindows="true">
 
-    <TextView
-        android:id="@+id/tvComments"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="164dp"
-        android:text="Comments"
-        android:fontFamily="@font/baloobhai2_bold"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <ImageView
-        android:id="@+id/ivhome"
-        android:layout_width="33dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/baseline_home_24" />
+        tools:context=".ui.teacher.CommentsActivity">
 
-    <ImageView
-        android:id="@+id/ivbackmssg"
-        android:layout_width="28dp"
-        android:layout_height="29dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/backarrow" />
+        <TextView
+            android:id="@+id/tvComments"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="164dp"
+            android:text="Comments"
+            android:fontFamily="@font/baloobhai2_bold"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
+        <ImageView
+            android:id="@+id/ivhome"
+            android:layout_width="33dp"
+            android:layout_height="37dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/baseline_home_24" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="414dp"
-        android:layout_height="593dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="28dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvComments"
-        tools:listitem="@layout/comments_list_item" />
+        <ImageView
+            android:id="@+id/ivbackmssg"
+            android:layout_width="28dp"
+            android:layout_height="29dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/backarrow" />
 
-    <TextView
-        android:id="@+id/tvMessage"
-        android:layout_width="wrap_content"
-        android:layout_height="19dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="28dp"
-        android:text="Add Comment"
-        android:textColor="@color/blue"
-        android:textSize="18dp"
-        android:textStyle="bold"
-        android:fontFamily="@font/baloobhai2_medium"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="414dp"
+            android:layout_height="593dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="36dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvComments"
+            tools:listitem="@layout/comments_list_item" />
 
-    <EditText
-        android:id="@+id/etMessage"
-        android:layout_width="320dp"
-        android:layout_height="61dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="28dp"
-        android:background="@color/grey"
-        android:ems="10"
-        android:hint="Comment.."
-        android:inputType="text"
-        android:fontFamily="@font/jost_regular"
-        android:shadowRadius="@integer/material_motion_duration_long_2"
-        android:textColor="@color/blue"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvMessage" />
+        <EditText
+            android:id="@+id/etMessage"
+            android:layout_width="310dp"
+            android:layout_height="85dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="44dp"
+            android:background="@color/grey"
+            android:ems="10"
+            android:fontFamily="@font/jost_regular"
+            android:hint="Comment.."
+            android:imeOptions="flagNoExtractUi"
+            android:inputType="text"
+            android:shadowRadius="@integer/material_motion_duration_long_2"
+            android:textColor="@color/blue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
 
-    <ImageView
-        android:id="@+id/ivsend"
-        android:layout_width="31dp"
-        android:layout_height="29dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="66dp"
-        app:layout_constraintStart_toEndOf="@+id/etMessage"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView"
-        app:srcCompat="@drawable/send"
-        app:tint="@color/blue" />
+        <ImageView
+            android:id="@+id/ivsend"
+            android:layout_width="31dp"
+            android:layout_height="29dp"
+            android:layout_marginBottom="24dp"
+            app:layout_constraintBottom_toBottomOf="@+id/etMessage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.438"
+            app:layout_constraintStart_toEndOf="@+id/etMessage"
+            app:srcCompat="@drawable/send"
+            app:tint="@color/blue" />
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

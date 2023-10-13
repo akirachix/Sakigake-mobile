@@ -40,7 +40,7 @@ class ParentLoginActivity : AppCompatActivity() {
             intent.putExtra("userPhoneNumber", userPhoneNumber)
             startActivity(intent)
 
-            startActivity(Intent(this, ParentsNavActivity::class.java))
+            startActivity(Intent(this, SubjectChoosenAssignments::class.java))
                 finish()
         })
     }

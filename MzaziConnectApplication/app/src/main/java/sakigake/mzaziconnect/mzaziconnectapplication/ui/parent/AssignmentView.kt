@@ -28,8 +28,6 @@ class AssignmentView : AppCompatActivity() {
         val category = intent.getIntExtra("selectedAssignmentCategory", 0)
         val due_date = intent.getStringExtra("selectedAssignmentDueDate") ?: ""
 
-
-
         populateAssignmentDetails(
 //            assignmentId,
             topic,
@@ -49,19 +47,12 @@ class AssignmentView : AppCompatActivity() {
 
         val recyclerView: RecyclerView = binding.rvresources
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+
         val resources1 = listOf(
-            Resources("Panga"),
-            Resources("Dustcoat"),
-            Resources("Rabbit"),
-            Resources("Seedlings"),
-            Resources("Gumboots"),
-            Resources("Jembe"),
-            Resources("Basket"),
-            Resources("Trees")
+            Resources("Books"),
         )
 
         resourcesAdapter = ResourcesAdapter(resources1) { selectedResource ->
-
             val intent = Intent(this@AssignmentView, ShopsActivity::class.java)
             intent.putExtra("Name", selectedResource.name)
             startActivity(intent)
@@ -74,7 +65,7 @@ class AssignmentView : AppCompatActivity() {
             scrollRecyclerView(false)
         }
 
-        binding.ivsend.setOnClickListener {
+        binding.tvMessage.setOnClickListener {
             startActivity(Intent(this, CommentsActivity::class.java))
         }
 
@@ -91,13 +82,12 @@ class AssignmentView : AppCompatActivity() {
         binding.ivhome.setOnClickListener {
             startActivity(Intent(this, NavActivity::class.java))
         }
-//        binding..setOnClickListener {
-//            startActivity(Intent(this, ShopsActivity::class.java))
-//        }
+        binding.rvresources.setOnClickListener {
+            startActivity(Intent(this, ShopsActivity::class.java))
+        }
     }
 
     private fun populateAssignmentDetails(
-//        assignmentId: Int,
         topic: Array<String>,
         competency: String,
         task: String,
@@ -106,11 +96,27 @@ class AssignmentView : AppCompatActivity() {
         category: Int,
         due_date: String
     ) {
+
         binding.tvAgric.text = topic.joinToString(", ")
         binding.tvPlantss.text = competency
-        binding.tvTask .text = task
+        binding.tvTask.text = task
         binding.tv30th.text = due_date
+
+        binding.rvresources.layoutManager = LinearLayoutManager(this)
+
+        val resourcesList = resources.map { Resources(it) }
+
+        resourcesAdapter = ResourcesAdapter(resourcesList) { selectedResource ->
+            val intent = Intent(this@AssignmentView, ShopsActivity::class.java)
+            intent.putExtra("Name", selectedResource.name)
+            startActivity(intent)
+        }
+
+        binding.rvresources.adapter = resourcesAdapter
     }
+
+
+
 
     private fun scrollRecyclerView(forward: Boolean) {
         val layoutManager = binding.rvresources.layoutManager as LinearLayoutManager

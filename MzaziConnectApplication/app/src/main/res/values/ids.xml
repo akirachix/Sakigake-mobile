@@ -14,4 +14,5 @@
     <item name="tilphonenum" type="id" />
     <item name="etPassword" type="id" />
     <item name="tvplogin" type="id" />
+    <item name="tvNewAssignments" type="id" />
 </resources>

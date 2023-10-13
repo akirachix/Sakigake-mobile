@@ -7,12 +7,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import sakigake.mzaziconnect.mzaziconnectapplication.database.Resources
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.ActivityAssignDetails2Binding
-import sakigake.mzaziconnect.mzaziconnectapplication.databinding.ActivityAssignmentViewBinding
-import sakigake.mzaziconnect.mzaziconnectapplication.model.Shops
 import sakigake.mzaziconnect.mzaziconnectapplication.ui.ResourcesAdapter
 //import sakigake.mzaziconnect.mzaziconnectapplication.ui.parent.Shops
-import sakigake.mzaziconnect.mzaziconnectapplication.ui.parent.ShopsActivity
-import sakigake.mzaziconnect.mzaziconnectapplication.ui.parent.SubjectChoosenAssignments
 
 class AssignDetails2Activity : AppCompatActivity() {
     lateinit var binding:ActivityAssignDetails2Binding

@@ -1,6 +1,7 @@
 package sakigake.mzaziconnect.mzaziconnectapplication.viewmodel
 
 import android.annotation.SuppressLint
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -17,16 +18,26 @@ class CommentsViewModel :ViewModel() {
     val errorLiveData = MutableLiveData<String>()
 
     @SuppressLint("SuspiciousIndentation")
-    fun fetchComments(){
-        viewModelScope.launch {
-            val response = commentsRepo.getComments()
-            if (response.isSuccessful){
-                val commentsLists =response.body()?: emptyList()
-                commentsLiveData.postValue(commentsLists as List<Comments>)
-            }
-            else{
-                errorLiveData.postValue(response.errorBody()?.string())
-            }
-        }
+    fun fetchComments():LiveData<List<Comments>>{
+        return commentsRepo.fetchComments()
+//        viewModelScope.launch {
+//            val response = commentsRepo.getComments()
+//            if (response.isSuccessful){
+//                val commentsLists =response.body()?: emptyList()
+//                commentsLiveData.postValue(commentsLists as List<Comments>)
+//            }
+//            else{
+//                errorLiveData.postValue(response.errorBody()?.string())
+//            }
+//        }
     }
+
+    fun saveComments(comment :Comments){
+        viewModelScope.launch {
+            commentsRepo.saveComment(comment)
+        }
+
+
+    }
+
 }
