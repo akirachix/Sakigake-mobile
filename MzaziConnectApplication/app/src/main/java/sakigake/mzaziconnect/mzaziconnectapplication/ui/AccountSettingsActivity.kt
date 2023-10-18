@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.ActivityAccountSettingsBinding
+import sakigake.mzaziconnect.mzaziconnectapplication.ui.parent.SubjectChoosenAssignments
 import sakigake.mzaziconnect.mzaziconnectapplication.ui.teacher.NavActivity
 import sakigake.mzaziconnect.mzaziconnectapplication.ui.teacher.SubjectActivity
 
@@ -21,7 +22,7 @@ class AccountSettingsActivity : AppCompatActivity() {
             startActivity(Intent(this@AccountSettingsActivity, SubjectActivity::class.java))
         }
         binding.btnupdate.setOnClickListener {
-            startActivity(Intent(this@AccountSettingsActivity, AccountSettingsActivity::class.java))
+            startActivity(Intent(this@AccountSettingsActivity, SubjectChoosenAssignments::class.java))
         }
     }
 }

@@ -23,13 +23,14 @@
         android:id="@+id/tvAccountSettings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="128dp"
-        android:layout_marginTop="24dp"
-        android:text="Shops"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/baloobhai2_bold"
+        android:text="Shops"
         android:textColor="@color/black"
         android:textSize="25dp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/ivHome"
+        app:layout_constraintHorizontal_bias="0.467"
         app:layout_constraintStart_toEndOf="@+id/imgBack"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -50,11 +51,11 @@
         android:id="@+id/ivHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="368dp"
+        android:layout_marginStart="320dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.038"
+        app:layout_constraintVertical_bias="0.033"
         app:srcCompat="@drawable/baseline_home_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

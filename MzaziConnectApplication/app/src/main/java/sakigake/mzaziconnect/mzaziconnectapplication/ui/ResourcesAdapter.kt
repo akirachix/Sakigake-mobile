@@ -20,7 +20,7 @@ class ResourcesAdapter(val resources: List<Resources>, var onItemClick: (Resourc
         val resources = resources[position]
         holder.bind(resources)
 
-        holder.itemView.setOnClickListener{
+        holder.binding.btnResources.setOnClickListener{
             onItemClick(resources)
         }
     }

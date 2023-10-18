@@ -36,13 +36,7 @@ class SubjectChoosenAssignments : AppCompatActivity() {
 
         val recyclerView = binding.rvAssignmentTopics
 
-        binding.imgBack.setOnClickListener {
-            val intent = Intent(this, ParentsNavActivity::class.java)
-            startActivity(intent)
-        }
-        binding.imgHome.setOnClickListener {
-            startActivity(Intent(this@SubjectChoosenAssignments, ChildGrade::class.java))
-        }
+
     }
     override fun onResume() {
         fetchingAssign()

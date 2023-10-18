@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MzaziConnectApplication</string>
+    <string name="app_name">MzaziConnect</string>
     <string name="title_activity_logout">LogoutActivity</string>
     <string name="open_nav">Open Navigation Drawer</string>
     <string name="close_nav">Close Navigation Drawer</string>

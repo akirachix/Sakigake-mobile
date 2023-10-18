@@ -1,4 +1,5 @@
-package sakigake.mzaziconnect.mzaziconnectapplication.ui.parent
+package sakigake.mzaziconnect.mzaziconnectapplication.ui.teacher
+
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,11 +7,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import jp.wasabeef.picasso.transformations.CropCircleTransformation
 import sakigake.mzaziconnect.mzaziconnectapplication.R
-import sakigake.mzaziconnect.mzaziconnectapplication.databinding.CommentsListItemBinding
+import sakigake.mzaziconnect.mzaziconnectapplication.databinding.TeachersCommentListBinding
 import sakigake.mzaziconnect.mzaziconnectapplication.model.Comments
 import sakigake.mzaziconnect.mzaziconnectapplication.model.MessageDetails
 
-class MessageAdapter (var messages: List<Comments>) : RecyclerView.Adapter<MessageAdapter.MessageViewHolder>() {
+class TeacherCommentAdapter (var messages: List<Comments>) : RecyclerView.Adapter<TeacherCommentAdapter.MessageViewHolder>() {
     fun updateMessages(newMessages: List<Comments>) {
         messages = newMessages
         notifyDataSetChanged()
@@ -20,7 +21,7 @@ class MessageAdapter (var messages: List<Comments>) : RecyclerView.Adapter<Messa
         viewType: Int
     ): MessageViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val binding = CommentsListItemBinding.inflate(inflater, parent, false)
+        val binding = TeachersCommentListBinding.inflate(inflater, parent, false)
         return MessageViewHolder(binding)
     }
 
@@ -35,18 +36,14 @@ class MessageAdapter (var messages: List<Comments>) : RecyclerView.Adapter<Messa
 
     }
 
-    class MessageViewHolder(val binding: CommentsListItemBinding) :
+    class MessageViewHolder(val binding: TeachersCommentListBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(message: Comments) {
             binding.tvmessengerName.text = message.assignment
             binding.tvmessage.text = message.content
             binding.tvmessengerName.text = message.commentor
 
-//            Picasso.get()
-//                .load(message.nameImageUrl)
-//                .error(R.drawable.greenbg)
-//                .transform(CropCircleTransformation())
-//                .into(binding.imgMessagerImage)
+
         }
 
     }

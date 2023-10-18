@@ -56,9 +56,13 @@ class AssignDetails2Activity : AppCompatActivity() {
             scrollRecyclerView(false)
         }
 
-        binding.ivsend.setOnClickListener {
-            startActivity(Intent(this, CommentsActivity::class.java))
+        binding.tvleaveComment.setOnClickListener {
+            startActivity(Intent(this, TeacherCommentsActivity::class.java))
         }
+//
+//        binding.ivsend.setOnClickListener {
+//            startActivity(Intent(this, CommentsActivity::class.java))
+//        }
 
         recyclerView.adapter = resourcesAdapter
     }

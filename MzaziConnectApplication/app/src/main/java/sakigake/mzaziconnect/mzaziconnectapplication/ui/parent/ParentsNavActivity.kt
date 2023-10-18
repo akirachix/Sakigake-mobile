@@ -1,5 +1,6 @@
 package sakigake.mzaziconnect.mzaziconnectapplication.ui.parent
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -14,6 +15,7 @@ import sakigake.mzaziconnect.mzaziconnectapplication.R
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.ActivityNavBinding
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.ActivityParentsNavBinding
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.FragmentParentsNavBinding
+import sakigake.mzaziconnect.mzaziconnectapplication.ui.ChooseUserActivity
 import sakigake.mzaziconnect.mzaziconnectapplication.ui.teacher.AccountFragment
 import sakigake.mzaziconnect.mzaziconnectapplication.ui.teacher.HomeFragment
 
@@ -62,7 +64,10 @@ class ParentsNavActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
         when (item.itemId) {
             R.id.nav_home -> replaceFragment(ParentsNavFragment())
             R.id.nav_account -> replaceFragment(AccountFragment())
-            R.id.nav_logout -> Toast.makeText(this, "Logout!", Toast.LENGTH_SHORT).show()
+            R.id.nav_logout -> {
+                startActivity(Intent(this, ChooseUserActivity::class.java))
+            }
+
         }
         drawerLayout.closeDrawer(GravityCompat.START)
         return true

@@ -20,6 +20,11 @@ interface CommentsDao {
 }
 
 
+
+//@Dao
+//interface ContactDao {
+//    @Insert(onConflict = OnConflictStrategy.REPLACE)
+//    fun insertContact(contact :ContactData)
 //    @Query("SELECT*FROM Contacts ORDER BY displayName")
 //    fun getAllContacts():LiveData<List<ContactData>>
 //

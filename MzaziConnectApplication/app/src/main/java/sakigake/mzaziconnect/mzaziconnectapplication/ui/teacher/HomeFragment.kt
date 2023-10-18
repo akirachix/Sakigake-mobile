@@ -115,6 +115,7 @@ class HomeFragment : Fragment() {
 
     fun fetchSubject() {
         subjectViewModel.fetchSubjects()
+
         subjectViewModel.subjectsLiveData.observe(viewLifecycleOwner, Observer { subjectsList ->
             subjectsAdapter.updateSubjects(subjectsList ?: emptyList())
             Toast.makeText(

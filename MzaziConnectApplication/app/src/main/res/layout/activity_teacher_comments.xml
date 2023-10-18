@@ -11,7 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".ui.teacher.CommentsActivity">
+        tools:context=".ui.teacher.CommentsTeachers">
 
         <TextView
             android:id="@+id/tvComments"
@@ -37,7 +37,7 @@
             app:srcCompat="@drawable/baseline_home_24" />
 
         <ImageView
-            android:id="@+id/ivbackmssg"
+            android:id="@+id/ivbackmessage"
             android:layout_width="28dp"
             android:layout_height="29dp"
             android:layout_marginStart="16dp"
@@ -56,7 +56,7 @@
             app:layout_constraintHorizontal_bias="0.23"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvComments"
-            tools:listitem="@layout/comments_list_item" />
+            tools:listitem="@layout/teachers_comment_list_item" />
 
         <EditText
             android:id="@+id/etMessage"
@@ -89,15 +89,3 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
-
-
-
-
-
-
-
-
-
-
-
-

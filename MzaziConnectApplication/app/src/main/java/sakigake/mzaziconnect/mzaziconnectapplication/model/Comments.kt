@@ -7,14 +7,14 @@ import androidx.room.PrimaryKey
 data class Comments(
     @PrimaryKey(autoGenerate = true)
 
-val id :Int,
-    val content :String,
-    val created_at : String,
-    val updated_at :String,
-    val assignment :String,
-    val commentor : Int,
-    var parent_comment :String,
-    val nameImageUrl : String
+    val id :Int,
+    val content :String ?= null ,
+    val created_at : String ?= null,
+    val updated_at :String ?= null,
+    val assignment :String ?= null,
+    val commentor : String ?= null,
+    var parent_comment :String ?= null,
+    val nameImageUrl : String ?= null
 
 )
 

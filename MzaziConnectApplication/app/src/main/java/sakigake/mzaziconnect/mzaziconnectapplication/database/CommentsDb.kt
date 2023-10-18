@@ -25,4 +25,3 @@ abstract class CommentsDb : RoomDatabase(){
 
     }
 }
-

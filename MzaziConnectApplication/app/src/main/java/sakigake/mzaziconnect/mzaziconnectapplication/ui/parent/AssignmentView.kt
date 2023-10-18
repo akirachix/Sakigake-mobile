@@ -56,10 +56,10 @@ class AssignmentView : AppCompatActivity() {
         binding.ivarrowback.setOnClickListener {
             scrollRecyclerView(false)
         }
-
-        binding.ivsend.setOnClickListener {
+        binding.tvMessage.setOnClickListener {
             startActivity(Intent(this, CommentsActivity::class.java))
         }
+
 
         recyclerView.adapter = resourcesAdapter
 
@@ -104,12 +104,8 @@ class AssignmentView : AppCompatActivity() {
             intent.putExtra("Name", selectedResource.name)
             startActivity(intent)
         }
-
         binding.rvresources.adapter = resourcesAdapter
-
     }
-
-
 
 
     private fun scrollRecyclerView(forward: Boolean) {

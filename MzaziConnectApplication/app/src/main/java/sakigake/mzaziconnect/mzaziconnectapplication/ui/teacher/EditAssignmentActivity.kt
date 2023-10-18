@@ -150,7 +150,6 @@ class EditAssignmentActivity : AppCompatActivity() {
         val selectedShop = shopSpinner.selectedItem as ShopData
 
 
-
         val assignmentData = AssignmentsData(
             topic = topic,
             task = task,

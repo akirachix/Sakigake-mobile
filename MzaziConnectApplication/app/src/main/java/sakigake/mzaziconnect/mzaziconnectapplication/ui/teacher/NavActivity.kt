@@ -1,5 +1,6 @@
 package sakigake.mzaziconnect.mzaziconnectapplication.ui.teacher
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -12,6 +13,7 @@ import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.navigation.NavigationView
 import sakigake.mzaziconnect.mzaziconnectapplication.R
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.ActivityNavBinding
+import sakigake.mzaziconnect.mzaziconnectapplication.ui.ChooseUserActivity
 
 class NavActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelectedListener {
     private lateinit var drawerLayout: DrawerLayout
@@ -51,7 +53,9 @@ class NavActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelectedL
         when (item.itemId) {
             R.id.nav_home -> replaceFragment(HomeFragment())
             R.id.nav_account -> replaceFragment(AccountFragment())
-            R.id.nav_logout -> Toast.makeText(this, "Logout!", Toast.LENGTH_SHORT).show()
+            R.id.nav_logout -> {
+                startActivity(Intent(this, ChooseUserActivity::class.java))
+            }
         }
         drawerLayout.closeDrawer(GravityCompat.START)
         return true

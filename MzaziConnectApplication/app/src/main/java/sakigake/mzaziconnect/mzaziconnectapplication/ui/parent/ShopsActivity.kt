@@ -28,11 +28,11 @@ class ShopsActivity : AppCompatActivity() {
         recyclerView.adapter = shopsAdapter
 
         binding.imgBack.setOnClickListener {
-            val intent = Intent(this@ShopsActivity, SubjectChoosenAssignments::class.java)
+            val intent = Intent(this@ShopsActivity, ParentsNavActivity::class.java)
             startActivity(intent)
         }
         binding.ivHome.setOnClickListener {
-            val intent = Intent(this@ShopsActivity, SubjectChoosenAssignments::class.java)
+            val intent = Intent(this@ShopsActivity, ParentsNavActivity::class.java)
             startActivity(intent)
         }
 
@@ -44,11 +44,6 @@ class ShopsActivity : AppCompatActivity() {
             if (shopsList != null) {
                 shopsAdapter.updateShops(shopsList)
             }
-            Toast.makeText(
-                baseContext,
-                "Found ${shopsList?.size} shops",
-                Toast.LENGTH_LONG
-            ).show()
 
         })
         shopsViewModel.errorLiveData.observe(this, Observer { error ->
