@@ -118,11 +118,11 @@ class HomeFragment : Fragment() {
 
         subjectViewModel.subjectsLiveData.observe(viewLifecycleOwner, Observer { subjectsList ->
             subjectsAdapter.updateSubjects(subjectsList ?: emptyList())
-            Toast.makeText(
-                requireContext(),
-                "Found ${subjectsList?.size} subjects",
-                Toast.LENGTH_LONG
-            ).show()
+//            Toast.makeText(
+//                requireContext(),
+//                "Found ${subjectsList?.size} subjects",
+//                Toast.LENGTH_LONG
+//            ).show()
         })
         subjectViewModel.errorLiveData.observe(viewLifecycleOwner, Observer { error ->
             Toast.makeText(requireContext(), error, Toast.LENGTH_LONG).show()

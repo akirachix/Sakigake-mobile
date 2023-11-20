@@ -5,7 +5,6 @@ import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Path
-import sakigake.mzaziconnect.mzaziconnectapplication.model.AssignmentData
 import sakigake.mzaziconnect.mzaziconnectapplication.model.AssignmentsData
 import sakigake.mzaziconnect.mzaziconnectapplication.model.ParentData
 import sakigake.mzaziconnect.mzaziconnectapplication.model.ParentLoginRequest
@@ -19,7 +18,6 @@ import sakigake.mzaziconnect.mzaziconnectapplication.model.Shops
 import sakigake.mzaziconnect.mzaziconnectapplication.model.SubjectData
 import sakigake.mzaziconnect.mzaziconnectapplication.model.Subjects
 import sakigake.mzaziconnect.mzaziconnectapplication.model.TopicsData
-
 
 
 interface ApiInterface {
@@ -47,7 +45,6 @@ interface ApiInterface {
     @GET("/assignment/assignments/")
     suspend fun getAssignment(): Response<List<AssignmentsData>>
 
-
     @GET("/subjects/subjectsList/")
     suspend fun getSubjects(): Response<List<Subjects>>
     @GET("/subjects/subjectsList/")
@@ -60,8 +57,5 @@ interface ApiInterface {
     suspend fun getComments(): Response<List<Comments>>
 
     @POST("/assignment/assignments/")
-    suspend fun postAssignment(@Body assignmentData: AssignmentsData)
-            :Response<AssignmentsData>
-
-
+    suspend fun postAssignment(@Body assignmentData: AssignmentsData):Response<AssignmentsData>
 }

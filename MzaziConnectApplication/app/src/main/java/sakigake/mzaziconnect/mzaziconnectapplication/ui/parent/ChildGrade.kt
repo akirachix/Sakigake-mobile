@@ -70,7 +70,6 @@ class ChildGrade: AppCompatActivity () {
                 "Ms Florence"
             ),
         )
-
         val subjectAdapter = SubjectAdapter(subjects) { selectedSubject ->
             val intent = Intent(this, SubjectChoosenAssignments::class.java)
             intent.putExtra("TopicName", selectedSubject.subjectName)

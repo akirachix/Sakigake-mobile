@@ -35,6 +35,7 @@ import sakigake.mzaziconnect.mzaziconnectapplication.ui.LogoutActivity
 import sakigake.mzaziconnect.mzaziconnectapplication.ui.teacher.SubjectAssignmentActivity
 import sakigake.mzaziconnect.mzaziconnectapplication.ui.teacher.SubjectsAdapter
 import sakigake.mzaziconnect.mzaziconnectapplication.viewmodel.SubjectsViewModel
+import java.util.Locale
 
 class ParentsNavFragment : Fragment() {
     private var _binding: FragmentParentsNavBinding? = null
@@ -147,7 +148,7 @@ class ParentsNavFragment : Fragment() {
                 .setSmallIcon(R.drawable.ic_launcher_foreground)
                 .setContentTitle("MzaziConnect")
                 .setSound(sound)
-                .setContentText("New Assignment: ${mostRecentAssignment.topic}")
+                .setContentText("New Assignment: ${mostRecentAssignment.topic.capitalize(Locale.ROOT)}")
 
 
 

@@ -10,22 +10,26 @@
         android:id="@+id/tvAgric"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/baloobhai2_bold"
         android:text="Assignment Details"
         android:textSize="25dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/ivhome"
+        app:layout_constraintHorizontal_bias="0.33"
         app:layout_constraintStart_toEndOf="@+id/ivarrow2"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/ivhome"
-        android:layout_width="33dp"
-        android:layout_height="37dp"
-        android:layout_marginEnd="16dp"
+        android:layout_width="25dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvAgric"
+        app:layout_constraintStart_toEndOf="@+id/tvAgric"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/baseline_home_24" />
 
     <TextView
@@ -35,7 +39,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="28dp"
         android:fontFamily="@font/inter_medium"
-        android:text="Due Date  :"
+        android:text="Posted On  : "
         android:textSize="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvAgric" />
@@ -120,10 +124,10 @@
 
     <ImageView
         android:id="@+id/ivarrow2"
-        android:layout_width="31dp"
-        android:layout_height="31dp"
+        android:layout_width="25dp"
+        android:layout_height="30dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="28dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/baseline_arrow_back_ios_24"
@@ -131,19 +135,21 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvresources"
-        android:layout_width="268dp"
-        android:layout_height="76dp"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="76dp"
+        android:layout_width="250dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="72dp"
+        app:layout_constraintEnd_toStartOf="@+id/ivarrowfoward"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView3"
         tools:listitem="@layout/resource_item" />
 
     <ImageView
         android:id="@+id/ivarrowback"
-        android:layout_width="33dp"
-        android:layout_height="34dp"
-        android:layout_marginTop="28dp"
+        android:layout_width="25dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="36dp"
         app:layout_constraintEnd_toStartOf="@+id/rvresources"
         app:layout_constraintHorizontal_bias="0.457"
         app:layout_constraintStart_toStartOf="parent"
@@ -153,13 +159,13 @@
 
     <ImageView
         android:id="@+id/ivarrowfoward"
-        android:layout_width="33dp"
-        android:layout_height="34dp"
-        android:layout_marginTop="88dp"
+        android:layout_width="25dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="36dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/rvresources"
-        app:layout_constraintTop_toBottomOf="@+id/cardView3"
+        app:layout_constraintTop_toBottomOf="@+id/tvResourcesNeeded"
         app:srcCompat="@drawable/baseline_arrow_forward_ios_24"
         app:tint="@color/blue" />
 
@@ -167,11 +173,17 @@
         android:id="@+id/tvleaveComment"
         android:layout_width="207dp"
         android:layout_height="54dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="56dp"
         android:layout_marginEnd="124dp"
         android:text="Leave  a comment"
+        android:textColor="@color/blue"
         android:textSize="20sp"
+        android:fontFamily="@font/baloobhai2"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rvresources" />
 
 

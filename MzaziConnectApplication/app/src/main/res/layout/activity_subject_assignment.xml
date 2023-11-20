@@ -9,10 +9,12 @@
 
     <ImageView
         android:id="@+id/imgBack"
-        android:layout_width="28dp"
-        android:layout_height="29dp"
+        android:layout_width="25dp"
+        android:layout_height="30dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toStartOf="@+id/tvAccountSettings"
+        app:layout_constraintHorizontal_bias="0.78"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/backarrow"
@@ -62,11 +64,12 @@
 
     <ImageView
         android:id="@+id/ivhome"
-        android:layout_width="33dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="12dp"
+        android:layout_width="25dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="28dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.71"
+        app:layout_constraintStart_toEndOf="@+id/tvAccountSettings"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/baseline_home_24" />
 

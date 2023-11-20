@@ -51,15 +51,8 @@ class EditAssignmentActivity : AppCompatActivity() {
         super.onResume()
         clearErrors()
 
-        fun showToast() {
-            Toast.makeText(applicationContext, "Assignment posted", Toast.LENGTH_SHORT).show()
-        }
-
         binding.btnPostAssignment.setOnClickListener {
             postAsignment()
-            showToast()
-            val intent = Intent(this, SubjectAssignmentActivity::class.java)
-            startActivity(intent)
         }
 
         binding.ivcancel.setOnClickListener {
@@ -90,11 +83,11 @@ class EditAssignmentActivity : AppCompatActivity() {
                     val selectedObject = subjectSpinner.selectedItem as SubjectData
 
 
-                    Toast.makeText (
-                        this@EditAssignmentActivity,
-                        "ID: ${selectedObject.id} Name: ${selectedObject.subject_name}",
-                        Toast.LENGTH_SHORT
-                    ).show()
+//                    Toast.makeText (
+//                        this@EditAssignmentActivity,
+//                        "ID: ${selectedObject.id} Name: ${selectedObject.subject_name}",
+//                        Toast.LENGTH_SHORT
+//                    ).show()
 
                 }
 
@@ -114,11 +107,11 @@ class EditAssignmentActivity : AppCompatActivity() {
             shopSpinner.onItemSelectedListener = object :AdapterView.OnItemSelectedListener{
                 override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                     val selectedObject = shopSpinner.selectedItem as ShopData
-                    Toast.makeText(
-                        this@EditAssignmentActivity,
-                        "ID: ${selectedObject.id} Name: ${selectedObject.category}",
-                        Toast.LENGTH_SHORT
-                    ).show()
+//                    Toast.makeText(
+//                        this@EditAssignmentActivity,
+//                        "ID: ${selectedObject.id} Name: ${selectedObject.category}",
+//                        Toast.LENGTH_SHORT
+//                    ).show()
                 }
 
                 override fun onNothingSelected(p0: AdapterView<*>?) {
@@ -137,36 +130,43 @@ class EditAssignmentActivity : AppCompatActivity() {
     }
 
 
-
-
-    fun postAsignment() {
-        val dueDate = formatDate()
-        val topic = binding.ettopic.text.toString()
-        val task = binding.ettypemessage.text.toString()
-        val resources = binding.etresources.text.toString()
-        val compentecy = binding.etcompetency.text.toString()
-
-        val selectedSubject = subjectSpinner.selectedItem as SubjectData
-        val selectedShop = shopSpinner.selectedItem as ShopData
-
-
-        val assignmentData = AssignmentsData(
-            topic = topic,
-            task = task,
-            category = selectedShop.id,
-            competency= compentecy,
-            due_date =dueDate,
-            resources = arrayOf(resources),
-            subject = selectedSubject.id
-        )
-
-        CoroutineScope(Dispatchers.IO).launch{
-            postrepo.postAssignment(assignmentData)
-        }
-
+fun postAsignment() {
+    if (!validateEditAssignment()) {
+        return  // Return early if the validation fails
     }
 
+    val dueDate = formatDate()
+    val topic = binding.ettopic.text.toString()
+    val task = binding.ettypemessage.text.toString()
+    val resources = binding.etresources.text.toString()
+    val compentecy = binding.etcompetency.text.toString()
 
+    val selectedSubject = subjectSpinner.selectedItem as SubjectData
+    val selectedShop = shopSpinner.selectedItem as ShopData
+
+    val assignmentData = AssignmentsData(
+        topic = topic,
+        task = task,
+        category = selectedShop.id,
+        competency = compentecy,
+        due_date = dueDate,
+        resources = arrayOf(resources),
+        subject = selectedSubject.id
+    )
+
+    CoroutineScope(Dispatchers.IO).launch {
+        postrepo.postAssignment(assignmentData)
+        runOnUiThread {
+            showToast()
+            val intent = Intent(this@EditAssignmentActivity, SubjectAssignmentActivity::class.java)
+            startActivity(intent)
+        }
+    }
+}
+
+    fun showToast() {
+        Toast.makeText(applicationContext, "Assignment posted", Toast.LENGTH_SHORT).show()
+    }
 
 
 
@@ -204,6 +204,7 @@ class EditAssignmentActivity : AppCompatActivity() {
         val topic = binding.ettopic.text.toString()
         val message = binding.ettypemessage.text.toString()
         val resources = binding.etresources.text.toString()
+        val compentency = binding.etcompetency.text.toString()
 
         var error = false
         if (topic.isBlank()) {
@@ -218,6 +219,10 @@ class EditAssignmentActivity : AppCompatActivity() {
             binding.tilresources.error = "Resources is required"
             error = true
         }
+        if (compentency.isBlank()){
+            binding.tilcomptenecy.error = "Competency is required"
+            error = true
+        }
         return !error
     }
 
@@ -225,5 +230,6 @@ class EditAssignmentActivity : AppCompatActivity() {
         binding.tilresources.error = null
         binding.tiltopic.error = null
         binding.tiltypemessage.error = null
+        binding.tilcomptenecy.error = null
     }
 }

@@ -13,27 +13,28 @@
 
         <TextView
             android:id="@+id/tvsubject"
-            android:layout_width="157dp"
-            android:layout_height="48dp"
+            android:layout_width="206dp"
+            android:layout_height="45dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="124dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="24dp"
             android:gravity="top"
-            android:text="Agriculture"
-            android:textSize="25sp"
             android:inputType="phone"
+            android:text="Add Assignment"
+            android:textSize="25sp"
             android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/ivcancel"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Spinner
             android:id="@+id/spinnerSubject"
-            android:layout_width="338dp"
+            android:layout_width="300dp"
             android:layout_height="55dp"
             android:layout_gravity="center"
-            android:layout_marginStart="28dp"
             android:layout_marginTop="16dp"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvsubject" />
 
@@ -41,82 +42,56 @@
             android:id="@+id/ivcancel"
             android:layout_width="37dp"
             android:layout_height="29dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginTop="24dp"
             android:src="@drawable/baseline_cancel_24"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
-
-
-        <EditText
-            android:id="@+id/etDueDate"
-            android:layout_width="260dp"
-            android:layout_height="61dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="84dp"
-            android:focusable="false"
-            android:hint="25th June 2023"
-            android:onClick="showDatePickerDialog"
-            app:layout_constraintStart_toEndOf="@+id/imageButtonCalendar"
-            app:layout_constraintTop_toBottomOf="@+id/tvsubject" />
-
-        <ImageView
-            android:id="@+id/imageButtonCalendar"
-            android:layout_width="44dp"
-            android:layout_height="53dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="148dp"
-            android:layout_marginEnd="10dp"
-            android:contentDescription="Calendar Button"
-            android:onClick="showDatePickerDialog"
-            android:src="@drawable/calendar"
-            app:layout_constraintEnd_toStartOf="@+id/etDueDate"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvsubject"
             app:layout_constraintTop_toTopOf="parent" />
+
 
         <TextView
             android:id="@+id/tvCategories"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="72dp"
+            android:layout_marginTop="32dp"
             android:text="Categories"
             android:textSize="25sp"
             android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.08"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tilcomptenecy" />
 
         <Spinner
             android:id="@+id/spinnercategories"
-            android:layout_width="353dp"
+            android:layout_width="320dp"
             android:layout_height="68dp"
-            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
             android:gravity="center"
-            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvCategories"/>
+            app:layout_constraintTop_toBottomOf="@+id/tvCategories" />
 
 
         <TextView
             android:id="@+id/tvResources"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="24dp"
             android:text="Resources"
             android:textSize="25sp"
             android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.08"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/spinnercategories" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilresources"
-            android:layout_width="351dp"
+            android:layout_width="320dp"
             android:layout_height="60dp"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvResources">
 
@@ -129,23 +104,24 @@
 
         <Button
             android:id="@+id/btnPostAssignment"
-            android:layout_width="351dp"
+            android:layout_width="320dp"
             android:layout_height="56dp"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="28dp"
+            android:backgroundTint="@color/blue"
             android:clickable="true"
             android:text="Post Assignment"
             android:textColor="@color/white"
             app:cornerRadius="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tilresources" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tiltypemessage"
-            android:layout_width="351dp"
+            android:layout_width="320dp"
             android:layout_height="133dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tiltopic">
 
@@ -160,20 +136,21 @@
             android:id="@+id/tvTopic"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="36dp"
             android:text="Topic"
             android:textSize="25sp"
             android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.065"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageButtonCalendar" />
+            app:layout_constraintTop_toBottomOf="@+id/spinnerSubject" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tiltopic"
-            android:layout_width="351dp"
+            android:layout_width="320dp"
             android:layout_height="56dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvTopic">
 
@@ -188,20 +165,21 @@
             android:id="@+id/tvcompentency"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="32dp"
             android:text="Competency"
             android:textSize="25sp"
             android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.08"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tiltypemessage" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilcomptenecy"
-            android:layout_width="351dp"
+            android:layout_width="320dp"
             android:layout_height="59dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="52dp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvcompentency">
 

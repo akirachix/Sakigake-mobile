@@ -18,15 +18,14 @@
         app:srcCompat="@drawable/blackwmn" />
 
     <androidx.cardview.widget.CardView
-        android:layout_width="293dp"
+        android:layout_width="280dp"
         android:layout_height="75dp"
-        android:layout_marginEnd="25dp"
         android:background="@color/grey"
         android:backgroundTint="@color/grey"
         app:cardBackgroundColor="@color/darkblue"
         app:cardCornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.23"
         app:layout_constraintStart_toEndOf="@+id/imgMessagerImage"
         app:layout_constraintTop_toTopOf="parent">
 
