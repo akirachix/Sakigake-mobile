@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/baloobhai2_bold"
-        android:text="Agriculture"
+        android:text="Assignment"
         android:textSize="25dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/ivhome"
@@ -126,10 +126,10 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvresources"
-        android:layout_width="268dp"
-        android:layout_height="72dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="55dp"
+        android:layout_width="350dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="65dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView3"
         tools:listitem="@layout/resource_item" />
@@ -139,7 +139,7 @@
         android:layout_width="232dp"
         android:layout_height="58dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="20dp"
         android:fontFamily="@font/baloobhai2_semibold"
         android:text="Leave a comment"
@@ -151,31 +151,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rvresources" />
 
-    <ImageView
-        android:id="@+id/ivarrowback"
-        android:layout_width="25dp"
-        android:layout_height="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/tvMessage"
-        app:layout_constraintEnd_toStartOf="@+id/rvresources"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvResourcesNeeded"
-        app:layout_constraintVertical_bias="0.261"
-        app:srcCompat="@drawable/baseline_arrow_back_ios_24"
-        app:tint="@color/blue" />
 
-    <ImageView
-        android:id="@+id/ivarrowfoward"
-        android:layout_width="25dp"
-        android:layout_height="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/tvMessage"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.44"
-        app:layout_constraintStart_toEndOf="@+id/rvresources"
-        app:layout_constraintTop_toTopOf="@+id/rvresources"
-        app:layout_constraintVertical_bias="0.18"
-        app:srcCompat="@drawable/baseline_arrow_forward_ios_24"
-        app:tint="@color/blue" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

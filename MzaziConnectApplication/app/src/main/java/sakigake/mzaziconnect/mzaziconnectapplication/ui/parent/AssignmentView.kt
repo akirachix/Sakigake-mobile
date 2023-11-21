@@ -2,6 +2,7 @@ package sakigake.mzaziconnect.mzaziconnectapplication.ui.parent
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import sakigake.mzaziconnect.mzaziconnectapplication.database.Resources
@@ -11,6 +12,7 @@ import sakigake.mzaziconnect.mzaziconnectapplication.model.Shops
 import sakigake.mzaziconnect.mzaziconnectapplication.ui.teacher.CommentsActivity
 import sakigake.mzaziconnect.mzaziconnectapplication.ui.ResourcesAdapter
 import sakigake.mzaziconnect.mzaziconnectapplication.ui.teacher.NavActivity
+import java.text.SimpleDateFormat
 
 class AssignmentView : AppCompatActivity() {
     lateinit var binding: ActivityAssignmentViewBinding
@@ -42,26 +44,43 @@ class AssignmentView : AppCompatActivity() {
 //            val intent = Intent(this@AssignmentView, Shops::class.java)
 //            startActivity(intent)
 //        }
+
         binding.rvresources.setOnClickListener {
             val intent = Intent(this@AssignmentView, ShopsActivity::class.java)
             startActivity(intent)
         }
 
-        val recyclerView: RecyclerView = binding.rvresources
-        recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
-        binding.ivarrowfoward.setOnClickListener {
-            scrollRecyclerView(true)
+        val recyclerView: RecyclerView = binding.rvresources
+        recyclerView.layoutManager = GridLayoutManager(this, 2)
+//        binding.rvresources.layoutManager = layoutManager
+
+        val resourcesList = resources.map { Resources(it) }
+
+        resourcesAdapter = ResourcesAdapter(resourcesList) { selectedResource ->
+            val intent = Intent(this@AssignmentView, ShopsActivity::class.java)
+            intent.putExtra("Name", selectedResource.name)
+            startActivity(intent)
         }
-        binding.ivarrowback.setOnClickListener {
-            scrollRecyclerView(false)
-        }
+
+
+
+//        val recyclerView: RecyclerView = binding.rvresources
+//        recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+
+//        binding.ivarrowfoward.setOnClickListener {
+//            scrollRecyclerView(true)
+//        }
+//        binding.ivarrowback.setOnClickListener {
+//            scrollRecyclerView(false)
+//        }
         binding.tvMessage.setOnClickListener {
             startActivity(Intent(this, CommentsActivity::class.java))
         }
 
 
         recyclerView.adapter = resourcesAdapter
+
 
     }
 
@@ -93,7 +112,10 @@ class AssignmentView : AppCompatActivity() {
 //        binding.tvAgric.text = topic.toString()
         binding.tvPlantss.text = competency
         binding.tvTask.text = task
-        binding.tv30th.text = due_date
+        val inputFormat = SimpleDateFormat("yyyy-MM-dd") // Assuming the input format is yyyy-MM-dd
+        val outputFormat = SimpleDateFormat("dd/MM/yyyy") // Desired output format: dd/MM/yyyy
+        val formattedDate = outputFormat.format(inputFormat.parse(due_date))
+        binding.tv30th.text = formattedDate
 
         binding.rvresources.layoutManager = LinearLayoutManager(this)
 

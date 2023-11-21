@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
+import sakigake.mzaziconnect.mzaziconnectapplication.R
 import sakigake.mzaziconnect.mzaziconnectapplication.model.Shops
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.ShopItemBinding
 
@@ -35,6 +36,10 @@ class ShopsViewHolder(val binding: ShopItemBinding): RecyclerView.ViewHolder(bin
     fun bind(shops: Shops) {
         binding.tvSubjectName.text = shops.name
         binding.tvShopLocation.text = shops.location
+        Picasso.get()
+            .load(shops.shopImgUrl)
+            .error(R.drawable.shop)
+            .into(binding.imgSubject)
 
     }
 }

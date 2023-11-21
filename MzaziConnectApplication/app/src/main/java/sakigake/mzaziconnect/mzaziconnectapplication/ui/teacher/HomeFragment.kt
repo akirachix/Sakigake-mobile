@@ -48,14 +48,51 @@ class HomeFragment : Fragment() {
         val layoutManager = GridLayoutManager(requireContext(), 2)
         recyclerView.layoutManager = layoutManager
 
-        subjectsAdapter = SubjectsAdapter(emptyList() ) {selectedSubject ->
+        val subjects = listOf(
+            Subjects(
+                "Agriculture",
+                "Farming",
+                1,
+                "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695151509/Frame_185_1_c2jysn.jpg",
+            ),
+            Subjects(
+                "English",
+                "Grammar",
+                2,
+                "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695151509/Frame_180_1_kjclpx.jpg",
+            ),
+            Subjects(
+                "Math",
+                "Calculations",
+                3,
+                "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695151508/Frame_181_rfkkvo.jpg",
+            ),
+            Subjects(
+                "Science",
+                "Human body",
+                4,
+                "https://res.cloudinary.com/dyxt6pqtx/image/upload/v1695151508/Frame_186_1_ldcvij.jpg",
+        ),
+        )
+
+
+//        val subjectAdapter = SubjectAdapter(subjects) { selectedSubject ->
+//            val intent = Intent(this, SubjectChoosenAssignments::class.java)
+//            intent.putExtra("TopicName", selectedSubject.subjectName)
+//            intent.putExtra("AssignmentDetails", selectedSubject.subjectTeacherName)
+//            intent.putExtra("DueDate", selectedSubject.subjectImageUrl)
+//            startActivity(intent)
+//        }
+
+        subjectsAdapter = SubjectsAdapter(subjects) {selectedSubject ->
             val intent = Intent(requireContext(), SubjectAssignmentActivity::class.java)
             intent.putExtra("Subject Name", selectedSubject.subjectName)
             intent.putExtra("SubjectTeacherName", selectedSubject.teacher)
+            intent.putExtra("DueDate", selectedSubject.subjectImageUrl)
             startActivity(intent)
         }
         recyclerView.adapter = subjectsAdapter
-        fetchSubject()
+//        fetchSubject()
 
 
         return view
@@ -113,22 +150,18 @@ class HomeFragment : Fragment() {
         _binding = null
     }
 
-    fun fetchSubject() {
-        subjectViewModel.fetchSubjects()
-
-        subjectViewModel.subjectsLiveData.observe(viewLifecycleOwner, Observer { subjectsList ->
-            subjectsAdapter.updateSubjects(subjectsList ?: emptyList())
-//            Toast.makeText(
-//                requireContext(),
-//                "Found ${subjectsList?.size} subjects",
-//                Toast.LENGTH_LONG
-//            ).show()
-        })
-        subjectViewModel.errorLiveData.observe(viewLifecycleOwner, Observer { error ->
-            Toast.makeText(requireContext(), error, Toast.LENGTH_LONG).show()
-        })
-
-    }
+//    fun fetchSubject() {
+//        subjectViewModel.fetchSubjects()
+//
+//        subjectViewModel.subjectsLiveData.observe(viewLifecycleOwner, Observer { subjectsList ->
+//            subjectsAdapter.updateSubjects(subjectsList ?: emptyList())
+//
+//        })
+//        subjectViewModel.errorLiveData.observe(viewLifecycleOwner, Observer { error ->
+//            Toast.makeText(requireContext(), error, Toast.LENGTH_LONG).show()
+//        })
+//
+//    }
 
 
 }

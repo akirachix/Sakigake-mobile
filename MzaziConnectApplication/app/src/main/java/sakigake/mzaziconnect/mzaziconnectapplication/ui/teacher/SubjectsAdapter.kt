@@ -38,7 +38,10 @@ class SubjectsAdapter (private var subjects: List<Subjects>,  val onItemClick: (
                 binding.tvSubjectName.text = subject.subjectName
                 binding.tvSubjectTeacherName.text = subject.teacher.toString()
                 binding.tvSubjectTeacherName.text = subject.description
-
+                Picasso.get()
+                    .load(subject.subjectImageUrl)
+                    .error(R.drawable.english_image)
+                    .into(binding.imgSubject)
             }
         }
     }

@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import sakigake.mzaziconnect.mzaziconnectapplication.databinding.TopicItemBinding
 import sakigake.mzaziconnect.mzaziconnectapplication.model.TopicsData
+import java.text.SimpleDateFormat
 
 class SubjectChoosenAssignmentsAdapter(private val topics: List<TopicsData>, private val context: Context) : RecyclerView.Adapter<SubjectChoosenAssignmentsAdapter.SubjectChoosenAssignmentViewHolder>() {
 
@@ -20,7 +21,17 @@ class SubjectChoosenAssignmentsAdapter(private val topics: List<TopicsData>, pri
         val topic = topics[position]
         val binding = holder.binding
         binding.tvTopicName.text = topic.topic.toString()
-        binding.tvDueDate.text = topic.due_date
+
+
+        val inputFormat = SimpleDateFormat("yyyy-MM-dd") // Assuming the input format is yyyy-MM-dd
+        val outputFormat = SimpleDateFormat("dd/MM/yyyy") // Desired output format: dd/MM/yyyy
+        val formattedDate = outputFormat.format(inputFormat.parse(topic.due_date))
+        binding.tvDueDate.text = formattedDate
+//        binding.tvDueDate.text = topic.due_date
+
+
+
+
         binding.tvAssignmentDetails.text = topic.task
         holder.binding.cvAssignment.setOnClickListener {
             val intent = Intent(context, AssignmentView::class.java)

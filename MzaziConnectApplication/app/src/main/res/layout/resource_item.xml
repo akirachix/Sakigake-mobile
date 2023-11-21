@@ -8,7 +8,6 @@
         android:id="@+id/btnResources"
         android:layout_width="134dp"
         android:layout_height="49dp"
-        android:layout_marginTop="8dp"
         android:backgroundTint="@color/blue"
         android:fontFamily="@font/inter_medium"
         android:text="Gamboots"
@@ -20,5 +19,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.028" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

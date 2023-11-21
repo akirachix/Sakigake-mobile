@@ -5,6 +5,7 @@ data class Shops(
     val name: String,
     val location: String,
     @SerializedName("phone_number")val phoneNumber : String,
-    val category : String
+    val category : String,
+    val shopImgUrl: String
 
 )

@@ -59,7 +59,7 @@
             android:layout_marginStart="12dp"
             android:layout_marginTop="40dp"
             android:fontFamily="@font/baloobhai2_medium"
-            android:text="Due: 12th Nov"
+            android:text="Due: 23rd Nov"
             android:textSize="15sp"
             app:layout_constraintStart_toEndOf="@+id/imgCalendar"
             app:layout_constraintTop_toTopOf="parent" />
@@ -88,7 +88,7 @@
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="15dp"
             android:fontFamily="@font/baloobhai2"
-            android:text="Posted on 20 Nov 2023"
+            android:text="Resources required"
             android:textSize="10sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
